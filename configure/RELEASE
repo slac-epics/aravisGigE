@@ -1,43 +1,41 @@
 # RELEASE - Location of external support modules
-#
-# IF YOU MAKE ANY CHANGES to this file you must subsequently
-# do a "gnumake rebuild" in this application's top level
-# directory.
-#
-# The build process does not check dependencies against files
-# that are outside this application, thus you should do a
-# "gnumake rebuild" in the top level directory after EPICS_BASE
-# or any other external module pointed to below is rebuilt.
-#
-# Host- or target-specific settings can be given in files named
-#  RELEASE.$(EPICS_HOST_ARCH).Common
-#  RELEASE.Common.$(T_A)
-#  RELEASE.$(EPICS_HOST_ARCH).$(T_A)
-#
-# This file should ONLY define paths to other support modules,
-# or include statements that pull in similar RELEASE files.
-# Build settings that are NOT module paths should appear in a
-# CONFIG_SITE file.
+include $(TOP)/RELEASE_SITE
 
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-SUPPORT=/dls_sw/prod/R3.14.12.3/support
-WORK=/dls_sw/work/R3.14.12.3/support
+# ===============================================================
+# Define the location and version of EPICS base
+# ===============================================================
+BASE_MODULE_VERSION=R3.14.12-0.4.0
+EPICS_BASE=$(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 
-# If you don't want to install into $(TOP) then
-# define INSTALL_LOCATION_APP here
-#INSTALL_LOCATION_APP=<fullpathname>
+# ===============================================================
+# Define the version(s) of any other needed modules 
+# ===============================================================
+#ASYN_MODULE_VERSION			= R4.23-0.4.0
+#ADCORE_MODULE_VERSION		= R2.1-0.3.0
+ASYN_MODULE_VERSION			= R4.23-0.1.0
+AREADETECTOR_MODULE_VERSION	= R1.9.1-0.11.0
 
-ASYN=$(SUPPORT)/asyn/4-21
-AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls15
+# ============================================================
+# External Support module path definitions
+#
+# If any of these macros expand to a path which
+# contains an "include" directory, that directory will be
+# included in the compiler include path.
+#
+# If any of these macros expand to a path which
+# contains a "lib/<arch>" directory, that directory will be
+# included in the compiler link path for that architecture.
+#
+# If your build fails, look for these paths in your build output
+# ============================================================
+#IPAC=$(EPICS_MODULES)/ipac/$(IPAC_MODULE_VERSION)
+#SEQ=$(EPICS_MODULES)/seq/$(SEQ_MODULE_VERSION)
+#
+ASYN	= $(EPICS_MODULES)/asyn/$(ASYN_MODULE_VERSION)
+#ADCORE	= $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
+AREADETECTOR	= $(EPICS_MODULES)/areaDetector/$(AREADETECTOR_MODULE_VERSION)
 
 # comment this out if glib is installed in a standard place
 # you need at least glib 2.28
-GLIBPREFIX=/dls_sw/prod/tools/RHEL6-x86_64/glib/2-28-8/prefix
-#GLIBPREFIX=/dls_sw/work/tools/RHEL6-x86_64/glib/prefix
-
-# EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/dls_sw/epics/R3.14.12.3/base
-
-# Set RULES here if you want to take build rules from somewhere
-# other than EPICS_BASE:
-#RULES=/path/to/epics/support/module/rules/x-y
+#GLIBPREFIX=/dls_sw/prod/tools/RHEL6-x86_64/glib/2-28-8/prefix
+GLIBPREFIX=/usr
