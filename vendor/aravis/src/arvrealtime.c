@@ -27,8 +27,10 @@
 
 ***/
 
-#include <arvrealtimeprivate.h>
-#include <arvdebug.h>
+#include "arvrealtimeprivate.h"
+#include "arvdebug.h"
+#include <pthread.h>
+#include <sched.h>
 #include <memory.h>
 #include <errno.h>
 #include <sys/time.h>
