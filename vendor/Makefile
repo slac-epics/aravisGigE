@@ -2,7 +2,7 @@ TOP = ..
 include $(TOP)/configure/CONFIG
 
 # config options for aravis
-CONFIGOPTIONS = --prefix=$(shell cd $(TOP)/vendor && pwd)/aravis-linux-x86_64
+CONFIGOPTIONS = --prefix=$(shell cd $(TOP)/vendor && pwd)/aravis-$(EPICS_HOST_ARCH)
 CONFIGOPTIONS += --disable-gst-plugin --disable-viewer
 
 # libs to install
@@ -23,9 +23,9 @@ endif
 
 # install libs
 # TODO: shouldn't really do this, should get the aravisGgigeApp/src/Makefile to point to the vendor directory
-BIN_INSTALLS_Linux  += $(addprefix ../aravis-linux-x86_64/bin/, $(ARAVIS_LINUX_BINS))
-LIB_INSTALLS_Linux  += $(addprefix ../aravis-linux-x86_64/lib/, $(ARAVIS_LINUX_LIBS))
-ARAVISMAK = $(TOP)/vendor/aravis-linux-x86_64/Makefile	
+BIN_INSTALLS_Linux  += $(addprefix ../aravis-$(EPICS_HOST_ARCH)/bin/, $(ARAVIS_LINUX_BINS))
+LIB_INSTALLS_Linux  += $(addprefix ../aravis-$(EPICS_HOST_ARCH)/lib/, $(ARAVIS_LINUX_LIBS))
+ARAVISMAK = $(TOP)/vendor/aravis-$(EPICS_HOST_ARCH)/Makefile	
 
 # depend on Makefile existing
 install: $(ARAVISMAK)
