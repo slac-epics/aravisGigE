@@ -20,21 +20,23 @@
 # CONFIG_SITE file.
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
-SUPPORT=/dls_sw/prod/R3.14.11/support
-WORK=/dls_sw/work/R3.14.11/support
+SUPPORT=/dls_sw/prod/R3.14.12.3/support
+WORK=/dls_sw/work/R3.14.12.3/support
 
 # If you don't want to install into $(TOP) then
 # define INSTALL_LOCATION_APP here
 #INSTALL_LOCATION_APP=<fullpathname>
 
 ASYN=$(SUPPORT)/asyn/4-21
-AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls4
+AREADETECTOR=$(SUPPORT)/areaDetector/1-9dls15
 
 # comment this out if glib is installed in a standard place
-GLIBPREFIX=/dls_sw/prod/tools/RHEL5/glib2.26.1
+# you need at least glib 2.28
+GLIBPREFIX=/dls_sw/prod/tools/RHEL6-x86_64/glib/2-28-8/prefix
+#GLIBPREFIX=/dls_sw/work/tools/RHEL6-x86_64/glib/prefix
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/dls_sw/epics/R3.14.11/base
+EPICS_BASE=/dls_sw/epics/R3.14.12.3/base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
