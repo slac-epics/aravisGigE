@@ -3,7 +3,8 @@ TOP = .
 
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) $(filter-out $(DIRS), configure)
-DIRS := $(DIRS) $(filter-out $(DIRS), vendor)
+# Commenting out vendor as we now install aravis under $PACKAGE_SITE_TOP
+#DIRS := $(DIRS) $(filter-out $(DIRS), vendor)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 
