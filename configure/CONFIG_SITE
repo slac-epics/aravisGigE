@@ -31,3 +31,12 @@ CROSS_COMPILER_TARGET_ARCHS =
 # You must rebuild in the iocBoot directory for this to
 #   take effect.
 #IOCS_APPL_TOP = </IOC/path/to/application/top>
+
+# Set the paths for glib and aravis packages
+ifeq '$(EPICS_HOST_ARCH)' 'rhel6-x86_64'
+PKG_ARCH=x86_64-rhel6-gcc44-opt
+else
+PKG_ARCH=x86_64-rhel5-gcc41-opt
+endif
+ARAVISPREFIX=$(PSPKG_ROOT)/aravis/0.3.7gige/$(PKG_ARCH)
+GLIBPREFIX=$(PSPKG_ROOT)/glib/2.28.8/$(PKG_ARCH)

@@ -38,4 +38,4 @@ AREADETECTOR	= $(EPICS_MODULES)/areaDetector/$(AREADETECTOR_MODULE_VERSION)
 # comment this out if glib is installed in a standard place
 # you need at least glib 2.28
 #GLIBPREFIX=/dls_sw/prod/tools/RHEL6-x86_64/glib/2-28-8/prefix
-GLIBPREFIX=/usr
+#GLIBPREFIX=/usr
