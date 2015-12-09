@@ -157,6 +157,25 @@ arv_buffer_get_data (ArvBuffer *buffer, size_t *size)
 	return buffer->priv->data;
 }
 
+/**
+ * arv_buffer_get_user_data:
+ * @buffer: a #ArvBuffer
+ *
+ * Buffer user data accessor.
+ *
+ * Returns: a pointer to the user data specified in #arv_buffer_new_full.
+ *
+ * Since: 0.4.0
+ **/
+
+const void *
+arv_buffer_get_user_data (ArvBuffer *buffer)
+{
+	g_return_val_if_fail (ARV_IS_BUFFER (buffer), NULL);
+
+	return buffer->priv->user_data;
+}
+
 typedef struct ARAVIS_PACKED_STRUCTURE {
 	guint32 id;
 	guint32 size;
