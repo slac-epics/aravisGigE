@@ -49,4 +49,7 @@ USR_LIBS += glib-2.0
 # TODO: should pick this up from the vendor directory
 USR_LIBS += aravis-0.4
 
+LIB_INSTALLS += $(wildcard $(ARAVISPREFIX)/lib/lib*)
+LIB_INSTALLS += $(wildcard $(GLIBPREFIX)/lib/lib*)
+
 include $(TOP)/configure/RULES
