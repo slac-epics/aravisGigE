@@ -18,8 +18,20 @@ options, args = parser.parse_args()
 if len(args) != 2:
     parser.error("Incorrect number of arguments")
 
+# open xml feature file
+xml_file = open(args[0])
+
+# Read the first line of the feature xml file to see if arv-tool left the camera id
+# there, thus creating an unparsable file
+# Throw it away if it doesn't look like valid xml
+# A valid first line of an xml file will be optional whitespace followed by '<'
+firstLine = xml_file.readline()
+if firstLine.lstrip().startswith('<'):
+    # Looks good, reset file to start
+    xml_file.seek(0)
+
 # parse xml file to dom object
-xml_root = parse(args[0])
+xml_root = parse(xml_file)
 camera_name = args[1]
 prefix = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 db_filename = os.path.join(prefix, "Db", camera_name + ".template")
@@ -200,7 +212,8 @@ for node in doneNodes:
         for n in elements(node):
             if str(n.nodeName) == "EnumEntry":
                 if i >= len(epicsId):
-                    print >> sys.stderr, "Too many enum entries in %s, truncating" % nodeName
+                    print >> sys.stderr, "More than 16 enum entries for %s mbbi record, discarding additional options." % nodeName
+                    print >> sys.stderr, "   If needed, edit the Enumeration tag for %s to select the 16 you want." % nodeName
                     break
                 name = str(n.getAttribute("Name"))
                 enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:16])
