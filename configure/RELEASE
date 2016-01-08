@@ -11,7 +11,7 @@ EPICS_BASE=$(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 # Define the version(s) of any other needed modules 
 # ===============================================================
 ASYN_MODULE_VERSION			= R4.23-0.4.0
-ADCORE_MODULE_VERSION		= R2.1-0.3.0
+ADCORE_MODULE_VERSION		= R2.1-0.3.1
 #ASYN_MODULE_VERSION			= R4.23-0.1.0
 #AREADETECTOR_MODULE_VERSION	= R1.9.1-0.11.0
 
