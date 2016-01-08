@@ -85,6 +85,26 @@ static const struct pix_lookup pix_lookup[] = {
     { ARV_PIXEL_FORMAT_BAYER_GB_12,   NDColorModeBayer, NDUInt16, NDBayerGBRG },
     { ARV_PIXEL_FORMAT_BAYER_BG_12,   NDColorModeBayer, NDUInt16, NDBayerBGGR }
 };
+   
+/* Convert ArvBufferStatus enum to string */
+const char * ArvBufferStatusToString( ArvBufferStatus buffer_status )
+{
+	const char	*	pString;
+	switch( buffer_status )
+	{
+		default:
+		case ARV_BUFFER_STATUS_UNKNOWN:			pString	= "Unknown";		break;
+		case ARV_BUFFER_STATUS_SUCCESS:			pString	= "Success";		break;
+		case ARV_BUFFER_STATUS_CLEARED:			pString	= "Buffer Cleared";	break;
+		case ARV_BUFFER_STATUS_TIMEOUT:			pString	= "Timeout";		break;
+		case ARV_BUFFER_STATUS_MISSING_PACKETS:	pString	= "Missing Pkts";	break;
+		case ARV_BUFFER_STATUS_WRONG_PACKET_ID:	pString	= "Wrong Pkt ID";	break;
+		case ARV_BUFFER_STATUS_SIZE_MISMATCH:	pString	= "Image>bufSize";	break;
+		case ARV_BUFFER_STATUS_FILLING:			pString	= "Filling";		break;
+		case ARV_BUFFER_STATUS_ABORTED:			pString	= "Aborted";		break;
+	}
+	return pString;
+}
 
 /** Aravis GigE detector driver */
 class aravisCamera : public ADDriver, epicsThreadRunable {
@@ -163,13 +183,13 @@ private:
 static void aravisShutdown(void* arg) {
     aravisCamera *pPvt = (aravisCamera *) arg;
     ArvCamera *cam = pPvt->camera;
-    printf("Stopping %s... ", pPvt->portName);
+    printf("aravisCamera: Stopping %s... ", pPvt->portName);
     arv_camera_stop_acquisition(cam);
     pPvt->connectionValid = 0;
     epicsThreadSleep(0.1);
     pPvt->camera = NULL;
     g_object_unref(cam);
-    printf("OK\n");
+    printf("aravisCamera: OK\n");
 }
 
 /** Called by aravis when destroying a buffer with an NDArray wrapper */
@@ -363,7 +383,7 @@ asynStatus aravisCamera::makeCameraObject() {
     this->genicam = NULL;
 
     /* connect to camera */
-    printf ("Looking for camera '%s'... \n", this->cameraName);
+    printf ("aravisCamera: Looking for camera '%s'... \n", this->cameraName);
     this->camera = arv_camera_new (this->cameraName);
     if (this->camera == NULL) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
@@ -459,7 +479,7 @@ asynStatus aravisCamera::connectToCamera() {
     
     /* Check the tick frequency */
     guint64 freq = arv_gv_device_get_timestamp_tick_frequency(ARV_GV_DEVICE(this->device));
-    printf("Your tick frequency is %" G_GUINT64_FORMAT "\n", freq);
+    printf("aravisCamera: Your tick frequency is %" G_GUINT64_FORMAT "\n", freq);
     if (freq > 0) {
         printf("So your timestamp resolution is %f ns\n", 1.e9/freq);
     } else {
@@ -514,9 +534,9 @@ asynStatus aravisCamera::connectToCamera() {
     }
     /* Mark connection valid again */
     this->connectionValid = 1;
-    printf("Done.\n");
+    printf("aravisCamera: Done.\n");
 
-    printf("Getting feature list...\n");
+    printf("aravisCamera: Getting feature list...\n");
     /* Add gain lookup */
     if (tryAddFeature(&ADGain, "Gain"))
         if (tryAddFeature(&ADGain, "GainRaw"))
@@ -538,7 +558,7 @@ asynStatus aravisCamera::connectToCamera() {
         status = asynError;
     }
 
-    printf("Done.\n");
+    printf("aravisCamera: Done.\n");
     return (asynStatus) status;
 }
 
@@ -1372,7 +1392,7 @@ asynStatus aravisCamera::getNextFeature() {
         } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(node)) == G_TYPE_STRING) {
             stringValue = arv_device_get_string_feature_value(this->device, featureName);
             if (stringValue == NULL) {
-                printf("Feature %s has NULL value\n", featureName);
+                printf("aravisCamera: Feature %s has NULL value\n", featureName);
                 status = asynError;
             } else {
                 status |= setStringParam(*index, stringValue);
