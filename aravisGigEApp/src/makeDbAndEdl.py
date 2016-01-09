@@ -123,11 +123,16 @@ print '# Macros:'
 print '#% macro, P, Device Prefix'
 print '#% macro, R, Device Suffix'
 print '#% macro, PORT, Asyn Port name'
-print '#% macro, TIMEOUT, Timeout'
-print '#% macro, ADDR, Asyn Port address'
+print '#% macro, TIMEOUT, Timeout, default=1'
+print '#% macro, ADDR, Asyn Port address, default=0'
 print '#%% gui, $(PORT), edmtab, %s.edl, P=$(P),R=$(R)' % camera_name
 print 
 
+a_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC'
+b_autosaveFields		= 'DESC ZSV OSV TSE'
+long_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE'
+mbb_autosaveFields		= 'DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE'
+string_autosaveFields	= 'DESC TSE'
 
 # for each node
 for node in doneNodes:
@@ -139,70 +144,78 @@ for node in doneNodes:
     if node.nodeName in ["Integer", "IntConverter", "IntSwissKnife"]:
         print 'record(longin, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'        
+        print '  info( autosaveFields, "%s" )' % long_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(longout, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s VAL" )' % long_autosaveFields
         print '}'
         print        
     elif node.nodeName in ["Boolean"]:
         print 'record(bi, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(ZNAM, "No")'
         print '  field(ONAM, "Yes")'                        
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % b_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(bo, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(ZNAM, "No")'
         print '  field(ONAM, "Yes")'                                
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s VAL" )' % b_autosaveFields
         print '}'
         print           
     elif node.nodeName in ["Float", "Converter", "SwissKnife"]:
         print 'record(ai, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynFloat64")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVD_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_%s")' % nodeName
         print '  field(PREC, "3")'        
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % a_autosaveFields
         print '}'
         print    
         if ro:
             continue    
         print 'record(ao, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynFloat64")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVD_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_%s")' % nodeName
         print '  field(PREC, "3")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s VAL" )' % a_autosaveFields
         print '}'
         print
     elif node.nodeName in ["StringReg"]:
         print 'record(stringin, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynOctetRead")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVS_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVS_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % string_autosaveFields
         print '}'
         print
     elif node.nodeName in ["Command"]:
         print 'record(longout, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % long_autosaveFields
         print '}'
         print         
     elif node.nodeName in ["Enumeration"]:
@@ -223,19 +236,21 @@ for node in doneNodes:
                 i += 1                
         print 'record(mbbi, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print enumerations,
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % mbb_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(mbbo, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print enumerations,       
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s VAL" )' % mbb_autosaveFields
         print '}'
         print          
     else:
