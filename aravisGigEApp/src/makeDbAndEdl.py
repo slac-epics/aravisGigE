@@ -267,11 +267,11 @@ h = 40
 x = 5
 y = 50
 text = ""
-defFontClass	= "arial"
+defFontClass	= "helvetica"
 defFgColorCtrl	= 25
-defBgColorCtrl	= 3
-defFgColorMon	= 16
-defBgColorMon	= 10
+defBgColorCtrl	= 5
+defFgColorMon	= 15
+defBgColorMon	= 12
 
 def quoteString(string):
     escape_list = ["\\","{","}",'"']

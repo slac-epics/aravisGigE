@@ -7,16 +7,16 @@ x 50
 y 50
 w 1825
 h 855
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
+ctlFont "helvetica-bold-r-12.0"
+btnFont "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
+ctlFgColor1 index 15
 ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlBgColor1 index 12
+ctlBgColor2 index 5
 topShadowColor index 1
 botShadowColor index 11
 title "Basler_acA1300-30gm features - $(P)$(R)"
@@ -88,7 +88,7 @@ x 0
 y 2
 w 1825
 h 24
-font "arial-bold-r-16.0"
+font "helvetica-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -151,7 +151,7 @@ x 5
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -176,7 +176,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -205,7 +205,7 @@ x 20
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -227,9 +227,9 @@ h 20
 controlPv "$(P)$(R)FirmwareVerMajor"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -243,11 +243,11 @@ y 55
 w 60
 h 20
 controlPv "$(P)$(R)FirmwareVerMajor_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -265,7 +265,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -294,7 +294,7 @@ x 20
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -316,9 +316,9 @@ h 20
 controlPv "$(P)$(R)FirmwareVerMinor"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -332,11 +332,11 @@ y 80
 w 60
 h 20
 controlPv "$(P)$(R)FirmwareVerMinor_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -354,7 +354,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -383,7 +383,7 @@ x 20
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -405,9 +405,9 @@ h 20
 controlPv "$(P)$(R)FirmwareVerBuild"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -421,11 +421,11 @@ y 105
 w 60
 h 20
 controlPv "$(P)$(R)FirmwareVerBuild_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -443,7 +443,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -472,7 +472,7 @@ x 20
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -492,13 +492,13 @@ y 130
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SensorType"
 indicatorPv "$(P)$(R)SensorType_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -515,7 +515,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -544,7 +544,7 @@ x 20
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -566,9 +566,9 @@ h 20
 controlPv "$(P)$(R)SensorBits"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -582,11 +582,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)SensorBits_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -604,7 +604,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -633,7 +633,7 @@ x 20
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -653,11 +653,11 @@ y 180
 w 125
 h 20
 controlPv "$(P)$(R)DeviceVendorName_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -675,7 +675,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -704,7 +704,7 @@ x 20
 y 205
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -724,11 +724,11 @@ y 205
 w 125
 h 20
 controlPv "$(P)$(R)DeviceModelName_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -746,7 +746,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -775,7 +775,7 @@ x 20
 y 230
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -795,11 +795,11 @@ y 230
 w 125
 h 20
 controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -817,7 +817,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -846,7 +846,7 @@ x 20
 y 255
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -866,11 +866,11 @@ y 255
 w 125
 h 20
 controlPv "$(P)$(R)DeviceID_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -888,7 +888,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -917,7 +917,7 @@ x 20
 y 280
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -937,11 +937,11 @@ y 280
 w 125
 h 20
 controlPv "$(P)$(R)DevicePartNumber_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -959,7 +959,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -988,7 +988,7 @@ x 20
 y 305
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1008,13 +1008,13 @@ y 305
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)DeviceScanType"
 indicatorPv "$(P)$(R)DeviceScanType_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -1042,7 +1042,7 @@ x 5
 y 335
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -1067,7 +1067,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1096,7 +1096,7 @@ x 20
 y 350
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1118,9 +1118,9 @@ h 20
 controlPv "$(P)$(R)StreamBytesPerSe"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1134,11 +1134,11 @@ y 350
 w 60
 h 20
 controlPv "$(P)$(R)StreamBytesPerSe_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1156,7 +1156,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1185,7 +1185,7 @@ x 20
 y 375
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1205,13 +1205,13 @@ y 375
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)BandwidthControl"
 indicatorPv "$(P)$(R)BandwidthControl_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -1228,7 +1228,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1257,7 +1257,7 @@ x 20
 y 400
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1279,9 +1279,9 @@ h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1295,11 +1295,11 @@ y 400
 w 60
 h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1317,7 +1317,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1346,7 +1346,7 @@ x 20
 y 425
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1366,13 +1366,13 @@ y 425
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ChunkModeActive"
 indicatorPv "$(P)$(R)ChunkModeActive_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -1389,7 +1389,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1418,7 +1418,7 @@ x 20
 y 450
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1440,9 +1440,9 @@ h 20
 controlPv "$(P)$(R)PayloadSize"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1456,11 +1456,11 @@ y 450
 w 60
 h 20
 controlPv "$(P)$(R)PayloadSize_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1478,7 +1478,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1507,7 +1507,7 @@ x 20
 y 475
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1529,9 +1529,9 @@ h 20
 controlPv "$(P)$(R)NonImagePayloadS"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1545,11 +1545,11 @@ y 475
 w 60
 h 20
 controlPv "$(P)$(R)NonImagePayloadS_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1567,7 +1567,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1596,7 +1596,7 @@ x 20
 y 500
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1616,13 +1616,13 @@ y 500
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)StreamFrameRateC"
 indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -1650,7 +1650,7 @@ x 5
 y 530
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -1675,7 +1675,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1704,7 +1704,7 @@ x 20
 y 545
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1724,13 +1724,13 @@ y 545
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)StreamHoldEnable"
 indicatorPv "$(P)$(R)StreamHoldEnable_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -1747,7 +1747,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1776,7 +1776,7 @@ x 20
 y 570
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1798,9 +1798,9 @@ h 20
 controlPv "$(P)$(R)StreamHoldCapaci"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1814,11 +1814,11 @@ y 570
 w 60
 h 20
 controlPv "$(P)$(R)StreamHoldCapaci_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1847,7 +1847,7 @@ x 5
 y 600
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -1872,7 +1872,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1901,7 +1901,7 @@ x 20
 y 615
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -1923,9 +1923,9 @@ h 20
 controlPv "$(P)$(R)GevTimestampTick"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -1939,11 +1939,11 @@ y 615
 w 60
 h 20
 controlPv "$(P)$(R)GevTimestampTick_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -1961,7 +1961,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -1990,7 +1990,7 @@ x 20
 y 640
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2019,7 +2019,7 @@ pressValue "1"
 onLabel "GevTimestampControlLatch"
 offLabel "GevTimestampControlLatch"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -2036,7 +2036,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2065,7 +2065,7 @@ x 20
 y 665
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2094,7 +2094,7 @@ pressValue "1"
 onLabel "GevTimestampControlReset"
 offLabel "GevTimestampControlReset"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -2111,7 +2111,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2140,7 +2140,7 @@ x 20
 y 690
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2162,9 +2162,9 @@ h 20
 controlPv "$(P)$(R)GevTimestampValu"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -2178,11 +2178,11 @@ y 690
 w 60
 h 20
 controlPv "$(P)$(R)GevTimestampValu_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2211,7 +2211,7 @@ x 265
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -2236,7 +2236,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2265,7 +2265,7 @@ x 280
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2294,7 +2294,7 @@ pressValue "1"
 onLabel "AcquisitionStart"
 offLabel "AcquisitionStart"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -2311,7 +2311,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2340,7 +2340,7 @@ x 280
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2369,7 +2369,7 @@ pressValue "1"
 onLabel "AcquisitionStop"
 offLabel "AcquisitionStop"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -2386,7 +2386,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2415,7 +2415,7 @@ x 280
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2444,7 +2444,7 @@ pressValue "1"
 onLabel "AcquisitionAbort"
 offLabel "AcquisitionAbort"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -2461,7 +2461,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2490,7 +2490,7 @@ x 280
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2510,13 +2510,13 @@ y 130
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)AcquisitionMode"
 indicatorPv "$(P)$(R)AcquisitionMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -2533,7 +2533,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2562,7 +2562,7 @@ x 280
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2584,9 +2584,9 @@ h 20
 controlPv "$(P)$(R)AcquisitionFrame"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -2600,11 +2600,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)AcquisitionFrame_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2622,7 +2622,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2651,7 +2651,7 @@ x 280
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2673,9 +2673,9 @@ h 20
 controlPv "$(P)$(R)AcquisitionFram0"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -2689,11 +2689,11 @@ y 180
 w 60
 h 20
 controlPv "$(P)$(R)AcquisitionFram0_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2711,7 +2711,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2740,7 +2740,7 @@ x 280
 y 205
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2762,9 +2762,9 @@ h 20
 controlPv "$(P)$(R)AcquisitionFram1"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -2778,11 +2778,11 @@ y 205
 w 60
 h 20
 controlPv "$(P)$(R)AcquisitionFram1_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2800,7 +2800,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2829,7 +2829,7 @@ x 280
 y 230
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2851,9 +2851,9 @@ h 20
 controlPv "$(P)$(R)RecorderPreEvent"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -2867,11 +2867,11 @@ y 230
 w 60
 h 20
 controlPv "$(P)$(R)RecorderPreEvent_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -2900,7 +2900,7 @@ x 265
 y 260
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -2925,7 +2925,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -2954,7 +2954,7 @@ x 280
 y 275
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -2974,13 +2974,13 @@ y 275
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)TriggerSelector"
 indicatorPv "$(P)$(R)TriggerSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -2997,7 +2997,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3026,7 +3026,7 @@ x 280
 y 300
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3046,13 +3046,13 @@ y 300
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)TriggerMode"
 indicatorPv "$(P)$(R)TriggerMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -3069,7 +3069,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3098,7 +3098,7 @@ x 280
 y 325
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3127,7 +3127,7 @@ pressValue "1"
 onLabel "TriggerSoftware"
 offLabel "TriggerSoftware"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -3144,7 +3144,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3173,7 +3173,7 @@ x 280
 y 350
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3193,13 +3193,13 @@ y 350
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)TriggerSource"
 indicatorPv "$(P)$(R)TriggerSource_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -3216,7 +3216,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3245,7 +3245,7 @@ x 280
 y 375
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3265,13 +3265,13 @@ y 375
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)TriggerActivatio"
 indicatorPv "$(P)$(R)TriggerActivatio_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -3288,7 +3288,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3317,7 +3317,7 @@ x 280
 y 400
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3337,13 +3337,13 @@ y 400
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)TriggerOverlap"
 indicatorPv "$(P)$(R)TriggerOverlap_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -3360,7 +3360,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3389,7 +3389,7 @@ x 280
 y 425
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3411,9 +3411,9 @@ h 20
 controlPv "$(P)$(R)TriggerDelayAbs"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3427,11 +3427,11 @@ y 425
 w 60
 h 20
 controlPv "$(P)$(R)TriggerDelayAbs_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3460,7 +3460,7 @@ x 265
 y 455
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -3485,7 +3485,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3514,7 +3514,7 @@ x 280
 y 470
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3536,9 +3536,9 @@ h 20
 controlPv "$(P)$(R)SensorWidth"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3552,11 +3552,11 @@ y 470
 w 60
 h 20
 controlPv "$(P)$(R)SensorWidth_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3574,7 +3574,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3603,7 +3603,7 @@ x 280
 y 495
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3625,9 +3625,9 @@ h 20
 controlPv "$(P)$(R)SensorHeight"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3641,11 +3641,11 @@ y 495
 w 60
 h 20
 controlPv "$(P)$(R)SensorHeight_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3663,7 +3663,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3692,7 +3692,7 @@ x 280
 y 520
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3714,9 +3714,9 @@ h 20
 controlPv "$(P)$(R)BinningHorizonta"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3730,11 +3730,11 @@ y 520
 w 60
 h 20
 controlPv "$(P)$(R)BinningHorizonta_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3752,7 +3752,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3781,7 +3781,7 @@ x 280
 y 545
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3803,9 +3803,9 @@ h 20
 controlPv "$(P)$(R)BinningVertical"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3819,11 +3819,11 @@ y 545
 w 60
 h 20
 controlPv "$(P)$(R)BinningVertical_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3841,7 +3841,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3870,7 +3870,7 @@ x 280
 y 570
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3892,9 +3892,9 @@ h 20
 controlPv "$(P)$(R)DecimationHorizo"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3908,11 +3908,11 @@ y 570
 w 60
 h 20
 controlPv "$(P)$(R)DecimationHorizo_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -3930,7 +3930,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -3959,7 +3959,7 @@ x 280
 y 595
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -3981,9 +3981,9 @@ h 20
 controlPv "$(P)$(R)DecimationVertic"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -3997,11 +3997,11 @@ y 595
 w 60
 h 20
 controlPv "$(P)$(R)DecimationVertic_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4030,7 +4030,7 @@ x 265
 y 625
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -4055,7 +4055,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4084,7 +4084,7 @@ x 280
 y 640
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4106,9 +4106,9 @@ h 20
 controlPv "$(P)$(R)WidthMax"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4122,11 +4122,11 @@ y 640
 w 60
 h 20
 controlPv "$(P)$(R)WidthMax_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4144,7 +4144,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4173,7 +4173,7 @@ x 280
 y 665
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4195,9 +4195,9 @@ h 20
 controlPv "$(P)$(R)HeightMax"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4211,11 +4211,11 @@ y 665
 w 60
 h 20
 controlPv "$(P)$(R)HeightMax_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4233,7 +4233,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4262,7 +4262,7 @@ x 280
 y 690
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4282,13 +4282,13 @@ y 690
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)PixelFormat"
 indicatorPv "$(P)$(R)PixelFormat_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -4305,7 +4305,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4334,7 +4334,7 @@ x 280
 y 715
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4356,9 +4356,9 @@ h 20
 controlPv "$(P)$(R)Width"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4372,11 +4372,11 @@ y 715
 w 60
 h 20
 controlPv "$(P)$(R)Width_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4394,7 +4394,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4423,7 +4423,7 @@ x 280
 y 740
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4445,9 +4445,9 @@ h 20
 controlPv "$(P)$(R)Height"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4461,11 +4461,11 @@ y 740
 w 60
 h 20
 controlPv "$(P)$(R)Height_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4483,7 +4483,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4512,7 +4512,7 @@ x 280
 y 765
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4534,9 +4534,9 @@ h 20
 controlPv "$(P)$(R)OffsetX"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4550,11 +4550,11 @@ y 765
 w 60
 h 20
 controlPv "$(P)$(R)OffsetX_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4572,7 +4572,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4601,7 +4601,7 @@ x 280
 y 790
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4623,9 +4623,9 @@ h 20
 controlPv "$(P)$(R)OffsetY"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4639,11 +4639,11 @@ y 790
 w 60
 h 20
 controlPv "$(P)$(R)OffsetY_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4661,7 +4661,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4690,7 +4690,7 @@ x 280
 y 815
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4712,9 +4712,9 @@ h 20
 controlPv "$(P)$(R)ImageSize"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4728,11 +4728,11 @@ y 815
 w 60
 h 20
 controlPv "$(P)$(R)ImageSize_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4761,7 +4761,7 @@ x 525
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -4786,7 +4786,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4815,7 +4815,7 @@ x 540
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4837,9 +4837,9 @@ h 20
 controlPv "$(P)$(R)Gamma"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -4853,11 +4853,11 @@ y 55
 w 60
 h 20
 controlPv "$(P)$(R)Gamma_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -4875,7 +4875,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4904,7 +4904,7 @@ x 540
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4924,13 +4924,13 @@ y 80
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)NirMode"
 indicatorPv "$(P)$(R)NirMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -4947,7 +4947,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -4976,7 +4976,7 @@ x 540
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -4998,9 +4998,9 @@ h 20
 controlPv "$(P)$(R)Hue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5014,11 +5014,11 @@ y 105
 w 60
 h 20
 controlPv "$(P)$(R)Hue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5036,7 +5036,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5065,7 +5065,7 @@ x 540
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5087,9 +5087,9 @@ h 20
 controlPv "$(P)$(R)Saturation"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5103,11 +5103,11 @@ y 130
 w 60
 h 20
 controlPv "$(P)$(R)Saturation_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5125,7 +5125,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5154,7 +5154,7 @@ x 540
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5174,13 +5174,13 @@ y 155
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)EdgeFilter"
 indicatorPv "$(P)$(R)EdgeFilter_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -5208,7 +5208,7 @@ x 525
 y 185
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -5233,7 +5233,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5262,7 +5262,7 @@ x 540
 y 200
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5284,9 +5284,9 @@ h 20
 controlPv "$(P)$(R)DSPSubregionLeft"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5300,11 +5300,11 @@ y 200
 w 60
 h 20
 controlPv "$(P)$(R)DSPSubregionLeft_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5322,7 +5322,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5351,7 +5351,7 @@ x 540
 y 225
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5373,9 +5373,9 @@ h 20
 controlPv "$(P)$(R)DSPSubregionTop"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5389,11 +5389,11 @@ y 225
 w 60
 h 20
 controlPv "$(P)$(R)DSPSubregionTop_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5411,7 +5411,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5440,7 +5440,7 @@ x 540
 y 250
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5462,9 +5462,9 @@ h 20
 controlPv "$(P)$(R)DSPSubregionRigh"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5478,11 +5478,11 @@ y 250
 w 60
 h 20
 controlPv "$(P)$(R)DSPSubregionRigh_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5500,7 +5500,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5529,7 +5529,7 @@ x 540
 y 275
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5551,9 +5551,9 @@ h 20
 controlPv "$(P)$(R)DSPSubregionBott"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5567,11 +5567,11 @@ y 275
 w 60
 h 20
 controlPv "$(P)$(R)DSPSubregionBott_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5600,7 +5600,7 @@ x 525
 y 305
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -5625,7 +5625,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5654,7 +5654,7 @@ x 540
 y 320
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5674,13 +5674,13 @@ y 320
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ExposureMode"
 indicatorPv "$(P)$(R)ExposureMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -5697,7 +5697,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5726,7 +5726,7 @@ x 540
 y 345
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5748,9 +5748,9 @@ h 20
 controlPv "$(P)$(R)ExposureTimeAbs"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5764,11 +5764,11 @@ y 345
 w 60
 h 20
 controlPv "$(P)$(R)ExposureTimeAbs_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5786,7 +5786,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5815,7 +5815,7 @@ x 540
 y 370
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5835,13 +5835,13 @@ y 370
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ExposureAuto"
 indicatorPv "$(P)$(R)ExposureAuto_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -5869,7 +5869,7 @@ x 525
 y 400
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -5894,7 +5894,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -5923,7 +5923,7 @@ x 540
 y 415
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -5945,9 +5945,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoTarg"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -5961,11 +5961,11 @@ y 415
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoTarg_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -5983,7 +5983,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6012,7 +6012,7 @@ x 540
 y 440
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6032,13 +6032,13 @@ y 440
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ExposureAutoAlg"
 indicatorPv "$(P)$(R)ExposureAutoAlg_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -6055,7 +6055,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6084,7 +6084,7 @@ x 540
 y 465
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6106,9 +6106,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoMin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6122,11 +6122,11 @@ y 465
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoMin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6144,7 +6144,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6173,7 +6173,7 @@ x 540
 y 490
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6195,9 +6195,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoMax"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6211,11 +6211,11 @@ y 490
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoMax_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6233,7 +6233,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6262,7 +6262,7 @@ x 540
 y 515
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6284,9 +6284,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoRate"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6300,11 +6300,11 @@ y 515
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoRate_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6322,7 +6322,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6351,7 +6351,7 @@ x 540
 y 540
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6373,9 +6373,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoOutl"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6389,11 +6389,11 @@ y 540
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoOutl_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6411,7 +6411,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6440,7 +6440,7 @@ x 540
 y 565
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6462,9 +6462,9 @@ h 20
 controlPv "$(P)$(R)ExposureAutoAdju"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6478,11 +6478,11 @@ y 565
 w 60
 h 20
 controlPv "$(P)$(R)ExposureAutoAdju_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6511,7 +6511,7 @@ x 525
 y 595
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -6536,7 +6536,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6565,7 +6565,7 @@ x 540
 y 610
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6585,13 +6585,13 @@ y 610
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)GainSelector"
 indicatorPv "$(P)$(R)GainSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -6608,7 +6608,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6637,7 +6637,7 @@ x 540
 y 635
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6659,9 +6659,9 @@ h 20
 controlPv "$(P)$(R)Gain"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6675,11 +6675,11 @@ y 635
 w 60
 h 20
 controlPv "$(P)$(R)Gain_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6697,7 +6697,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6726,7 +6726,7 @@ x 540
 y 660
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6746,13 +6746,13 @@ y 660
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)GainAuto"
 indicatorPv "$(P)$(R)GainAuto_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -6780,7 +6780,7 @@ x 785
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -6805,7 +6805,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6834,7 +6834,7 @@ x 800
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6856,9 +6856,9 @@ h 20
 controlPv "$(P)$(R)GainAutoTarget"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6872,11 +6872,11 @@ y 55
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoTarget_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6894,7 +6894,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -6923,7 +6923,7 @@ x 800
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -6945,9 +6945,9 @@ h 20
 controlPv "$(P)$(R)GainAutoMin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -6961,11 +6961,11 @@ y 80
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoMin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -6983,7 +6983,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7012,7 +7012,7 @@ x 800
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7034,9 +7034,9 @@ h 20
 controlPv "$(P)$(R)GainAutoMax"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7050,11 +7050,11 @@ y 105
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoMax_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7072,7 +7072,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7101,7 +7101,7 @@ x 800
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7123,9 +7123,9 @@ h 20
 controlPv "$(P)$(R)GainAutoRate"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7139,11 +7139,11 @@ y 130
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoRate_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7161,7 +7161,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7190,7 +7190,7 @@ x 800
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7212,9 +7212,9 @@ h 20
 controlPv "$(P)$(R)GainAutoOutliers"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7228,11 +7228,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoOutliers_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7250,7 +7250,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7279,7 +7279,7 @@ x 800
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7301,9 +7301,9 @@ h 20
 controlPv "$(P)$(R)GainAutoAdjustTo"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7317,11 +7317,11 @@ y 180
 w 60
 h 20
 controlPv "$(P)$(R)GainAutoAdjustTo_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7350,7 +7350,7 @@ x 785
 y 210
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -7375,7 +7375,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7404,7 +7404,7 @@ x 800
 y 225
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7424,13 +7424,13 @@ y 225
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)BlackLevelSelect"
 indicatorPv "$(P)$(R)BlackLevelSelect_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -7447,7 +7447,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7476,7 +7476,7 @@ x 800
 y 250
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7498,9 +7498,9 @@ h 20
 controlPv "$(P)$(R)BlackLevel"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7514,11 +7514,11 @@ y 250
 w 60
 h 20
 controlPv "$(P)$(R)BlackLevel_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7547,7 +7547,7 @@ x 785
 y 280
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -7572,7 +7572,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7601,7 +7601,7 @@ x 800
 y 295
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7621,13 +7621,13 @@ y 295
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)BalanceRatioSele"
 indicatorPv "$(P)$(R)BalanceRatioSele_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -7644,7 +7644,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7673,7 +7673,7 @@ x 800
 y 320
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7695,9 +7695,9 @@ h 20
 controlPv "$(P)$(R)BalanceRatioAbs"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7711,11 +7711,11 @@ y 320
 w 60
 h 20
 controlPv "$(P)$(R)BalanceRatioAbs_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7733,7 +7733,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7762,7 +7762,7 @@ x 800
 y 345
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7782,13 +7782,13 @@ y 345
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)BalanceWhiteAut0"
 indicatorPv "$(P)$(R)BalanceWhiteAut0_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -7816,7 +7816,7 @@ x 785
 y 375
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -7841,7 +7841,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7870,7 +7870,7 @@ x 800
 y 390
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7892,9 +7892,9 @@ h 20
 controlPv "$(P)$(R)BalanceWhiteAut1"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7908,11 +7908,11 @@ y 390
 w 60
 h 20
 controlPv "$(P)$(R)BalanceWhiteAut1_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -7930,7 +7930,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -7959,7 +7959,7 @@ x 800
 y 415
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -7981,9 +7981,9 @@ h 20
 controlPv "$(P)$(R)BalanceWhiteAut2"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -7997,11 +7997,11 @@ y 415
 w 60
 h 20
 controlPv "$(P)$(R)BalanceWhiteAut2_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8030,7 +8030,7 @@ x 785
 y 445
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -8055,7 +8055,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8084,7 +8084,7 @@ x 800
 y 460
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8104,13 +8104,13 @@ y 460
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)IrisMode"
 indicatorPv "$(P)$(R)IrisMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -8127,7 +8127,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8156,7 +8156,7 @@ x 800
 y 485
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8178,9 +8178,9 @@ h 20
 controlPv "$(P)$(R)IrisAutoTarget"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -8194,11 +8194,11 @@ y 485
 w 60
 h 20
 controlPv "$(P)$(R)IrisAutoTarget_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8216,7 +8216,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8245,7 +8245,7 @@ x 800
 y 510
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8267,9 +8267,9 @@ h 20
 controlPv "$(P)$(R)IrisVideoLevel"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -8283,11 +8283,11 @@ y 510
 w 60
 h 20
 controlPv "$(P)$(R)IrisVideoLevel_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8305,7 +8305,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8334,7 +8334,7 @@ x 800
 y 535
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8356,9 +8356,9 @@ h 20
 controlPv "$(P)$(R)IrisVideoLevelMi"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -8372,11 +8372,11 @@ y 535
 w 60
 h 20
 controlPv "$(P)$(R)IrisVideoLevelMi_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8394,7 +8394,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8423,7 +8423,7 @@ x 800
 y 560
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8445,9 +8445,9 @@ h 20
 controlPv "$(P)$(R)IrisVideoLevelMa"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -8461,11 +8461,11 @@ y 560
 w 60
 h 20
 controlPv "$(P)$(R)IrisVideoLevelMa_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8494,7 +8494,7 @@ x 785
 y 590
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -8519,7 +8519,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8548,7 +8548,7 @@ x 800
 y 605
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8568,13 +8568,13 @@ y 605
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)DefectMaskColumn"
 indicatorPv "$(P)$(R)DefectMaskColumn_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -8591,7 +8591,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8620,7 +8620,7 @@ x 800
 y 630
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8640,13 +8640,13 @@ y 630
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)DefectMaskPixelE"
 indicatorPv "$(P)$(R)DefectMaskPixelE_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -8674,7 +8674,7 @@ x 785
 y 660
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -8699,7 +8699,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8728,7 +8728,7 @@ x 800
 y 675
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8750,9 +8750,9 @@ h 20
 controlPv "$(P)$(R)VsubValue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -8766,11 +8766,11 @@ y 675
 w 60
 h 20
 controlPv "$(P)$(R)VsubValue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -8799,7 +8799,7 @@ x 785
 y 705
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -8824,7 +8824,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8853,7 +8853,7 @@ x 800
 y 720
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8873,13 +8873,13 @@ y 720
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ColorTransforma0"
 indicatorPv "$(P)$(R)ColorTransforma0_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -8896,7 +8896,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8925,7 +8925,7 @@ x 800
 y 745
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -8945,13 +8945,13 @@ y 745
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ColorTransforma1"
 indicatorPv "$(P)$(R)ColorTransforma1_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -8968,7 +8968,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -8997,7 +8997,7 @@ x 800
 y 770
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9017,13 +9017,13 @@ y 770
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)ColorTransforma2"
 indicatorPv "$(P)$(R)ColorTransforma2_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -9040,7 +9040,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9069,7 +9069,7 @@ x 800
 y 795
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9091,9 +9091,9 @@ h 20
 controlPv "$(P)$(R)ColorTransforma4"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9107,11 +9107,11 @@ y 795
 w 60
 h 20
 controlPv "$(P)$(R)ColorTransforma4_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -9140,7 +9140,7 @@ x 1045
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -9165,7 +9165,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9194,7 +9194,7 @@ x 1060
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9214,13 +9214,13 @@ y 55
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)LUTSelector"
 indicatorPv "$(P)$(R)LUTSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -9237,7 +9237,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9266,7 +9266,7 @@ x 1060
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9286,13 +9286,13 @@ y 80
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)LUTMode"
 indicatorPv "$(P)$(R)LUTMode_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -9309,7 +9309,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9338,7 +9338,7 @@ x 1060
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9358,13 +9358,13 @@ y 105
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)LUTEnable"
 indicatorPv "$(P)$(R)LUTEnable_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -9381,7 +9381,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9410,7 +9410,7 @@ x 1060
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9432,9 +9432,9 @@ h 20
 controlPv "$(P)$(R)LUTIndex"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9448,11 +9448,11 @@ y 130
 w 60
 h 20
 controlPv "$(P)$(R)LUTIndex_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -9470,7 +9470,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9499,7 +9499,7 @@ x 1060
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9521,9 +9521,9 @@ h 20
 controlPv "$(P)$(R)LUTValue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9537,11 +9537,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)LUTValue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -9559,7 +9559,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9588,7 +9588,7 @@ x 1060
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9617,7 +9617,7 @@ pressValue "1"
 onLabel "LUTLoad"
 offLabel "LUTLoad"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -9634,7 +9634,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9663,7 +9663,7 @@ x 1060
 y 205
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9692,7 +9692,7 @@ pressValue "1"
 onLabel "LUTSave"
 offLabel "LUTSave"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Rectangle)
@@ -9720,7 +9720,7 @@ x 1045
 y 235
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -9745,7 +9745,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9774,7 +9774,7 @@ x 1060
 y 250
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9796,9 +9796,9 @@ h 20
 controlPv "$(P)$(R)LUTBitDepthIn"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9812,11 +9812,11 @@ y 250
 w 60
 h 20
 controlPv "$(P)$(R)LUTBitDepthIn_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -9834,7 +9834,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9863,7 +9863,7 @@ x 1060
 y 275
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9885,9 +9885,9 @@ h 20
 controlPv "$(P)$(R)LUTBitDepthOut"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9901,11 +9901,11 @@ y 275
 w 60
 h 20
 controlPv "$(P)$(R)LUTBitDepthOut_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -9923,7 +9923,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -9952,7 +9952,7 @@ x 1060
 y 300
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -9974,9 +9974,9 @@ h 20
 controlPv "$(P)$(R)LUTAddress"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -9990,11 +9990,11 @@ y 300
 w 60
 h 20
 controlPv "$(P)$(R)LUTAddress_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10012,7 +10012,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10041,7 +10041,7 @@ x 1060
 y 325
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10063,9 +10063,9 @@ h 20
 controlPv "$(P)$(R)LUTSizeBytes"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -10079,11 +10079,11 @@ y 325
 w 60
 h 20
 controlPv "$(P)$(R)LUTSizeBytes_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10112,7 +10112,7 @@ x 1045
 y 355
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -10137,7 +10137,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10166,7 +10166,7 @@ x 1060
 y 370
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10188,9 +10188,9 @@ h 20
 controlPv "$(P)$(R)SyncInLevels"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -10204,11 +10204,11 @@ y 370
 w 60
 h 20
 controlPv "$(P)$(R)SyncInLevels_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10226,7 +10226,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10255,7 +10255,7 @@ x 1060
 y 395
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10275,13 +10275,13 @@ y 395
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SyncInSelector"
 indicatorPv "$(P)$(R)SyncInSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -10298,7 +10298,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10327,7 +10327,7 @@ x 1060
 y 420
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10349,9 +10349,9 @@ h 20
 controlPv "$(P)$(R)SyncInGlitchFilt"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -10365,11 +10365,11 @@ y 420
 w 60
 h 20
 controlPv "$(P)$(R)SyncInGlitchFilt_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10398,7 +10398,7 @@ x 1045
 y 450
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -10423,7 +10423,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10452,7 +10452,7 @@ x 1060
 y 465
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10474,9 +10474,9 @@ h 20
 controlPv "$(P)$(R)SyncOutLevels"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -10490,11 +10490,11 @@ y 465
 w 60
 h 20
 controlPv "$(P)$(R)SyncOutLevels_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10512,7 +10512,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10541,7 +10541,7 @@ x 1060
 y 490
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10561,13 +10561,13 @@ y 490
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SyncOutSelector"
 indicatorPv "$(P)$(R)SyncOutSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -10584,7 +10584,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10613,7 +10613,7 @@ x 1060
 y 515
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10633,13 +10633,13 @@ y 515
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SyncOutSource"
 indicatorPv "$(P)$(R)SyncOutSource_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -10656,7 +10656,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10685,7 +10685,7 @@ x 1060
 y 540
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10705,13 +10705,13 @@ y 540
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SyncOutPolarity"
 indicatorPv "$(P)$(R)SyncOutPolarity_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -10739,7 +10739,7 @@ x 1045
 y 570
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -10764,7 +10764,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10793,7 +10793,7 @@ x 1060
 y 585
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10813,13 +10813,13 @@ y 585
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)StrobeSource"
 indicatorPv "$(P)$(R)StrobeSource_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -10836,7 +10836,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10865,7 +10865,7 @@ x 1060
 y 610
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10885,13 +10885,13 @@ y 610
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)StrobeDurationMo"
 indicatorPv "$(P)$(R)StrobeDurationMo_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -10908,7 +10908,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -10937,7 +10937,7 @@ x 1060
 y 635
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -10959,9 +10959,9 @@ h 20
 controlPv "$(P)$(R)StrobeDelay"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -10975,11 +10975,11 @@ y 635
 w 60
 h 20
 controlPv "$(P)$(R)StrobeDelay_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -10997,7 +10997,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11026,7 +11026,7 @@ x 1060
 y 660
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11048,9 +11048,9 @@ h 20
 controlPv "$(P)$(R)StrobeDuration"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11064,11 +11064,11 @@ y 660
 w 60
 h 20
 controlPv "$(P)$(R)StrobeDuration_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11097,7 +11097,7 @@ x 1045
 y 690
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -11122,7 +11122,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11151,7 +11151,7 @@ x 1060
 y 705
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11171,13 +11171,13 @@ y 705
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)EventSelector"
 indicatorPv "$(P)$(R)EventSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -11194,7 +11194,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11223,7 +11223,7 @@ x 1060
 y 730
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11243,13 +11243,13 @@ y 730
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)EventNotificatio"
 indicatorPv "$(P)$(R)EventNotificatio_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -11266,7 +11266,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11295,7 +11295,7 @@ x 1060
 y 755
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11317,9 +11317,9 @@ h 20
 controlPv "$(P)$(R)EventsEnable1"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11333,11 +11333,11 @@ y 755
 w 60
 h 20
 controlPv "$(P)$(R)EventsEnable1_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11366,7 +11366,7 @@ x 1305
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -11391,7 +11391,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11420,7 +11420,7 @@ x 1320
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11442,9 +11442,9 @@ h 20
 controlPv "$(P)$(R)EventAcquisition"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11458,11 +11458,11 @@ y 55
 w 60
 h 20
 controlPv "$(P)$(R)EventAcquisition_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11480,7 +11480,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11509,7 +11509,7 @@ x 1320
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11531,9 +11531,9 @@ h 20
 controlPv "$(P)$(R)EventAcquisitio0"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11547,11 +11547,11 @@ y 80
 w 60
 h 20
 controlPv "$(P)$(R)EventAcquisitio0_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11569,7 +11569,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11598,7 +11598,7 @@ x 1320
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11620,9 +11620,9 @@ h 20
 controlPv "$(P)$(R)EventFrameTrigge"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11636,11 +11636,11 @@ y 105
 w 60
 h 20
 controlPv "$(P)$(R)EventFrameTrigge_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11658,7 +11658,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11687,7 +11687,7 @@ x 1320
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11709,9 +11709,9 @@ h 20
 controlPv "$(P)$(R)EventExposureEnd"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11725,11 +11725,11 @@ y 130
 w 60
 h 20
 controlPv "$(P)$(R)EventExposureEnd_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11747,7 +11747,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11776,7 +11776,7 @@ x 1320
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11798,9 +11798,9 @@ h 20
 controlPv "$(P)$(R)EventAcquisitio1"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11814,11 +11814,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)EventAcquisitio1_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11836,7 +11836,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11865,7 +11865,7 @@ x 1320
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11887,9 +11887,9 @@ h 20
 controlPv "$(P)$(R)EventLine1Rising"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11903,11 +11903,11 @@ y 180
 w 60
 h 20
 controlPv "$(P)$(R)EventLine1Rising_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -11925,7 +11925,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -11954,7 +11954,7 @@ x 1320
 y 205
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -11976,9 +11976,9 @@ h 20
 controlPv "$(P)$(R)EventLine1Fallin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -11992,11 +11992,11 @@ y 205
 w 60
 h 20
 controlPv "$(P)$(R)EventLine1Fallin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12014,7 +12014,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12043,7 +12043,7 @@ x 1320
 y 230
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12065,9 +12065,9 @@ h 20
 controlPv "$(P)$(R)EventLine2Rising"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12081,11 +12081,11 @@ y 230
 w 60
 h 20
 controlPv "$(P)$(R)EventLine2Rising_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12103,7 +12103,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12132,7 +12132,7 @@ x 1320
 y 255
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12154,9 +12154,9 @@ h 20
 controlPv "$(P)$(R)EventLine2Fallin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12170,11 +12170,11 @@ y 255
 w 60
 h 20
 controlPv "$(P)$(R)EventLine2Fallin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12192,7 +12192,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12221,7 +12221,7 @@ x 1320
 y 280
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12243,9 +12243,9 @@ h 20
 controlPv "$(P)$(R)EventLine3Rising"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12259,11 +12259,11 @@ y 280
 w 60
 h 20
 controlPv "$(P)$(R)EventLine3Rising_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12281,7 +12281,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12310,7 +12310,7 @@ x 1320
 y 305
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12332,9 +12332,9 @@ h 20
 controlPv "$(P)$(R)EventLine3Fallin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12348,11 +12348,11 @@ y 305
 w 60
 h 20
 controlPv "$(P)$(R)EventLine3Fallin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12370,7 +12370,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12399,7 +12399,7 @@ x 1320
 y 330
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12421,9 +12421,9 @@ h 20
 controlPv "$(P)$(R)EventLine4Rising"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12437,11 +12437,11 @@ y 330
 w 60
 h 20
 controlPv "$(P)$(R)EventLine4Rising_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12459,7 +12459,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12488,7 +12488,7 @@ x 1320
 y 355
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12510,9 +12510,9 @@ h 20
 controlPv "$(P)$(R)EventLine4Fallin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12526,11 +12526,11 @@ y 355
 w 60
 h 20
 controlPv "$(P)$(R)EventLine4Fallin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12548,7 +12548,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12577,7 +12577,7 @@ x 1320
 y 380
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12599,9 +12599,9 @@ h 20
 controlPv "$(P)$(R)EventOverflow"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12615,11 +12615,11 @@ y 380
 w 60
 h 20
 controlPv "$(P)$(R)EventOverflow_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12637,7 +12637,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12666,7 +12666,7 @@ x 1320
 y 405
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12688,9 +12688,9 @@ h 20
 controlPv "$(P)$(R)EventError"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -12704,11 +12704,11 @@ y 405
 w 60
 h 20
 controlPv "$(P)$(R)EventError_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -12737,7 +12737,7 @@ x 1305
 y 435
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -12762,7 +12762,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12791,7 +12791,7 @@ x 1320
 y 450
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12811,13 +12811,13 @@ y 450
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)UserSetSelector"
 indicatorPv "$(P)$(R)UserSetSelector_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -12834,7 +12834,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12863,7 +12863,7 @@ x 1320
 y 475
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12892,7 +12892,7 @@ pressValue "1"
 onLabel "UserSetLoad"
 offLabel "UserSetLoad"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -12909,7 +12909,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -12938,7 +12938,7 @@ x 1320
 y 500
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -12967,7 +12967,7 @@ pressValue "1"
 onLabel "UserSetSave"
 offLabel "UserSetSave"
 3d
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Related Display)
@@ -12984,7 +12984,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13013,7 +13013,7 @@ x 1320
 y 525
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13033,13 +13033,13 @@ y 525
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)UserSetDefaultSe"
 indicatorPv "$(P)$(R)UserSetDefaultSe_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Rectangle)
@@ -13067,7 +13067,7 @@ x 1305
 y 555
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -13092,7 +13092,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13121,7 +13121,7 @@ x 1320
 y 570
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13143,9 +13143,9 @@ h 20
 controlPv "$(P)$(R)LensVoltage"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13159,11 +13159,11 @@ y 570
 w 60
 h 20
 controlPv "$(P)$(R)LensVoltage_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13181,7 +13181,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13210,7 +13210,7 @@ x 1320
 y 595
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13232,9 +13232,9 @@ h 20
 controlPv "$(P)$(R)LensVoltageContr"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13248,11 +13248,11 @@ y 595
 w 60
 h 20
 controlPv "$(P)$(R)LensVoltageContr_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13270,7 +13270,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13299,7 +13299,7 @@ x 1320
 y 620
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13319,13 +13319,13 @@ y 620
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)LensDriveCommand"
 indicatorPv "$(P)$(R)LensDriveCommand_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -13342,7 +13342,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13371,7 +13371,7 @@ x 1320
 y 645
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13393,9 +13393,9 @@ h 20
 controlPv "$(P)$(R)LensDriveDuratio"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13409,11 +13409,11 @@ y 645
 w 60
 h 20
 controlPv "$(P)$(R)LensDriveDuratio_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13442,7 +13442,7 @@ x 1565
 y 40
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -13467,7 +13467,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13496,7 +13496,7 @@ x 1580
 y 55
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13516,13 +13516,13 @@ y 55
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)PvDummyTriggerSe"
 indicatorPv "$(P)$(R)PvDummyTriggerSe_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -13539,7 +13539,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13568,7 +13568,7 @@ x 1580
 y 80
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13588,13 +13588,13 @@ y 80
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)PvDummyFrameStar"
 indicatorPv "$(P)$(R)PvDummyFrameStar_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -13611,7 +13611,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13640,7 +13640,7 @@ x 1580
 y 105
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13660,13 +13660,13 @@ y 105
 w 125
 h 20
 fgColor index 25
-bgColor index 3
+bgColor index 5
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)PvDummyTriggerMo"
 indicatorPv "$(P)$(R)PvDummyTriggerMo_RBV"
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties        
 
 # (Related Display)
@@ -13683,7 +13683,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13712,7 +13712,7 @@ x 1580
 y 130
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13734,9 +13734,9 @@ h 20
 controlPv "$(P)$(R)FrameStartTrigge"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13750,11 +13750,11 @@ y 130
 w 60
 h 20
 controlPv "$(P)$(R)FrameStartTrigge_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13772,7 +13772,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13801,7 +13801,7 @@ x 1580
 y 155
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13823,9 +13823,9 @@ h 20
 controlPv "$(P)$(R)ExposureValue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13839,11 +13839,11 @@ y 155
 w 60
 h 20
 controlPv "$(P)$(R)ExposureValue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13861,7 +13861,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13890,7 +13890,7 @@ x 1580
 y 180
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -13912,9 +13912,9 @@ h 20
 controlPv "$(P)$(R)TimeStampValueLo"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -13928,11 +13928,11 @@ y 180
 w 60
 h 20
 controlPv "$(P)$(R)TimeStampValueLo_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -13950,7 +13950,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -13979,7 +13979,7 @@ x 1580
 y 205
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14001,9 +14001,9 @@ h 20
 controlPv "$(P)$(R)TimeStampValueHi"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14017,11 +14017,11 @@ y 205
 w 60
 h 20
 controlPv "$(P)$(R)TimeStampValueHi_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14039,7 +14039,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14068,7 +14068,7 @@ x 1580
 y 230
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14090,9 +14090,9 @@ h 20
 controlPv "$(P)$(R)WhitebalValueRed"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14106,11 +14106,11 @@ y 230
 w 60
 h 20
 controlPv "$(P)$(R)WhitebalValueRed_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14128,7 +14128,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14157,7 +14157,7 @@ x 1580
 y 255
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14179,9 +14179,9 @@ h 20
 controlPv "$(P)$(R)WhitebalValueBlu"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14195,11 +14195,11 @@ y 255
 w 60
 h 20
 controlPv "$(P)$(R)WhitebalValueBlu_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14217,7 +14217,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14246,7 +14246,7 @@ x 1580
 y 280
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14266,11 +14266,11 @@ y 280
 w 125
 h 20
 controlPv "$(P)$(R)ModelName_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -14288,7 +14288,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14317,7 +14317,7 @@ x 1580
 y 305
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14339,9 +14339,9 @@ h 20
 controlPv "$(P)$(R)GainValue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14355,11 +14355,11 @@ y 305
 w 60
 h 20
 controlPv "$(P)$(R)GainValue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14377,7 +14377,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14406,7 +14406,7 @@ x 1580
 y 330
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14428,9 +14428,9 @@ h 20
 controlPv "$(P)$(R)PvGainAutoMin"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14444,11 +14444,11 @@ y 330
 w 60
 h 20
 controlPv "$(P)$(R)PvGainAutoMin_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14466,7 +14466,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14495,7 +14495,7 @@ x 1580
 y 355
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14517,9 +14517,9 @@ h 20
 controlPv "$(P)$(R)PvGainAutoMax"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14533,11 +14533,11 @@ y 355
 w 60
 h 20
 controlPv "$(P)$(R)PvGainAutoMax_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14555,7 +14555,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -14584,7 +14584,7 @@ x 1580
 y 380
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "helvetica-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -14606,9 +14606,9 @@ h 20
 controlPv "$(P)$(R)OffsetValue"
 fgColor index 25
 fgAlarm
-bgColor index 3
+bgColor index 5
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 endObjectProperties
 
 # (Textupdate)
@@ -14622,11 +14622,11 @@ y 380
 w 60
 h 20
 controlPv "$(P)$(R)OffsetValue_RBV"
-fgColor index 16
+fgColor index 15
 fgAlarm
-bgColor index 10
+bgColor index 12
 fill
-font "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -14645,6 +14645,6 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-bold-r-14.0"
+font "helvetica-bold-r-14.0"
 3d
 endObjectProperties
