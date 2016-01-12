@@ -7,9 +7,9 @@ x 314
 y 401
 w 500
 h 90
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "helvetica-medium-r-12.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -30,12 +30,12 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
-x 0
+release 1
+x 4
 y 0
-w 500
+w 496
 h 90
-font "arial-bold-r-12.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
