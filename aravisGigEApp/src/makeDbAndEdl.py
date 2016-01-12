@@ -267,6 +267,11 @@ h = 40
 x = 5
 y = 50
 text = ""
+defFontClass	= "arial"
+defFgColorCtrl	= 25
+defBgColorCtrl	= 3
+defFgColorMon	= 16
+defBgColorMon	= 10
 
 def quoteString(string):
     escape_list = ["\\","{","}",'"']
@@ -301,7 +306,7 @@ x %(x)d
 y %(laby)d
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "%(defFontClass)s-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -329,7 +334,7 @@ fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "%(defFontClass)s-bold-r-10.0"
 xPosOffset -100
 yPosOffset -85
 useFocus
@@ -361,7 +366,7 @@ x %(nx)d
 y %(y)d
 w 110
 h 20
-font "arial-bold-r-10.0"
+font "%(defFontClass)s-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
@@ -384,11 +389,11 @@ y %(y)d
 w 125
 h 20
 controlPv "$(P)$(R)%(recordName)s_RBV"
-fgColor index 16
+fgColor index %(defFgColorMon)d
 fgAlarm
-bgColor index 10
+bgColor index %(defBgColorMon)d
 fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 fontAlign "center"
 endObjectProperties        
 
@@ -406,11 +411,11 @@ y %(y)d
 w 60
 h 20
 controlPv "$(P)$(R)%(recordName)s"
-fgColor index 25
+fgColor index %(defFgColorCtrl)d
 fgAlarm
-bgColor index 3
+bgColor index %(defBgColorCtrl)d
 fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 endObjectProperties
 
 """ % globals()
@@ -427,11 +432,11 @@ y %(y)d
 w 60
 h 20
 controlPv "$(P)$(R)%(recordName)s_RBV"
-fgColor index 16
+fgColor index %(defFgColorMon)d
 fgAlarm
-bgColor index 10
+bgColor index %(defBgColorMon)d
 fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -448,14 +453,14 @@ x %(nx)d
 y %(y)d
 w 125
 h 20
-fgColor index 25
-bgColor index 3
+fgColor index %(defFgColorCtrl)d
+bgColor index %(defBgColorCtrl)d
 inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)%(recordName)s"
 indicatorPv "$(P)$(R)%(recordName)s_RBV"
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 endObjectProperties        
 
 """ % globals()
@@ -471,7 +476,7 @@ x %(nx)d
 y %(y)d
 w 125
 h 20
-fgColor index 25
+fgColor index %(defFgColorCtrl)d
 onColor index 3
 offColor index 3
 topShadowColor index 1
@@ -481,7 +486,7 @@ pressValue "1"
 onLabel "%(nodeName)s"
 offLabel "%(nodeName)s"
 3d
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 endObjectProperties
 
 """ % globals()
@@ -556,16 +561,16 @@ x 50
 y 50
 w %(w)d
 h %(h)d
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
+ctlFont "%(defFontClass)s-bold-r-12.0"
+btnFont "%(defFontClass)s-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
-ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlFgColor1 index %(defFgColorMon)d
+ctlFgColor2 index %(defFgColorCtrl)d
+ctlBgColor1 index %(defBgColorMon)d
+ctlBgColor2 index %(defBgColorCtrl)d
 topShadowColor index 1
 botShadowColor index 11
 title "%(camera_name)s features - $(P)$(R)"
@@ -637,7 +642,7 @@ x 0
 y 2
 w %(w)d
 h 24
-font "arial-bold-r-16.0"
+font "%(defFontClass)s-bold-r-16.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -692,7 +697,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-bold-r-14.0"
+font "%(defFontClass)s-bold-r-14.0"
 3d
 endObjectProperties
 """ % globals())
@@ -709,16 +714,16 @@ x 713
 y 157
 w 390
 h 820
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
+ctlFont "%(defFontClass)s-bold-r-12.0"
+btnFont "%(defFontClass)s-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
-ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlFgColor1 index %(defFgColorMon)d
+ctlFgColor2 index %(defFgColorCtrl)d
+ctlBgColor1 index %(defBgColorMon)d
+ctlBgColor2 index %(defBgColorCtrl)d
 topShadowColor index 1
 botShadowColor index 11
 showGrid
@@ -797,7 +802,7 @@ fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "%(defFontClass)s-bold-r-14.0"
 buttonLabel "more features..."
 numPvs 4
 numDsps 1
@@ -807,5 +812,5 @@ displayFileName {
 setPosition {
   0 "parentWindow"
 }
-endObjectProperties""" % camera_name)
+endObjectProperties""" % (camera_name, globals()) )
 
