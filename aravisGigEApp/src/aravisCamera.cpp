@@ -917,7 +917,6 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     pRaw->dataType = (NDDataType_t) dataType;
     int width = arv_buffer_get_image_width(buffer);
     int height = arv_buffer_get_image_height(buffer);
-	int bitsPerPixel = 8;
     int x_offset = arv_buffer_get_image_x(buffer);
     int y_offset = arv_buffer_get_image_y(buffer);
     size_t size = 0;
@@ -955,21 +954,21 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     /* If we are 16 bit, shift by the correct amount */
     if (pRaw->dataType == NDUInt16) {
         expected_size *= 2;
-		switch (pixel_format) {
-			case ARV_PIXEL_FORMAT_MONO_14:
-				bitsPerPixel = 14;
-				break;
-			case ARV_PIXEL_FORMAT_MONO_12:
-				bitsPerPixel = 12;
-				break;
-			case ARV_PIXEL_FORMAT_MONO_10:
-				bitsPerPixel = 10;
-				break;
-			default:
-				break;
-		}
         if (left_shift) {
-            int shift = 16 - bitsPerPixel;
+            int shift = 0;
+            switch (pixel_format) {
+                case ARV_PIXEL_FORMAT_MONO_14:
+                    shift = 2;
+                    break;
+                case ARV_PIXEL_FORMAT_MONO_12:
+                    shift = 4;
+                    break;
+                case ARV_PIXEL_FORMAT_MONO_10:
+                    shift = 6;
+                    break;
+                default:
+                    break;
+            }
             if (shift != 0) {
                 //printf("Shift by %d\n", shift);
                 uint16_t *array = (uint16_t *) pRaw->pData;
@@ -986,11 +985,6 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
                     driverName, functionName, width, height, size, expected_size);
         return asynError;
     }
-
-	/* Set bitsPerPixel */
-	pRaw->bitsPerElement	= bitsPerPixel;
-	setIntegerParam( NDBitsPerPixel, bitsPerPixel );
-
 /*
     for (int ib = 0; ib<10; ib++) {
         unsigned char *ix = ((unsigned char *)pRaw->pData) + ib;
