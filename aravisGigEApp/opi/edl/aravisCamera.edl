@@ -3,13 +3,13 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 230
-y 692
+x 188
+y 1984
 w 390
 h 110
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "helvetica-bold-r-12.0"
+ctlFont "helvetica-bold-r-12.0"
+btnFont "helvetica-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
@@ -21,7 +21,7 @@ topShadowColor index 1
 botShadowColor index 11
 showGrid
 snapToGrid
-gridSize 5
+gridSize 4
 disableScroll
 endScreenProperties
 
@@ -31,8 +31,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 5
-y 15
+x 4
+y 12
 w 380
 h 90
 lineColor index 14
@@ -46,8 +46,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 5
-y 5
+x 4
+y 4
 w 60
 h 14
 font "helvetica-medium-r-12.0"
@@ -67,8 +67,8 @@ major 4
 minor 7
 release 0
 x 90
-y 25
-w 95
+y 24
+w 92
 h 20
 controlPv "$(P)$(R)COMPLETED_RBV"
 font "helvetica-medium-r-12.0"
@@ -90,9 +90,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 25
-w 75
+x 8
+y 24
+w 76
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -110,8 +110,8 @@ major 4
 minor 7
 release 0
 x 90
-y 50
-w 95
+y 48
+w 92
 h 20
 controlPv "$(P)$(R)FAILURES_RBV"
 font "helvetica-medium-r-12.0"
@@ -133,9 +133,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 50
-w 75
+x 8
+y 48
+w 76
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -153,8 +153,8 @@ major 4
 minor 7
 release 0
 x 90
-y 75
-w 95
+y 72
+w 92
 h 20
 controlPv "$(P)$(R)UNDERRUNS_RBV"
 font "helvetica-medium-r-12.0"
@@ -176,9 +176,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 75
-w 75
+x 8
+y 72
+w 76
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -195,9 +195,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 205
-y 75
-w 85
+x 208
+y 72
+w 84
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -215,8 +215,8 @@ major 4
 minor 1
 release 0
 x 290
-y 75
-w 90
+y 72
+w 88
 h 20
 fgColor index 25
 onColor index 6
@@ -237,9 +237,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 205
-y 50
-w 85
+x 208
+y 48
+w 84
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -257,8 +257,8 @@ major 4
 minor 0
 release 0
 x 290
-y 50
-w 90
+y 48
+w 88
 h 20
 fgColor index 25
 bgColor index 5
@@ -277,7 +277,7 @@ major 4
 minor 4
 release 0
 x 192
-y 75
+y 72
 w 12
 h 20
 fgColor index 14
@@ -309,7 +309,7 @@ major 4
 minor 4
 release 0
 x 192
-y 50
+y 48
 w 12
 h 20
 fgColor index 14
@@ -341,7 +341,7 @@ major 4
 minor 4
 release 0
 x 192
-y 25
+y 24
 w 12
 h 20
 fgColor index 14
@@ -372,9 +372,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 205
-y 25
-w 85
+x 208
+y 24
+w 84
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -392,8 +392,8 @@ major 4
 minor 0
 release 0
 x 290
-y 25
-w 90
+y 24
+w 88
 h 20
 fgColor index 25
 bgColor index 5
@@ -411,8 +411,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 10
-y 25
+x 12
+y 24
 w 175
 h 70
 
@@ -424,10 +424,10 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 10
-y 25
-w 175
-h 70
+x 8
+y 24
+w 176
+h 72
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 20
