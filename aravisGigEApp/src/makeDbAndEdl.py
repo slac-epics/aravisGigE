@@ -134,6 +134,19 @@ long_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE'
 mbb_autosaveFields		= 'DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE'
 string_autosaveFields	= 'DESC TSE'
 
+# Create CamModel and CamModelScreen PV's for navigation and labeling
+print 'record(stringin, "$(P)$(R)CamModel") {'
+print '  field(VAL,   "%s")' % camera_name
+print '  field(PINI,  "YES")'
+print '}'
+print
+print 'record(stringin, "$(P)$(R)CamModelScreen") {'
+print '  field(VAL,   "aravisScreens/%s.edl")' % camera_name
+print '  field(PINI,  "YES")'
+print '}'
+print
+
+# for each node
 # for each node
 for node in doneNodes:
     nodeName = str(node.getAttribute("Name"))
@@ -262,10 +275,10 @@ sys.stdout = stdout
 
 # Spit out a feature screen
 edl_file = open(edl_more_filename, "w")
-w = 260
+w = 300
 h = 40
-x = 5
-y = 50
+x = 4
+y = 48
 text = ""
 defFontClass	= "helvetica"
 defFgColorCtrl	= 25
@@ -289,7 +302,7 @@ minor 0
 release 0
 x %(x)d
 y %(y)d
-w 255
+w %(boxw)d
 h %(boxh)d
 lineColor index 14
 fill
@@ -301,7 +314,7 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x %(x)d
 y %(laby)d
 w 150
@@ -316,7 +329,6 @@ value {
 autoSize
 border
 endObjectProperties
-
 """ % globals()
 
 def make_description():
@@ -324,11 +336,11 @@ def make_description():
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x %(nx)d
 y %(y)d
-w 10
+w 12
 h 20
 fgColor index 14
 bgColor index 3
@@ -336,13 +348,13 @@ topShadowColor index 1
 botShadowColor index 11
 font "%(defFontClass)s-bold-r-10.0"
 xPosOffset -100
-yPosOffset -85
+yPosOffset -88
 useFocus
 buttonLabel "?"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "aravisHelp"
+  0 "aravisScreens/aravisHelp.edl"
 }
 setPosition {
   0 "button"
@@ -350,7 +362,7 @@ setPosition {
 symbols {
   0 "desc0=%(desc0)s,desc1=%(desc1)s,desc2=%(desc2)s,desc3=%(desc3)s,desc4=%(desc4)s,desc5=%(desc5)s"
 }
-endObjectProperties                
+endObjectProperties
 
 """ % globals()
 
@@ -361,10 +373,10 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x %(nx)d
 y %(y)d
-w 110
+w %(label_w)d
 h 20
 font "%(defFontClass)s-bold-r-10.0"
 fgColor index 14
@@ -373,12 +385,12 @@ useDisplayBg
 value {
   "%(nodeName)s"
 }
-endObjectProperties   
+endObjectProperties
 
 """ % globals()             
 
 def make_ro():
-    return """# (Textupdate)
+    return """# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -386,7 +398,7 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
 controlPv "$(P)$(R)%(recordName)s_RBV"
 fgColor index %(defFgColorMon)d
@@ -395,27 +407,34 @@ bgColor index %(defBgColorMon)d
 fill
 font "%(defFontClass)s-bold-r-12.0"
 fontAlign "center"
-endObjectProperties        
+endObjectProperties
 
 """ % globals()         
 
 def make_demand():
-    return """# (Textentry)
-object TextentryClass
+    return """# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
-major 10
-minor 0
+major 4
+minor 7
 release 0
 x %(nx)d
 y %(y)d
 w 60
 h 20
 controlPv "$(P)$(R)%(recordName)s"
-fgColor index %(defFgColorCtrl)d
-fgAlarm
-bgColor index %(defBgColorCtrl)d
-fill
 font "%(defFontClass)s-bold-r-12.0"
+fgColor index %(defFgColorCtrl)d
+bgColor index %(defBgColorCtrl)d
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
 endObjectProperties
 
 """ % globals()
@@ -451,17 +470,17 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
 fgColor index %(defFgColorCtrl)d
 bgColor index %(defBgColorCtrl)d
-inconsistentColor index 0
+inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)%(recordName)s"
 indicatorPv "$(P)$(R)%(recordName)s_RBV"
 font "%(defFontClass)s-bold-r-12.0"
-endObjectProperties        
+endObjectProperties
 
 """ % globals()
 
@@ -474,7 +493,7 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
 fgColor index %(defFgColorCtrl)d
 onColor index 3
@@ -491,17 +510,19 @@ endObjectProperties
 
 """ % globals()
 
+label_w = 132
 # Write each section
 for name, nodes in structure:
     # write box
-    boxh = len(nodes) * 25 + 5
-    if (boxh + y > 850):
-        y = 50
-        w += 260
-        x += 260  
-    laby = y - 10      
+    boxh = len(nodes) * 24 + 8
+    boxw = label_w + 156
+    if (boxh + y > 940):
+        y = 44
+        w += boxw + 8
+        x += boxw + 8
+    laby = y - 8      
     text += make_box()
-    y += 5
+    y += 8
     h = max(y, h)    
     for node in nodes:
         nodeName = str(node.getAttribute("Name"))
@@ -526,16 +547,16 @@ for name, nodes in structure:
                 globals()["desc%d" % i] = quoteString(descs[i])
             else:
                 globals()["desc%d" % i] = "''"
-        nx = x + 5
+        nx = x + 4
         text += make_description()   
-        nx += 10
+        nx += 16
         text += make_label()
-        nx += 110            
+        nx += label_w + 4            
         if node.nodeName in ["StringReg"] or ro:
             text += make_ro()
         elif node.nodeName in ["Integer", "Float", "Converter", "IntConverter", "IntSwissKnife", "SwissKnife"]:  
             text += make_demand()
-            nx += 65 
+            nx += 68 
             text += make_rbv() 
         elif node.nodeName in ["Enumeration", "Boolean"]:
             text += make_menu()
@@ -543,15 +564,17 @@ for name, nodes in structure:
             text += make_cmd()
         else:
             print "Don't know what to do with", node.nodeName
-        y += 25
-    y += 15
+        y += 24
+    y += 16
     h = max(y, h)    
 
 # tidy up
-w += 5
+w += 4
 exitX = w - 100
-exitY = h - min(30, h - y)
-h = exitY + 30
+exitY = h - min(28, h - y)
+h = exitY + 28
+
+# Write edl file header
 edl_file.write("""4 0 1
 beginScreenProperties
 major 4
@@ -576,7 +599,7 @@ botShadowColor index 11
 title "%(camera_name)s features - $(P)$(R)"
 showGrid
 snapToGrid
-gridSize 5
+gridSize 4
 endScreenProperties
 
 # (Group)
@@ -637,12 +660,12 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 2
 w %(w)d
 h 24
-font "%(defFontClass)s-bold-r-16.0"
+font "%(defFontClass)s-bold-r-18.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -681,7 +704,11 @@ endGroup
 endObjectProperties
 
 """ %globals())
+
+# Write edl file widgets
 edl_file.write(text.encode('ascii', 'replace'))
+
+# Write edl file exit button
 edl_file.write("""# (Exit Button)
 object activeExitButtonClass
 beginObjectProperties
@@ -712,7 +739,7 @@ minor 0
 release 1
 x 713
 y 157
-w 390
+w 420
 h 820
 font "%(defFontClass)s-bold-r-12.0"
 ctlFont "%(defFontClass)s-bold-r-12.0"
@@ -728,23 +755,8 @@ topShadowColor index 1
 botShadowColor index 11
 showGrid
 snapToGrid
-gridSize 5
+gridSize 4
 endScreenProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 470
-w 390
-h 350
-lineColor index 5
-fill
-fillColor index 5
-endObjectProperties
 
 # (Embedded Window)
 object activePipClass
@@ -752,17 +764,17 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 0
-y 0
-w 390
-h 470
+x 4
+y 4
+w 408
+h 476
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "ADBase"
-sizeOfs 5
+file "areaDetectorScreens/ADBase.edl"
+sizeOfs 0
 numDsps 0
 noScroll
 endObjectProperties
@@ -773,17 +785,17 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 0
-y 470
-w 390
-h 110
+x 4
+y 480
+w 408
+h 112
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "aravisCamera"
-sizeOfs 5
+file "aravisScreens/aravisCamera.edl"
+sizeOfs 0
 numDsps 0
 noScroll
 endObjectProperties
@@ -792,12 +804,12 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
-x 5
-y 790
-w 380
-h 25
+x 4
+y 792
+w 408
+h 24
 fgColor index 43
 bgColor index 3
 topShadowColor index 1
@@ -807,10 +819,11 @@ buttonLabel "more features..."
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "%s-features"
+  0 "aravisScreens/%(camera_name)s-features.edl"
 }
 setPosition {
   0 "parentWindow"
 }
-endObjectProperties""" % (camera_name, globals()) )
+endObjectProperties
+""" % globals() )
 
