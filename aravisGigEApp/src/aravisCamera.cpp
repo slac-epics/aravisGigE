@@ -208,7 +208,7 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
     buffer = arv_stream_try_pop_buffer(stream);
     if (buffer == NULL)    return;
     ArvBufferStatus buffer_status = arv_buffer_get_status(buffer);
-    unsigned long int size = 0;
+    size_t	size = 0;
     arv_buffer_get_data(buffer, &size);
     if (buffer_status == ARV_BUFFER_STATUS_SUCCESS /*|| buffer->status == ARV_BUFFER_STATUS_MISSING_PACKETS*/) {
         status = epicsMessageQueueTrySend(pPvt->msgQId,
@@ -354,8 +354,14 @@ asynStatus aravisCamera::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
     		break;
     	case 'S':
     		createParam(drvInfo, asynParamOctet, &(this->features[featureIndex]));
-    		if (this->connectionValid == 1)
-    			setStringParam(this->features[featureIndex], arv_device_get_string_feature_value(this->device, feature));
+    		if (this->connectionValid == 1) {
+    			const char *stringValue;
+    			stringValue = arv_device_get_string_feature_value(this->device, feature);
+				if( stringValue == NULL )
+					stringValue = "(null)";
+				printf("aravisCamera: Adding feature %s with value: %s\n", feature, stringValue);
+    			setStringParam(this->features[featureIndex], stringValue );
+			}
     		break;
     	default:
     		asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
