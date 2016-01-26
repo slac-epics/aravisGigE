@@ -10,10 +10,8 @@ EPICS_BASE=$(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
 # ===============================================================
 # Define the version(s) of any other needed modules 
 # ===============================================================
-ASYN_MODULE_VERSION			= R4.23-0.4.0
-ADCORE_MODULE_VERSION		= R2.1-0.3.1
-#ASYN_MODULE_VERSION			= R4.23-0.1.0
-#AREADETECTOR_MODULE_VERSION	= R1.9.1-0.11.0
+ASYN_MODULE_VERSION			= R4.23-0.5.0
+ADCORE_MODULE_VERSION		= R2.1-0.4.0
 
 # ============================================================
 # External Support module path definitions
@@ -33,9 +31,4 @@ ADCORE_MODULE_VERSION		= R2.1-0.3.1
 #
 ASYN	= $(EPICS_MODULES)/asyn/$(ASYN_MODULE_VERSION)
 ADCORE	= $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
-#AREADETECTOR	= $(EPICS_MODULES)/areaDetector/$(AREADETECTOR_MODULE_VERSION)
 
-# comment this out if glib is installed in a standard place
-# you need at least glib 2.28
-#GLIBPREFIX=/dls_sw/prod/tools/RHEL6-x86_64/glib/2-28-8/prefix
-#GLIBPREFIX=/usr
