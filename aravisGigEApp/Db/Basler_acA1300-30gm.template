@@ -16,6 +16,16 @@ record(stringin, "$(P)$(R)CamModelScreen") {
   field(PINI,  "YES")
 }
 
+record(stringin, "$(P)$(R)CamType") {
+  field(VAL,   "$(TYPE=aravis)")
+  field(PINI,  "YES")
+}
+
+record(stringin, "$(P)$(R)CamTypeScreen") {
+  field(VAL,   "aravisScreens/$(TYPE=aravis).edl")
+  field(PINI,  "YES")
+}
+
 record(longin, "$(P)$(R)FirmwareVerMajor_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerMajor")
@@ -76,6 +86,7 @@ record(mbbi, "$(P)$(R)SensorType_RBV") {
 record(mbbo, "$(P)$(R)SensorType") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorType")
+  field(DOL,  "0")
   field(ZRST, "Mono")
   field(ZRVL, "0")
   field(ONST, "Bayer")
@@ -152,6 +163,7 @@ record(mbbi, "$(P)$(R)DeviceScanType_RBV") {
 record(mbbo, "$(P)$(R)DeviceScanType") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DeviceScanType")
+  field(DOL,  "0")
   field(ZRST, "Areascan")
   field(ZRVL, "0")
   field(DISA, "0")
@@ -190,6 +202,7 @@ record(mbbi, "$(P)$(R)BandwidthControl_RBV") {
 record(mbbo, "$(P)$(R)BandwidthControl") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BandwidthControlMode")
+  field(DOL,  "0")
   field(ZRST, "StreamBytesPerSe")
   field(ZRVL, "0")
   field(ONST, "SCPD")
@@ -298,6 +311,7 @@ record(mbbi, "$(P)$(R)StreamHoldEnable_RBV") {
 record(mbbo, "$(P)$(R)StreamHoldEnable") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamHoldEnable")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "On")
@@ -405,6 +419,7 @@ record(mbbi, "$(P)$(R)AcquisitionMode_RBV") {
 record(mbbo, "$(P)$(R)AcquisitionMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_AcquisitionMode")
+  field(DOL,  "1")
   field(ZRST, "Continuous")
   field(ZRVL, "1")
   field(ONST, "SingleFrame")
@@ -500,6 +515,7 @@ record(mbbi, "$(P)$(R)TriggerSelector_RBV") {
 record(mbbo, "$(P)$(R)TriggerSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerSelector")
+  field(DOL,  "0")
   field(ZRST, "FrameStart")
   field(ZRVL, "0")
   field(ONST, "AcquisitionStart")
@@ -527,6 +543,7 @@ record(mbbi, "$(P)$(R)TriggerMode_RBV") {
 record(mbbo, "$(P)$(R)TriggerMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerMode")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "On")
@@ -567,6 +584,7 @@ record(mbbi, "$(P)$(R)TriggerSource_RBV") {
 record(mbbo, "$(P)$(R)TriggerSource") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerSource")
+  field(DOL,  "0")
   field(ZRST, "Freerun")
   field(ZRVL, "0")
   field(ONST, "Line1")
@@ -606,6 +624,7 @@ record(mbbi, "$(P)$(R)TriggerActivatio_RBV") {
 record(mbbo, "$(P)$(R)TriggerActivatio") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerActivation")
+  field(DOL,  "0")
   field(ZRST, "RisingEdge")
   field(ZRVL, "0")
   field(ONST, "FallingEdge")
@@ -637,6 +656,7 @@ record(mbbi, "$(P)$(R)TriggerOverlap_RBV") {
 record(mbbo, "$(P)$(R)TriggerOverlap") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerOverlap")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "ReadOut")
@@ -827,6 +847,7 @@ record(mbbi, "$(P)$(R)PixelFormat_RBV") {
 record(mbbo, "$(P)$(R)PixelFormat") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PixelFormat")
+  field(DOL,  "17301505")
   field(ZRST, "Mono8")
   field(ZRVL, "17301505")
   field(ONST, "Mono10")
@@ -972,6 +993,7 @@ record(mbbi, "$(P)$(R)NirMode_RBV") {
 record(mbbo, "$(P)$(R)NirMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_NirMode")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "On_HighQuality")
@@ -1037,6 +1059,7 @@ record(mbbi, "$(P)$(R)EdgeFilter_RBV") {
 record(mbbo, "$(P)$(R)EdgeFilter") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EdgeFilter")
+  field(DOL,  "14")
   field(ZRST, "Smooth2")
   field(ZRVL, "14")
   field(ONST, "Smooth1")
@@ -1124,6 +1147,7 @@ record(mbbi, "$(P)$(R)ExposureMode_RBV") {
 record(mbbo, "$(P)$(R)ExposureMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureMode")
+  field(DOL,  "1")
   field(ZRST, "Timed")
   field(ZRVL, "1")
   field(DISA, "0")
@@ -1166,6 +1190,7 @@ record(mbbi, "$(P)$(R)ExposureAuto_RBV") {
 record(mbbo, "$(P)$(R)ExposureAuto") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAuto")
+  field(DOL,  "1")
   field(ZRST, "Off")
   field(ZRVL, "1")
   field(ONST, "Once")
@@ -1208,6 +1233,7 @@ record(mbbi, "$(P)$(R)ExposureAutoAlg_RBV") {
 record(mbbo, "$(P)$(R)ExposureAutoAlg") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoAlg")
+  field(DOL,  "0")
   field(ZRST, "Mean")
   field(ZRVL, "0")
   field(ONST, "FitRange")
@@ -1304,6 +1330,7 @@ record(mbbi, "$(P)$(R)GainSelector_RBV") {
 record(mbbo, "$(P)$(R)GainSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GainSelector")
+  field(DOL,  "0")
   field(ZRST, "All")
   field(ZRVL, "0")
   field(DISA, "0")
@@ -1344,6 +1371,7 @@ record(mbbi, "$(P)$(R)GainAuto_RBV") {
 record(mbbo, "$(P)$(R)GainAuto") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GainAuto")
+  field(DOL,  "1")
   field(ZRST, "Off")
   field(ZRVL, "1")
   field(ONST, "Once")
@@ -1461,6 +1489,7 @@ record(mbbi, "$(P)$(R)BlackLevelSelect_RBV") {
 record(mbbo, "$(P)$(R)BlackLevelSelect") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BlackLevelSelector")
+  field(DOL,  "0")
   field(ZRST, "All")
   field(ZRVL, "0")
   field(DISA, "0")
@@ -1499,6 +1528,7 @@ record(mbbi, "$(P)$(R)BalanceRatioSele_RBV") {
 record(mbbo, "$(P)$(R)BalanceRatioSele") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceRatioSelector")
+  field(DOL,  "0")
   field(ZRST, "Red")
   field(ZRVL, "0")
   field(ONST, "Blue")
@@ -1541,6 +1571,7 @@ record(mbbi, "$(P)$(R)BalanceWhiteAut0_RBV") {
 record(mbbo, "$(P)$(R)BalanceWhiteAut0") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAuto")
+  field(DOL,  "1")
   field(ZRST, "Off")
   field(ZRVL, "1")
   field(ONST, "Once")
@@ -1600,6 +1631,7 @@ record(mbbi, "$(P)$(R)IrisMode_RBV") {
 record(mbbo, "$(P)$(R)IrisMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisMode")
+  field(DOL,  "0")
   field(ZRST, "Disabled")
   field(ZRVL, "0")
   field(ONST, "Video")
@@ -1687,6 +1719,7 @@ record(mbbi, "$(P)$(R)DefectMaskColumn_RBV") {
 record(mbbo, "$(P)$(R)DefectMaskColumn") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskColumnEnable")
+  field(DOL,  "0")
   field(ZRST, "Disabled")
   field(ZRVL, "0")
   field(ONST, "Enabled")
@@ -1710,6 +1743,7 @@ record(mbbi, "$(P)$(R)DefectMaskPixelE_RBV") {
 record(mbbo, "$(P)$(R)DefectMaskPixelE") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskPixelEnable")
+  field(DOL,  "0")
   field(ZRST, "Disabled")
   field(ZRVL, "0")
   field(ONST, "Enabled")
@@ -1746,6 +1780,7 @@ record(mbbi, "$(P)$(R)ColorTransforma0_RBV") {
 record(mbbo, "$(P)$(R)ColorTransforma0") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationSelector")
+  field(DOL,  "0")
   field(ZRST, "RGBtoRGB")
   field(ZRVL, "0")
   field(DISA, "0")
@@ -1769,6 +1804,7 @@ record(mbbi, "$(P)$(R)ColorTransforma1_RBV") {
 record(mbbo, "$(P)$(R)ColorTransforma1") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationMode")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "Manual")
@@ -1808,6 +1844,7 @@ record(mbbi, "$(P)$(R)ColorTransforma2_RBV") {
 record(mbbo, "$(P)$(R)ColorTransforma2") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationValueSelector")
+  field(DOL,  "0")
   field(ZRST, "Gain00")
   field(ZRVL, "0")
   field(ONST, "Gain01")
@@ -1864,6 +1901,7 @@ record(mbbi, "$(P)$(R)LUTSelector_RBV") {
 record(mbbo, "$(P)$(R)LUTSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTSelector")
+  field(DOL,  "0")
   field(ZRST, "LUT1")
   field(ZRVL, "0")
   field(ONST, "LUT2")
@@ -1893,6 +1931,7 @@ record(mbbi, "$(P)$(R)LUTMode_RBV") {
 record(mbbo, "$(P)$(R)LUTMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTMode")
+  field(DOL,  "0")
   field(ZRST, "Luminance")
   field(ZRVL, "0")
   field(ONST, "Red")
@@ -2062,6 +2101,7 @@ record(mbbi, "$(P)$(R)SyncInSelector_RBV") {
 record(mbbo, "$(P)$(R)SyncInSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncInSelector")
+  field(DOL,  "0")
   field(ZRST, "SyncIn1")
   field(ZRVL, "0")
   field(ONST, "SyncIn2")
@@ -2123,6 +2163,7 @@ record(mbbi, "$(P)$(R)SyncOutSelector_RBV") {
 record(mbbo, "$(P)$(R)SyncOutSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncOutSelector")
+  field(DOL,  "0")
   field(ZRST, "SyncOut1")
   field(ZRVL, "0")
   field(ONST, "SyncOut2")
@@ -2168,6 +2209,7 @@ record(mbbi, "$(P)$(R)SyncOutSource_RBV") {
 record(mbbo, "$(P)$(R)SyncOutSource") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncOutSource")
+  field(DOL,  "0")
   field(ZRST, "GPO")
   field(ZRVL, "0")
   field(ONST, "AcquisitionTrigg")
@@ -2209,6 +2251,7 @@ record(mbbi, "$(P)$(R)SyncOutPolarity_RBV") {
 record(mbbo, "$(P)$(R)SyncOutPolarity") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncOutPolarity")
+  field(DOL,  "0")
   field(ZRST, "Normal")
   field(ZRVL, "0")
   field(ONST, "Invert")
@@ -2244,6 +2287,7 @@ record(mbbi, "$(P)$(R)StrobeSource_RBV") {
 record(mbbo, "$(P)$(R)StrobeSource") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeSource")
+  field(DOL,  "1")
   field(ZRST, "AcquisitionTrigg")
   field(ZRVL, "1")
   field(ONST, "FrameTriggerRead")
@@ -2279,6 +2323,7 @@ record(mbbi, "$(P)$(R)StrobeDurationMo_RBV") {
 record(mbbo, "$(P)$(R)StrobeDurationMo") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeDurationMode")
+  field(DOL,  "0")
   field(ZRST, "Source")
   field(ZRVL, "0")
   field(ONST, "Controlled")
@@ -2354,6 +2399,7 @@ record(mbbi, "$(P)$(R)EventSelector_RBV") {
 record(mbbo, "$(P)$(R)EventSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventSelector")
+  field(DOL,  "40000")
   field(ZRST, "AcquisitionStart")
   field(ZRVL, "40000")
   field(ONST, "AcquisitionEnd")
@@ -2399,6 +2445,7 @@ record(mbbi, "$(P)$(R)EventNotificatio_RBV") {
 record(mbbo, "$(P)$(R)EventNotificatio") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventNotification")
+  field(DOL,  "0")
   field(ZRST, "Off")
   field(ZRVL, "0")
   field(ONST, "On")
@@ -2670,6 +2717,7 @@ record(mbbi, "$(P)$(R)UserSetSelector_RBV") {
 record(mbbo, "$(P)$(R)UserSetSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_UserSetSelector")
+  field(DOL,  "0")
   field(ZRST, "Default")
   field(ZRVL, "0")
   field(ONST, "UserSet1")
@@ -2723,6 +2771,7 @@ record(mbbi, "$(P)$(R)UserSetDefaultSe_RBV") {
 record(mbbo, "$(P)$(R)UserSetDefaultSe") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_UserSetDefaultSelector")
+  field(DOL,  "0")
   field(ZRST, "Default")
   field(ZRVL, "0")
   field(ONST, "UserSet1")
@@ -2794,6 +2843,7 @@ record(mbbi, "$(P)$(R)LensDriveCommand_RBV") {
 record(mbbo, "$(P)$(R)LensDriveCommand") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensDriveCommand")
+  field(DOL,  "0")
   field(ZRST, "Stop")
   field(ZRVL, "0")
   field(ONST, "IrisTimedOpen")
@@ -2846,6 +2896,7 @@ record(mbbi, "$(P)$(R)PvDummyTriggerSe_RBV") {
 record(mbbo, "$(P)$(R)PvDummyTriggerSe") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerSelector")
+  field(DOL,  "0")
   field(ZRST, "FrameStart")
   field(ZRVL, "0")
   field(ONST, "AcquisitionStart")
@@ -2883,6 +2934,7 @@ record(mbbi, "$(P)$(R)PvDummyFrameStar_RBV") {
 record(mbbo, "$(P)$(R)PvDummyFrameStar") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyFrameStartTriggerMode")
+  field(DOL,  "2147483648")
   field(ZRST, "Freerun")
   field(ZRVL, "2147483648")
   field(ONST, "SyncIn1")
@@ -2926,6 +2978,7 @@ record(mbbi, "$(P)$(R)PvDummyTriggerMo_RBV") {
 record(mbbo, "$(P)$(R)PvDummyTriggerMo") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerMode")
+  field(DOL,  "0")
   field(ZRST, "Disabled")
   field(ZRVL, "0")
   field(ONST, "SyncIn1")

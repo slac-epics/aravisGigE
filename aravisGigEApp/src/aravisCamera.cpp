@@ -453,7 +453,7 @@ asynStatus aravisCamera::makeStreamObject() {
               "frame-retention", 100000, //100ms
               NULL);
     // Uncomment this line to disable packet resend
-    //g_object_set (ARV_GV_STREAM (this->stream), "packet-resend", ARV_GV_STREAM_PACKET_RESEND_NEVER, NULL);
+    g_object_set (ARV_GV_STREAM (this->stream), "packet-resend", ARV_GV_STREAM_PACKET_RESEND_NEVER, NULL);
     arv_stream_set_emit_signals (this->stream, TRUE);
     g_signal_connect (this->stream, "new-buffer", G_CALLBACK (newBufferCallback), this);
     return asynSuccess;
@@ -1025,6 +1025,7 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
         setDoubleParam(AravisCompleted, (double) n_completed_buffers);
         setDoubleParam(AravisFailures, (double) n_failures);
         setDoubleParam(AravisUnderruns, (double) n_underruns);
+    	// TODO: Add status updates on resend using arv_gv_stream_get_statistics( ArvGvStream *, uint64 * n_resent_pkts, uint64 * n_missing_pkts )
     }
 
     /* See if acquisition is done */
@@ -1468,6 +1469,8 @@ asynStatus aravisCamera::tryAddFeature(int *ADIdx, const char *featureString) {
 extern "C" int aravisCameraConfig(const char *portName, const char *cameraName,
                                  int maxBuffers, size_t maxMemory, int priority, int stackSize)
 {
+	if ( stackSize <= 0 )
+		stackSize = epicsThreadGetStackSize(epicsThreadStackMedium);
     new aravisCamera(portName, cameraName, maxBuffers, maxMemory,
                      priority, stackSize);
     return(asynSuccess);

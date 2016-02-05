@@ -209,3 +209,54 @@ record(longin, "$(P)$(R)NumExposuresCounter_RBV") {
 record(mbbo, "$(P)$(R)TriggerMode") {
   field(DISA, "1")
 }
+
+
+record( ao, "$(P)$(R)XmitRate" )
+{
+    field( DOL,  "1.0e6" )
+    field( EGU,  "Bytes/Sec" )
+    field( PREC, "3" )
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+
+record( ao, "$(P)$(R)CamProcDelay" )
+{
+    field( DOL,  "1.0e-6" )
+    field( EGU,  "Sec" )
+    field( PREC, "3" ) 
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+
+record( calc, "$(P)$(R)XmitDelay" )
+{
+    field( INPA, "$(P)$(R)ArraySize_RBV CP MS" )
+    field( INPB, "$(P)$(R)XmitRate CPP MS" )
+    field( INPC, "$(P)$(R)CamProcDelay CPP MS" )
+    field( CALC, "A/B+C" )
+    field( EGU,  "Bytes/Sec" )
+}   
+
+record( ao, "$(P)$(R)DriverProcDelay" )
+{
+    field( DOL,  "1.0e-6" )
+    field( EGU,  "Sec" )
+    field( PREC, "3" ) 
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+
+# TSS_Delay: Expected delay from trigger to timeStamp update 
+# TODO: Add INPA as trigger delay
+record( calc, "$(P)$(R)TSS_Delay" )
+{
+    field( INPA, "0" )
+    field( INPB, "$(P)$(R)XmitDelay CP MS" )
+    field( INPC, "$(P)$(R)AcquireTime_RBV CP MS" )
+    field( INPD, "$(P)$(R)DriverProcDelay CP MS" )
+    field( CALC, "A+B+C+D" )
+    field( EGU,  "sec" )
+    field( PREC, "5" ) 
+}   
+
