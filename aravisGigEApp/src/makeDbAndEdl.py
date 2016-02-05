@@ -134,7 +134,7 @@ long_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE'
 mbb_autosaveFields		= 'DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE'
 string_autosaveFields	= 'DESC TSE'
 
-# Create CamModel and CamModelScreen PV's for navigation and labeling
+# Create CamModel and CamType related PV's for navigation and labeling
 print 'record(stringin, "$(P)$(R)CamModel") {'
 print '  field(VAL,   "%s")' % camera_name
 print '  field(PINI,  "YES")'
@@ -145,6 +145,17 @@ print '  field(VAL,   "aravisScreens/%s.edl")' % camera_name
 print '  field(PINI,  "YES")'
 print '}'
 print
+print 'record(stringin, "$(P)$(R)CamType") {'
+print '  field(VAL,   "$(TYPE=aravis)")'
+print '  field(PINI,  "YES")'
+print '}'
+print
+print 'record(stringin, "$(P)$(R)CamTypeScreen") {'
+print '  field(VAL,   "aravisScreens/$(TYPE=aravis).edl")'
+print '  field(PINI,  "YES")'
+print '}'
+print
+
 
 # for each node
 # for each node
@@ -234,6 +245,7 @@ for node in doneNodes:
     elif node.nodeName in ["Enumeration"]:
         enumerations = ""
         i = 0
+        defaultVal = "0"
         epicsId = ["ZR", "ON", "TW", "TH", "FR", "FV", "SX", "SV", "EI", "NI", "TE", "EL", "TV", "TT", "FT", "FF"]
         for n in elements(node):
             if str(n.nodeName) == "EnumEntry":
@@ -245,7 +257,9 @@ for node in doneNodes:
                 enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:16])
                 value = [x for x in elements(n) if str(x.nodeName) == "Value"]
                 assert value, "EnumEntry %s in node %s doesn't have a value" %(name, nodeName)                
-                enumerations += '  field(%sVL, "%s")\n' %(epicsId[i], getText(value[0]))                
+                if i == 0:
+                    defaultVal = getText(value[0])
+                enumerations += '  field(%sVL, "%s")\n' %(epicsId[i], getText(value[0]))
                 i += 1                
         print 'record(mbbi, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
@@ -261,6 +275,7 @@ for node in doneNodes:
         print 'record(mbbo, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
         print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
+        print '  field(DOL,  "%s")' % defaultVal
         print enumerations,       
         print '  field(DISA, "0")'
         print '  info( autosaveFields, "%s VAL" )' % mbb_autosaveFields
