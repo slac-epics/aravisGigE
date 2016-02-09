@@ -12,7 +12,7 @@ record(stringin, "$(P)$(R)CamModel") {
 }
 
 record(stringin, "$(P)$(R)CamModelScreen") {
-  field(VAL,   "aravisScreens/Basler_acA1300-30gm.edl")
+  field(VAL,   "arvScreens/Basler_acA1300-30gm")
   field(PINI,  "YES")
 }
 
@@ -22,7 +22,7 @@ record(stringin, "$(P)$(R)CamType") {
 }
 
 record(stringin, "$(P)$(R)CamTypeScreen") {
-  field(VAL,   "aravisScreens/$(TYPE=aravis).edl")
+  field(VAL,   "arvScreens/$(TYPE=aravis).edl")
   field(PINI,  "YES")
 }
 

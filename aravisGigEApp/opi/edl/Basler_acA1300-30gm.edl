@@ -59,7 +59,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "aravisScreens/aravisCamera.edl"
+file "arvScreens/aravisCamera.edl"
 numDsps 0
 noScroll
 endObjectProperties
@@ -83,7 +83,7 @@ buttonLabel "more features..."
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "aravisScreens/Basler_acA1300-30gm-features.edl"
+  0 "arvScreens/Basler_acA1300-30gm-features.edl"
 }
 setPosition {
   0 "parentWindow"

@@ -141,7 +141,7 @@ print '  field(PINI,  "YES")'
 print '}'
 print
 print 'record(stringin, "$(P)$(R)CamModelScreen") {'
-print '  field(VAL,   "aravisScreens/%s.edl")' % camera_name
+print '  field(VAL,   "arvScreens/%s")' % camera_name
 print '  field(PINI,  "YES")'
 print '}'
 print
@@ -151,7 +151,7 @@ print '  field(PINI,  "YES")'
 print '}'
 print
 print 'record(stringin, "$(P)$(R)CamTypeScreen") {'
-print '  field(VAL,   "aravisScreens/$(TYPE=aravis).edl")'
+print '  field(VAL,   "arvScreens/$(TYPE=aravis).edl")'
 print '  field(PINI,  "YES")'
 print '}'
 print
@@ -369,7 +369,7 @@ buttonLabel "?"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "aravisScreens/aravisHelp.edl"
+  0 "arvScreens/aravisHelp.edl"
 }
 setPosition {
   0 "button"
@@ -809,7 +809,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "aravisScreens/aravisCamera.edl"
+file "arvScreens/aravisCamera.edl"
 sizeOfs 0
 numDsps 0
 noScroll
@@ -834,7 +834,7 @@ buttonLabel "more features..."
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "aravisScreens/%(camera_name)s-features.edl"
+  0 "arvScreens/%(camera_name)s-features.edl"
 }
 setPosition {
   0 "parentWindow"
