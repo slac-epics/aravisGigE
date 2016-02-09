@@ -247,16 +247,19 @@ record( ao, "$(P)$(R)DriverProcDelay" )
     info( autosaveFields, "VAL" )
 }   
 
-# TSS_Delay: Expected delay from trigger to timeStamp update 
-# TODO: Add INPA as trigger delay
-record( calc, "$(P)$(R)TSS_Delay" )
+#
+# TrigToTS_Calc: Calculates expected delay from trigger to timeStamp update 
+# Inputs: All units in seconds
+#   A   - Camera acquire time (exposure length)
+#   B   - Camera image transmission time
+#   C   - Estimated driver processing delay before requesting timestamp
+record( calc, "$(P)$(R)TrigToTS_Calc" )
 {
-    field( INPA, "0" )
+    field( INPA, "$(P)$(R)AcquireTime_RBV CP MS" )
     field( INPB, "$(P)$(R)XmitDelay CP MS" )
-    field( INPC, "$(P)$(R)AcquireTime_RBV CP MS" )
-    field( INPD, "$(P)$(R)DriverProcDelay CP MS" )
-    field( CALC, "A+B+C+D" )
+    field( INPC, "$(P)$(R)DriverProcDelay CP MS" )
+    field( CALC, "A+B+C" )
     field( EGU,  "sec" )
     field( PREC, "5" ) 
-}   
+}
 
