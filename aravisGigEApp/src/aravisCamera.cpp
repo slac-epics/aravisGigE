@@ -210,6 +210,7 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
     ArvBufferStatus buffer_status = arv_buffer_get_status(buffer);
     size_t	size = 0;
     arv_buffer_get_data(buffer, &size);
+	// TODO: Look into calling updateTimeStamp() here in aravis buffer callbck if possible
     if (buffer_status == ARV_BUFFER_STATUS_SUCCESS /*|| buffer->status == ARV_BUFFER_STATUS_MISSING_PACKETS*/) {
         status = epicsMessageQueueTrySend(pPvt->msgQId,
                 &buffer,
@@ -907,6 +908,10 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     /* Put the frame number and time stamp into the buffer */
     pRaw->uniqueId = imageCounter;
     pRaw->timeStamp = arv_buffer_get_timestamp(buffer) / 1.e9;
+
+	/* Update the areaDetector timeStamp */
+	updateTimeStamp( &pRaw->epicsTS );
+
     /* Get any attributes that have been defined for this driver */
     this->getAttributes(pRaw->pAttributeList);
 
