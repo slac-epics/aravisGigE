@@ -34,13 +34,6 @@ record(longin, "$(P)$(R)FirmwareVerMajor_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)FirmwareVerMajor") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerMajor")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)FirmwareVerMinor_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerMinor")
@@ -49,26 +42,12 @@ record(longin, "$(P)$(R)FirmwareVerMinor_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)FirmwareVerMinor") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerMinor")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)FirmwareVerBuild_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerBuild")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)FirmwareVerBuild") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVerBuild")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(mbbi, "$(P)$(R)SensorType_RBV") {
@@ -83,31 +62,12 @@ record(mbbi, "$(P)$(R)SensorType_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)SensorType") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorType")
-  field(DOL,  "0")
-  field(ZRST, "Mono")
-  field(ZRVL, "0")
-  field(ONST, "Bayer")
-  field(ONVL, "1")
-  field(DISA, "0")
-  info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
-}
-
 record(longin, "$(P)$(R)SensorBits_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorBits")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)SensorBits") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorBits")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(stringin, "$(P)$(R)DeviceVendorName_RBV") {
@@ -126,7 +86,7 @@ record(stringin, "$(P)$(R)DeviceModelName_RBV") {
   info( autosaveFields, "DESC TSE" )
 }
 
-record(stringin, "$(P)$(R)DeviceFirmwareVe_RBV") {
+record(stringin, "$(P)$(R)DeviceFirmwareVersion_RBV") {
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVS_DeviceFirmwareVersion")
   field(SCAN, "I/O Intr")
@@ -170,7 +130,7 @@ record(mbbo, "$(P)$(R)DeviceScanType") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)StreamBytesPerSe_RBV") {
+record(longin, "$(P)$(R)StreamBytesPerSecond_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamBytesPerSecond")
   field(SCAN, "I/O Intr")
@@ -178,17 +138,17 @@ record(longin, "$(P)$(R)StreamBytesPerSe_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)StreamBytesPerSe") {
+record(longout, "$(P)$(R)StreamBytesPerSecond") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamBytesPerSecond")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)BandwidthControl_RBV") {
+record(mbbi, "$(P)$(R)BandwidthControlMode_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BandwidthControlMode")
-  field(ZRST, "StreamBytesPerSe")
+  field(ZRST, "StreamBytesPerSecond")
   field(ZRVL, "0")
   field(ONST, "SCPD")
   field(ONVL, "1")
@@ -199,11 +159,11 @@ record(mbbi, "$(P)$(R)BandwidthControl_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)BandwidthControl") {
+record(mbbo, "$(P)$(R)BandwidthControlMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BandwidthControlMode")
   field(DOL,  "0")
-  field(ZRST, "StreamBytesPerSe")
+  field(ZRST, "StreamBytesPerSecond")
   field(ZRVL, "0")
   field(ONST, "SCPD")
   field(ONVL, "1")
@@ -213,7 +173,7 @@ record(mbbo, "$(P)$(R)BandwidthControl") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)GevSCPSPacketSiz_RBV") {
+record(longin, "$(P)$(R)GevSCPSPacketSize_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevSCPSPacketSize")
   field(SCAN, "I/O Intr")
@@ -221,7 +181,7 @@ record(longin, "$(P)$(R)GevSCPSPacketSiz_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)GevSCPSPacketSiz") {
+record(longout, "$(P)$(R)GevSCPSPacketSize") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevSCPSPacketSize")
   field(DISA, "0")
@@ -255,14 +215,7 @@ record(longin, "$(P)$(R)PayloadSize_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)PayloadSize") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PayloadSize")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longin, "$(P)$(R)NonImagePayloadS_RBV") {
+record(longin, "$(P)$(R)NonImagePayloadSize_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_NonImagePayloadSize")
   field(SCAN, "I/O Intr")
@@ -270,14 +223,7 @@ record(longin, "$(P)$(R)NonImagePayloadS_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)NonImagePayloadS") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_NonImagePayloadSize")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(bi, "$(P)$(R)StreamFrameRateC_RBV") {
+record(bi, "$(P)$(R)StreamFrameRateConstrain_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamFrameRateConstrain")
   field(SCAN, "I/O Intr")
@@ -287,7 +233,7 @@ record(bi, "$(P)$(R)StreamFrameRateC_RBV") {
   info( autosaveFields, "DESC ZSV OSV TSE" )
 }
 
-record(bo, "$(P)$(R)StreamFrameRateC") {
+record(bo, "$(P)$(R)StreamFrameRateConstrain") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamFrameRateConstrain")
   field(ZNAM, "No")
@@ -320,7 +266,7 @@ record(mbbo, "$(P)$(R)StreamHoldEnable") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)StreamHoldCapaci_RBV") {
+record(longin, "$(P)$(R)StreamHoldCapacity_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamHoldCapacity")
   field(SCAN, "I/O Intr")
@@ -328,14 +274,7 @@ record(longin, "$(P)$(R)StreamHoldCapaci_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)StreamHoldCapaci") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StreamHoldCapacity")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longin, "$(P)$(R)GevTimestampTick_RBV") {
+record(longin, "$(P)$(R)GevTimestampTickFrequency_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampTickFrequency")
   field(SCAN, "I/O Intr")
@@ -343,28 +282,21 @@ record(longin, "$(P)$(R)GevTimestampTick_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)GevTimestampTick") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampTickFrequency")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longout, "$(P)$(R)GevTimestampCont") {
+record(longout, "$(P)$(R)GevTimestampControlLatch") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampControlLatch")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)GevTimestampCon0") {
+record(longout, "$(P)$(R)GevTimestampControlReset") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampControlReset")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longin, "$(P)$(R)GevTimestampValu_RBV") {
+record(longin, "$(P)$(R)GevTimestampValue_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampValue")
   field(SCAN, "I/O Intr")
@@ -372,7 +304,7 @@ record(longin, "$(P)$(R)GevTimestampValu_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)GevTimestampValu") {
+record(longout, "$(P)$(R)GevTimestampValue") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GevTimestampValue")
   field(DISA, "0")
@@ -432,7 +364,7 @@ record(mbbo, "$(P)$(R)AcquisitionMode") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)AcquisitionFrame_RBV") {
+record(longin, "$(P)$(R)AcquisitionFrameCount_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_AcquisitionFrameCount")
   field(SCAN, "I/O Intr")
@@ -440,14 +372,14 @@ record(longin, "$(P)$(R)AcquisitionFrame_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)AcquisitionFrame") {
+record(longout, "$(P)$(R)AcquisitionFrameCount") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_AcquisitionFrameCount")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(ai, "$(P)$(R)AcquisitionFram0_RBV") {
+record(ai, "$(P)$(R)AcquisitionFrameRateAbs_RBV") {
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_AcquisitionFrameRateAbs")
   field(PREC, "3")
@@ -456,7 +388,7 @@ record(ai, "$(P)$(R)AcquisitionFram0_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC" )
 }
 
-record(ao, "$(P)$(R)AcquisitionFram0") {
+record(ao, "$(P)$(R)AcquisitionFrameRateAbs") {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_AcquisitionFrameRateAbs")
   field(PREC, "3")
@@ -464,7 +396,7 @@ record(ao, "$(P)$(R)AcquisitionFram0") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC VAL" )
 }
 
-record(ai, "$(P)$(R)AcquisitionFram1_RBV") {
+record(ai, "$(P)$(R)AcquisitionFrameRateLimit_RBV") {
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_AcquisitionFrameRateLimit")
   field(PREC, "3")
@@ -473,15 +405,7 @@ record(ai, "$(P)$(R)AcquisitionFram1_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC" )
 }
 
-record(ao, "$(P)$(R)AcquisitionFram1") {
-  field(DTYP, "asynFloat64")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_AcquisitionFrameRateLimit")
-  field(PREC, "3")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC VAL" )
-}
-
-record(longin, "$(P)$(R)RecorderPreEvent_RBV") {
+record(longin, "$(P)$(R)RecorderPreEventCount_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_RecorderPreEventCount")
   field(SCAN, "I/O Intr")
@@ -489,7 +413,7 @@ record(longin, "$(P)$(R)RecorderPreEvent_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)RecorderPreEvent") {
+record(longout, "$(P)$(R)RecorderPreEventCount") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_RecorderPreEventCount")
   field(DISA, "0")
@@ -505,7 +429,7 @@ record(mbbi, "$(P)$(R)TriggerSelector_RBV") {
   field(ONVL, "3")
   field(TWST, "AcquisitionEnd")
   field(TWVL, "4")
-  field(THST, "AcquisitionRecor")
+  field(THST, "AcquisitionRecord")
   field(THVL, "6")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
@@ -522,7 +446,7 @@ record(mbbo, "$(P)$(R)TriggerSelector") {
   field(ONVL, "3")
   field(TWST, "AcquisitionEnd")
   field(TWVL, "4")
-  field(THST, "AcquisitionRecor")
+  field(THST, "AcquisitionRecord")
   field(THVL, "6")
   field(DISA, "0")
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
@@ -603,7 +527,7 @@ record(mbbo, "$(P)$(R)TriggerSource") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)TriggerActivatio_RBV") {
+record(mbbi, "$(P)$(R)TriggerActivation_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerActivation")
   field(ZRST, "RisingEdge")
@@ -621,7 +545,7 @@ record(mbbi, "$(P)$(R)TriggerActivatio_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)TriggerActivatio") {
+record(mbbo, "$(P)$(R)TriggerActivation") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TriggerActivation")
   field(DOL,  "0")
@@ -692,13 +616,6 @@ record(longin, "$(P)$(R)SensorWidth_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)SensorWidth") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorWidth")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)SensorHeight_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorHeight")
@@ -707,14 +624,7 @@ record(longin, "$(P)$(R)SensorHeight_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)SensorHeight") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SensorHeight")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longin, "$(P)$(R)BinningHorizonta_RBV") {
+record(longin, "$(P)$(R)BinningHorizontal_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BinningHorizontal")
   field(SCAN, "I/O Intr")
@@ -722,7 +632,7 @@ record(longin, "$(P)$(R)BinningHorizonta_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)BinningHorizonta") {
+record(longout, "$(P)$(R)BinningHorizontal") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BinningHorizontal")
   field(DISA, "0")
@@ -744,7 +654,7 @@ record(longout, "$(P)$(R)BinningVertical") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)DecimationHorizo_RBV") {
+record(longin, "$(P)$(R)DecimationHorizontal_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DecimationHorizontal")
   field(SCAN, "I/O Intr")
@@ -752,14 +662,14 @@ record(longin, "$(P)$(R)DecimationHorizo_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)DecimationHorizo") {
+record(longout, "$(P)$(R)DecimationHorizontal") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DecimationHorizontal")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)DecimationVertic_RBV") {
+record(longin, "$(P)$(R)DecimationVertical_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DecimationVertical")
   field(SCAN, "I/O Intr")
@@ -767,7 +677,7 @@ record(longin, "$(P)$(R)DecimationVertic_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)DecimationVertic") {
+record(longout, "$(P)$(R)DecimationVertical") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DecimationVertical")
   field(DISA, "0")
@@ -782,26 +692,12 @@ record(longin, "$(P)$(R)WidthMax_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)WidthMax") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_WidthMax")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)HeightMax_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_HeightMax")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)HeightMax") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_HeightMax")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(mbbi, "$(P)$(R)PixelFormat_RBV") {
@@ -952,13 +848,6 @@ record(longin, "$(P)$(R)ImageSize_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)ImageSize") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ImageSize")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(ai, "$(P)$(R)Gamma_RBV") {
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_Gamma")
@@ -1104,7 +993,7 @@ record(longout, "$(P)$(R)DSPSubregionTop") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)DSPSubregionRigh_RBV") {
+record(longin, "$(P)$(R)DSPSubregionRight_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DSPSubregionRight")
   field(SCAN, "I/O Intr")
@@ -1112,14 +1001,14 @@ record(longin, "$(P)$(R)DSPSubregionRigh_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)DSPSubregionRigh") {
+record(longout, "$(P)$(R)DSPSubregionRight") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DSPSubregionRight")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)DSPSubregionBott_RBV") {
+record(longin, "$(P)$(R)DSPSubregionBottom_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DSPSubregionBottom")
   field(SCAN, "I/O Intr")
@@ -1127,7 +1016,7 @@ record(longin, "$(P)$(R)DSPSubregionBott_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)DSPSubregionBott") {
+record(longout, "$(P)$(R)DSPSubregionBottom") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DSPSubregionBottom")
   field(DISA, "0")
@@ -1203,7 +1092,7 @@ record(mbbo, "$(P)$(R)ExposureAuto") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)ExposureAutoTarg_RBV") {
+record(longin, "$(P)$(R)ExposureAutoTarget_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoTarget")
   field(SCAN, "I/O Intr")
@@ -1211,7 +1100,7 @@ record(longin, "$(P)$(R)ExposureAutoTarg_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)ExposureAutoTarg") {
+record(longout, "$(P)$(R)ExposureAutoTarget") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoTarget")
   field(DISA, "0")
@@ -1287,7 +1176,7 @@ record(longout, "$(P)$(R)ExposureAutoRate") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)ExposureAutoOutl_RBV") {
+record(longin, "$(P)$(R)ExposureAutoOutliers_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoOutliers")
   field(SCAN, "I/O Intr")
@@ -1295,14 +1184,14 @@ record(longin, "$(P)$(R)ExposureAutoOutl_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)ExposureAutoOutl") {
+record(longout, "$(P)$(R)ExposureAutoOutliers") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoOutliers")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)ExposureAutoAdju_RBV") {
+record(longin, "$(P)$(R)ExposureAutoAdjustTol_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoAdjustTol")
   field(SCAN, "I/O Intr")
@@ -1310,7 +1199,7 @@ record(longin, "$(P)$(R)ExposureAutoAdju_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)ExposureAutoAdju") {
+record(longout, "$(P)$(R)ExposureAutoAdjustTol") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ExposureAutoAdjustTol")
   field(DISA, "0")
@@ -1461,7 +1350,7 @@ record(longout, "$(P)$(R)GainAutoOutliers") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)GainAutoAdjustTo_RBV") {
+record(longin, "$(P)$(R)GainAutoAdjustTol_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GainAutoAdjustTol")
   field(SCAN, "I/O Intr")
@@ -1469,14 +1358,14 @@ record(longin, "$(P)$(R)GainAutoAdjustTo_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)GainAutoAdjustTo") {
+record(longout, "$(P)$(R)GainAutoAdjustTol") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_GainAutoAdjustTol")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)BlackLevelSelect_RBV") {
+record(mbbi, "$(P)$(R)BlackLevelSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BlackLevelSelector")
   field(ZRST, "All")
@@ -1486,7 +1375,7 @@ record(mbbi, "$(P)$(R)BlackLevelSelect_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)BlackLevelSelect") {
+record(mbbo, "$(P)$(R)BlackLevelSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BlackLevelSelector")
   field(DOL,  "0")
@@ -1513,7 +1402,7 @@ record(ao, "$(P)$(R)BlackLevel") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC VAL" )
 }
 
-record(mbbi, "$(P)$(R)BalanceRatioSele_RBV") {
+record(mbbi, "$(P)$(R)BalanceRatioSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceRatioSelector")
   field(ZRST, "Red")
@@ -1525,7 +1414,7 @@ record(mbbi, "$(P)$(R)BalanceRatioSele_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)BalanceRatioSele") {
+record(mbbo, "$(P)$(R)BalanceRatioSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceRatioSelector")
   field(DOL,  "0")
@@ -1554,7 +1443,7 @@ record(ao, "$(P)$(R)BalanceRatioAbs") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC VAL" )
 }
 
-record(mbbi, "$(P)$(R)BalanceWhiteAut0_RBV") {
+record(mbbi, "$(P)$(R)BalanceWhiteAuto_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAuto")
   field(ZRST, "Off")
@@ -1568,7 +1457,7 @@ record(mbbi, "$(P)$(R)BalanceWhiteAut0_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)BalanceWhiteAut0") {
+record(mbbo, "$(P)$(R)BalanceWhiteAuto") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAuto")
   field(DOL,  "1")
@@ -1582,7 +1471,7 @@ record(mbbo, "$(P)$(R)BalanceWhiteAut0") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)BalanceWhiteAut1_RBV") {
+record(longin, "$(P)$(R)BalanceWhiteAutoRate_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAutoRate")
   field(SCAN, "I/O Intr")
@@ -1590,14 +1479,14 @@ record(longin, "$(P)$(R)BalanceWhiteAut1_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)BalanceWhiteAut1") {
+record(longout, "$(P)$(R)BalanceWhiteAutoRate") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAutoRate")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)BalanceWhiteAut2_RBV") {
+record(longin, "$(P)$(R)BalanceWhiteAutoAdjustTol_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAutoAdjustTol")
   field(SCAN, "I/O Intr")
@@ -1605,7 +1494,7 @@ record(longin, "$(P)$(R)BalanceWhiteAut2_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)BalanceWhiteAut2") {
+record(longout, "$(P)$(R)BalanceWhiteAutoAdjustTol") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_BalanceWhiteAutoAdjustTol")
   field(DISA, "0")
@@ -1667,14 +1556,7 @@ record(longin, "$(P)$(R)IrisVideoLevel_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)IrisVideoLevel") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisVideoLevel")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longin, "$(P)$(R)IrisVideoLevelMi_RBV") {
+record(longin, "$(P)$(R)IrisVideoLevelMin_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisVideoLevelMin")
   field(SCAN, "I/O Intr")
@@ -1682,14 +1564,14 @@ record(longin, "$(P)$(R)IrisVideoLevelMi_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)IrisVideoLevelMi") {
+record(longout, "$(P)$(R)IrisVideoLevelMin") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisVideoLevelMin")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)IrisVideoLevelMa_RBV") {
+record(longin, "$(P)$(R)IrisVideoLevelMax_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisVideoLevelMax")
   field(SCAN, "I/O Intr")
@@ -1697,14 +1579,14 @@ record(longin, "$(P)$(R)IrisVideoLevelMa_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)IrisVideoLevelMa") {
+record(longout, "$(P)$(R)IrisVideoLevelMax") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_IrisVideoLevelMax")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)DefectMaskColumn_RBV") {
+record(mbbi, "$(P)$(R)DefectMaskColumnEnable_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskColumnEnable")
   field(ZRST, "Disabled")
@@ -1716,7 +1598,7 @@ record(mbbi, "$(P)$(R)DefectMaskColumn_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)DefectMaskColumn") {
+record(mbbo, "$(P)$(R)DefectMaskColumnEnable") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskColumnEnable")
   field(DOL,  "0")
@@ -1728,7 +1610,7 @@ record(mbbo, "$(P)$(R)DefectMaskColumn") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)DefectMaskPixelE_RBV") {
+record(mbbi, "$(P)$(R)DefectMaskPixelEnable_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskPixelEnable")
   field(ZRST, "Disabled")
@@ -1740,7 +1622,7 @@ record(mbbi, "$(P)$(R)DefectMaskPixelE_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)DefectMaskPixelE") {
+record(mbbo, "$(P)$(R)DefectMaskPixelEnable") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_DefectMaskPixelEnable")
   field(DOL,  "0")
@@ -1767,7 +1649,7 @@ record(longout, "$(P)$(R)VsubValue") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)ColorTransforma0_RBV") {
+record(mbbi, "$(P)$(R)ColorTransformationSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationSelector")
   field(ZRST, "RGBtoRGB")
@@ -1777,7 +1659,7 @@ record(mbbi, "$(P)$(R)ColorTransforma0_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)ColorTransforma0") {
+record(mbbo, "$(P)$(R)ColorTransformationSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationSelector")
   field(DOL,  "0")
@@ -1787,7 +1669,7 @@ record(mbbo, "$(P)$(R)ColorTransforma0") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)ColorTransforma1_RBV") {
+record(mbbi, "$(P)$(R)ColorTransformationMode_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationMode")
   field(ZRST, "Off")
@@ -1801,7 +1683,7 @@ record(mbbi, "$(P)$(R)ColorTransforma1_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)ColorTransforma1") {
+record(mbbo, "$(P)$(R)ColorTransformationMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationMode")
   field(DOL,  "0")
@@ -1815,7 +1697,7 @@ record(mbbo, "$(P)$(R)ColorTransforma1") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)ColorTransforma2_RBV") {
+record(mbbi, "$(P)$(R)ColorTransformationValueSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationValueSelector")
   field(ZRST, "Gain00")
@@ -1841,7 +1723,7 @@ record(mbbi, "$(P)$(R)ColorTransforma2_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)ColorTransforma2") {
+record(mbbo, "$(P)$(R)ColorTransformationValueSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_ColorTransformationValueSelector")
   field(DOL,  "0")
@@ -1867,7 +1749,7 @@ record(mbbo, "$(P)$(R)ColorTransforma2") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(ai, "$(P)$(R)ColorTransforma4_RBV") {
+record(ai, "$(P)$(R)ColorTransformationValue_RBV") {
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_ColorTransformationValue")
   field(PREC, "3")
@@ -1876,7 +1758,7 @@ record(ai, "$(P)$(R)ColorTransforma4_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC" )
 }
 
-record(ao, "$(P)$(R)ColorTransforma4") {
+record(ao, "$(P)$(R)ColorTransformationValue") {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_ColorTransformationValue")
   field(PREC, "3")
@@ -2015,26 +1897,12 @@ record(longin, "$(P)$(R)LUTBitDepthIn_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LUTBitDepthIn") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTBitDepthIn")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)LUTBitDepthOut_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTBitDepthOut")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)LUTBitDepthOut") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTBitDepthOut")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(longin, "$(P)$(R)LUTAddress_RBV") {
@@ -2045,13 +1913,6 @@ record(longin, "$(P)$(R)LUTAddress_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LUTAddress") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTAddress")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)LUTSizeBytes_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTSizeBytes")
@@ -2060,26 +1921,12 @@ record(longin, "$(P)$(R)LUTSizeBytes_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LUTSizeBytes") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LUTSizeBytes")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)SyncInLevels_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncInLevels")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)SyncInLevels") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncInLevels")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(mbbi, "$(P)$(R)SyncInSelector_RBV") {
@@ -2114,7 +1961,7 @@ record(mbbo, "$(P)$(R)SyncInSelector") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)SyncInGlitchFilt_RBV") {
+record(longin, "$(P)$(R)SyncInGlitchFilter_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncInGlitchFilter")
   field(SCAN, "I/O Intr")
@@ -2122,7 +1969,7 @@ record(longin, "$(P)$(R)SyncInGlitchFilt_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)SyncInGlitchFilt") {
+record(longout, "$(P)$(R)SyncInGlitchFilter") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncInGlitchFilter")
   field(DISA, "0")
@@ -2181,9 +2028,9 @@ record(mbbi, "$(P)$(R)SyncOutSource_RBV") {
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_SyncOutSource")
   field(ZRST, "GPO")
   field(ZRVL, "0")
-  field(ONST, "AcquisitionTrigg")
+  field(ONST, "AcquisitionTriggerReady")
   field(ONVL, "1")
-  field(TWST, "FrameTriggerRead")
+  field(TWST, "FrameTriggerReady")
   field(TWVL, "2")
   field(THST, "FrameTrigger")
   field(THVL, "3")
@@ -2212,9 +2059,9 @@ record(mbbo, "$(P)$(R)SyncOutSource") {
   field(DOL,  "0")
   field(ZRST, "GPO")
   field(ZRVL, "0")
-  field(ONST, "AcquisitionTrigg")
+  field(ONST, "AcquisitionTriggerReady")
   field(ONVL, "1")
-  field(TWST, "FrameTriggerRead")
+  field(TWST, "FrameTriggerReady")
   field(TWVL, "2")
   field(THST, "FrameTrigger")
   field(THVL, "3")
@@ -2263,9 +2110,9 @@ record(mbbo, "$(P)$(R)SyncOutPolarity") {
 record(mbbi, "$(P)$(R)StrobeSource_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeSource")
-  field(ZRST, "AcquisitionTrigg")
+  field(ZRST, "AcquisitionTriggerReady")
   field(ZRVL, "1")
-  field(ONST, "FrameTriggerRead")
+  field(ONST, "FrameTriggerReady")
   field(ONVL, "2")
   field(TWST, "FrameTrigger")
   field(TWVL, "3")
@@ -2288,9 +2135,9 @@ record(mbbo, "$(P)$(R)StrobeSource") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeSource")
   field(DOL,  "1")
-  field(ZRST, "AcquisitionTrigg")
+  field(ZRST, "AcquisitionTriggerReady")
   field(ZRVL, "1")
-  field(ONST, "FrameTriggerRead")
+  field(ONST, "FrameTriggerReady")
   field(ONVL, "2")
   field(TWST, "FrameTrigger")
   field(TWVL, "3")
@@ -2308,7 +2155,7 @@ record(mbbo, "$(P)$(R)StrobeSource") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)StrobeDurationMo_RBV") {
+record(mbbi, "$(P)$(R)StrobeDurationMode_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeDurationMode")
   field(ZRST, "Source")
@@ -2320,7 +2167,7 @@ record(mbbi, "$(P)$(R)StrobeDurationMo_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)StrobeDurationMo") {
+record(mbbo, "$(P)$(R)StrobeDurationMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_StrobeDurationMode")
   field(DOL,  "0")
@@ -2373,7 +2220,7 @@ record(mbbi, "$(P)$(R)EventSelector_RBV") {
   field(TWVL, "40002")
   field(THST, "ExposureEnd")
   field(THVL, "40003")
-  field(FRST, "AcquisitionRecor")
+  field(FRST, "AcquisitionRecordTrigger")
   field(FRVL, "40004")
   field(FVST, "Line1RisingEdge")
   field(FVVL, "40010")
@@ -2408,7 +2255,7 @@ record(mbbo, "$(P)$(R)EventSelector") {
   field(TWVL, "40002")
   field(THST, "ExposureEnd")
   field(THVL, "40003")
-  field(FRST, "AcquisitionRecor")
+  field(FRST, "AcquisitionRecordTrigger")
   field(FRVL, "40004")
   field(FVST, "Line1RisingEdge")
   field(FVVL, "40010")
@@ -2430,7 +2277,7 @@ record(mbbo, "$(P)$(R)EventSelector") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)EventNotificatio_RBV") {
+record(mbbi, "$(P)$(R)EventNotification_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventNotification")
   field(ZRST, "Off")
@@ -2442,7 +2289,7 @@ record(mbbi, "$(P)$(R)EventNotificatio_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)EventNotificatio") {
+record(mbbo, "$(P)$(R)EventNotification") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventNotification")
   field(DOL,  "0")
@@ -2469,7 +2316,7 @@ record(longout, "$(P)$(R)EventsEnable1") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventAcquisition_RBV") {
+record(longin, "$(P)$(R)EventAcquisitionStart_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionStart")
   field(SCAN, "I/O Intr")
@@ -2477,14 +2324,14 @@ record(longin, "$(P)$(R)EventAcquisition_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventAcquisition") {
+record(longout, "$(P)$(R)EventAcquisitionStart") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionStart")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventAcquisitio0_RBV") {
+record(longin, "$(P)$(R)EventAcquisitionEnd_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionEnd")
   field(SCAN, "I/O Intr")
@@ -2492,14 +2339,14 @@ record(longin, "$(P)$(R)EventAcquisitio0_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventAcquisitio0") {
+record(longout, "$(P)$(R)EventAcquisitionEnd") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionEnd")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventFrameTrigge_RBV") {
+record(longin, "$(P)$(R)EventFrameTrigger_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventFrameTrigger")
   field(SCAN, "I/O Intr")
@@ -2507,7 +2354,7 @@ record(longin, "$(P)$(R)EventFrameTrigge_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventFrameTrigge") {
+record(longout, "$(P)$(R)EventFrameTrigger") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventFrameTrigger")
   field(DISA, "0")
@@ -2529,7 +2376,7 @@ record(longout, "$(P)$(R)EventExposureEnd") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventAcquisitio1_RBV") {
+record(longin, "$(P)$(R)EventAcquisitionRecordTrigger_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionRecordTrigger")
   field(SCAN, "I/O Intr")
@@ -2537,14 +2384,14 @@ record(longin, "$(P)$(R)EventAcquisitio1_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventAcquisitio1") {
+record(longout, "$(P)$(R)EventAcquisitionRecordTrigger") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventAcquisitionRecordTrigger")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine1Rising_RBV") {
+record(longin, "$(P)$(R)EventLine1RisingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine1RisingEdge")
   field(SCAN, "I/O Intr")
@@ -2552,14 +2399,14 @@ record(longin, "$(P)$(R)EventLine1Rising_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine1Rising") {
+record(longout, "$(P)$(R)EventLine1RisingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine1RisingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine1Fallin_RBV") {
+record(longin, "$(P)$(R)EventLine1FallingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine1FallingEdge")
   field(SCAN, "I/O Intr")
@@ -2567,14 +2414,14 @@ record(longin, "$(P)$(R)EventLine1Fallin_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine1Fallin") {
+record(longout, "$(P)$(R)EventLine1FallingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine1FallingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine2Rising_RBV") {
+record(longin, "$(P)$(R)EventLine2RisingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine2RisingEdge")
   field(SCAN, "I/O Intr")
@@ -2582,14 +2429,14 @@ record(longin, "$(P)$(R)EventLine2Rising_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine2Rising") {
+record(longout, "$(P)$(R)EventLine2RisingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine2RisingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine2Fallin_RBV") {
+record(longin, "$(P)$(R)EventLine2FallingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine2FallingEdge")
   field(SCAN, "I/O Intr")
@@ -2597,14 +2444,14 @@ record(longin, "$(P)$(R)EventLine2Fallin_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine2Fallin") {
+record(longout, "$(P)$(R)EventLine2FallingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine2FallingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine3Rising_RBV") {
+record(longin, "$(P)$(R)EventLine3RisingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine3RisingEdge")
   field(SCAN, "I/O Intr")
@@ -2612,14 +2459,14 @@ record(longin, "$(P)$(R)EventLine3Rising_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine3Rising") {
+record(longout, "$(P)$(R)EventLine3RisingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine3RisingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine3Fallin_RBV") {
+record(longin, "$(P)$(R)EventLine3FallingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine3FallingEdge")
   field(SCAN, "I/O Intr")
@@ -2627,14 +2474,14 @@ record(longin, "$(P)$(R)EventLine3Fallin_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine3Fallin") {
+record(longout, "$(P)$(R)EventLine3FallingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine3FallingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine4Rising_RBV") {
+record(longin, "$(P)$(R)EventLine4RisingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine4RisingEdge")
   field(SCAN, "I/O Intr")
@@ -2642,14 +2489,14 @@ record(longin, "$(P)$(R)EventLine4Rising_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine4Rising") {
+record(longout, "$(P)$(R)EventLine4RisingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine4RisingEdge")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)EventLine4Fallin_RBV") {
+record(longin, "$(P)$(R)EventLine4FallingEdge_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine4FallingEdge")
   field(SCAN, "I/O Intr")
@@ -2657,7 +2504,7 @@ record(longin, "$(P)$(R)EventLine4Fallin_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)EventLine4Fallin") {
+record(longout, "$(P)$(R)EventLine4FallingEdge") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_EventLine4FallingEdge")
   field(DISA, "0")
@@ -2748,7 +2595,7 @@ record(longout, "$(P)$(R)UserSetSave") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(mbbi, "$(P)$(R)UserSetDefaultSe_RBV") {
+record(mbbi, "$(P)$(R)UserSetDefaultSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_UserSetDefaultSelector")
   field(ZRST, "Default")
@@ -2768,7 +2615,7 @@ record(mbbi, "$(P)$(R)UserSetDefaultSe_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)UserSetDefaultSe") {
+record(mbbo, "$(P)$(R)UserSetDefaultSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_UserSetDefaultSelector")
   field(DOL,  "0")
@@ -2796,14 +2643,7 @@ record(longin, "$(P)$(R)LensVoltage_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LensVoltage") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensVoltage")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
-record(longin, "$(P)$(R)LensVoltageContr_RBV") {
+record(longin, "$(P)$(R)LensVoltageControl_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensVoltageControl")
   field(SCAN, "I/O Intr")
@@ -2811,7 +2651,7 @@ record(longin, "$(P)$(R)LensVoltageContr_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LensVoltageContr") {
+record(longout, "$(P)$(R)LensVoltageControl") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensVoltageControl")
   field(DISA, "0")
@@ -2862,7 +2702,7 @@ record(mbbo, "$(P)$(R)LensDriveCommand") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)LensDriveDuratio_RBV") {
+record(longin, "$(P)$(R)LensDriveDuration_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensDriveDuration")
   field(SCAN, "I/O Intr")
@@ -2870,14 +2710,14 @@ record(longin, "$(P)$(R)LensDriveDuratio_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)LensDriveDuratio") {
+record(longout, "$(P)$(R)LensDriveDuration") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_LensDriveDuration")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)PvDummyTriggerSe_RBV") {
+record(mbbi, "$(P)$(R)PvDummyTriggerSelector_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerSelector")
   field(ZRST, "FrameStart")
@@ -2886,14 +2726,14 @@ record(mbbi, "$(P)$(R)PvDummyTriggerSe_RBV") {
   field(ONVL, "3")
   field(TWST, "AcquisitionEnd")
   field(TWVL, "4")
-  field(THST, "AcquisitionRecor")
+  field(THST, "AcquisitionRecord")
   field(THVL, "6")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)PvDummyTriggerSe") {
+record(mbbo, "$(P)$(R)PvDummyTriggerSelector") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerSelector")
   field(DOL,  "0")
@@ -2903,13 +2743,13 @@ record(mbbo, "$(P)$(R)PvDummyTriggerSe") {
   field(ONVL, "3")
   field(TWST, "AcquisitionEnd")
   field(TWVL, "4")
-  field(THST, "AcquisitionRecor")
+  field(THST, "AcquisitionRecord")
   field(THVL, "6")
   field(DISA, "0")
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)PvDummyFrameStar_RBV") {
+record(mbbi, "$(P)$(R)PvDummyFrameStartTriggerMode_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyFrameStartTriggerMode")
   field(ZRST, "Freerun")
@@ -2931,7 +2771,7 @@ record(mbbi, "$(P)$(R)PvDummyFrameStar_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)PvDummyFrameStar") {
+record(mbbo, "$(P)$(R)PvDummyFrameStartTriggerMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyFrameStartTriggerMode")
   field(DOL,  "2147483648")
@@ -2953,7 +2793,7 @@ record(mbbo, "$(P)$(R)PvDummyFrameStar") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(mbbi, "$(P)$(R)PvDummyTriggerMo_RBV") {
+record(mbbi, "$(P)$(R)PvDummyTriggerMode_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerMode")
   field(ZRST, "Disabled")
@@ -2975,7 +2815,7 @@ record(mbbi, "$(P)$(R)PvDummyTriggerMo_RBV") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE" )
 }
 
-record(mbbo, "$(P)$(R)PvDummyTriggerMo") {
+record(mbbo, "$(P)$(R)PvDummyTriggerMode") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_PvDummyTriggerMode")
   field(DOL,  "0")
@@ -2997,7 +2837,7 @@ record(mbbo, "$(P)$(R)PvDummyTriggerMo") {
   info( autosaveFields, "DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE VAL" )
 }
 
-record(longin, "$(P)$(R)FrameStartTrigge_RBV") {
+record(longin, "$(P)$(R)FrameStartTriggerDelay_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FrameStartTriggerDelay")
   field(SCAN, "I/O Intr")
@@ -3005,7 +2845,7 @@ record(longin, "$(P)$(R)FrameStartTrigge_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)FrameStartTrigge") {
+record(longout, "$(P)$(R)FrameStartTriggerDelay") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FrameStartTriggerDelay")
   field(DISA, "0")
@@ -3035,26 +2875,12 @@ record(longin, "$(P)$(R)TimeStampValueLo_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)TimeStampValueLo") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TimeStampValueLo")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
-}
-
 record(longin, "$(P)$(R)TimeStampValueHi_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TimeStampValueHi")
   field(SCAN, "I/O Intr")
   field(DISA, "0")
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
-record(longout, "$(P)$(R)TimeStampValueHi") {
-  field(DTYP, "asynInt32")
-  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_TimeStampValueHi")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
 record(longin, "$(P)$(R)WhitebalValueRed_RBV") {
@@ -3072,7 +2898,7 @@ record(longout, "$(P)$(R)WhitebalValueRed") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE VAL" )
 }
 
-record(longin, "$(P)$(R)WhitebalValueBlu_RBV") {
+record(longin, "$(P)$(R)WhitebalValueBlue_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_WhitebalValueBlue")
   field(SCAN, "I/O Intr")
@@ -3080,7 +2906,7 @@ record(longin, "$(P)$(R)WhitebalValueBlu_RBV") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
 }
 
-record(longout, "$(P)$(R)WhitebalValueBlu") {
+record(longout, "$(P)$(R)WhitebalValueBlue") {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_WhitebalValueBlue")
   field(DISA, "0")

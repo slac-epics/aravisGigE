@@ -162,7 +162,7 @@ record(calcout, "$(P)$(R)CHKCONN")
 {
    field(SCAN, "1 second")
    field(INPA, "$(P)$(R)CONNECTION.SEVR CP")
-   field(CALC, "A==0")
+   field(CALC, "A!=0")
    field(OOPT, "When Non-zero")
    field(OUT,  "$(P)$(R)CONNECTION.PROC PP")
 }
@@ -187,6 +187,7 @@ record(mbbo, "$(P)$(R)LEFTSHIFT") {
   field(ZRVL, "0")
   field(ONST, "Yes")
   field(ONVL, "1")
+  field(PINI, "YES")
   info( autosaveFields, "DESC ZRSV ONSV VAL" )
 }
 

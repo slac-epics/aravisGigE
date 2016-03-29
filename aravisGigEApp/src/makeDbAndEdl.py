@@ -61,8 +61,8 @@ def handle_node(node):
         name = str(node.getAttribute("Name"))
         lookup[name] = node
         recordName = name
-        if len(recordName) > 16:
-            recordName = recordName[:16]
+        if len(recordName) > 61:
+            recordName = recordName[:61]
         i = 0
         while recordName in records.values():
             recordName = recordName[:-len(str(i))] + str(i)
@@ -156,15 +156,21 @@ print '  field(PINI,  "YES")'
 print '}'
 print
 
+def	isNodeReadOnly( node ):
+    for n in elements(node):
+        if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
+            return True
+        elif str(n.nodeName) == "pValue":
+            regNode = lookup[getText(n)]
+            if not regNode:
+                return True
+            return isNodeReadOnly( regNode )
+    return False
 
-# for each node
 # for each node
 for node in doneNodes:
     nodeName = str(node.getAttribute("Name"))
-    ro = False
-    for n in elements(node):
-        if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
-            ro = True
+    ro = isNodeReadOnly( node )
     if node.nodeName in ["Integer", "IntConverter", "IntSwissKnife"]:
         print 'record(longin, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
@@ -254,7 +260,7 @@ for node in doneNodes:
                     print >> sys.stderr, "   If needed, edit the Enumeration tag for %s to select the 16 you want." % nodeName
                     break
                 name = str(n.getAttribute("Name"))
-                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:16])
+                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:26])
                 value = [x for x in elements(n) if str(x.nodeName) == "Value"]
                 assert value, "EnumEntry %s in node %s doesn't have a value" %(name, nodeName)                
                 if i == 0:
@@ -545,11 +551,9 @@ for name, nodes in structure:
     for node in nodes:
         nodeName = str(node.getAttribute("Name"))
         recordName = records[nodeName]
-        ro = False
+        ro = isNodeReadOnly( node )
         desc = ""
         for n in elements(node):
-            if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
-                ro = True
             if str(n.nodeName) in ["ToolTip", "Description"]:
                 desc = getText(n)
         descs = ["%s: "% nodeName, "", "", "", "", ""]
