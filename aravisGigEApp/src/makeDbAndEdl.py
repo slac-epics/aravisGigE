@@ -151,7 +151,7 @@ print '  field(PINI,  "YES")'
 print '}'
 print
 print 'record(stringin, "$(P)$(R)CamTypeScreen") {'
-print '  field(VAL,   "arvScreens/$(TYPE=aravis).edl")'
+print '  field(VAL,   "arvScreens/$(TYPE=aravis)CamType.edl")'
 print '  field(PINI,  "YES")'
 print '}'
 print
@@ -324,7 +324,10 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
+""" % globals()
+
+def make_box_label():
+    return """# (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
@@ -581,7 +584,12 @@ for name, nodes in structure:
             print "Don't know what to do with", node.nodeName
         y += 24
     y += 16
-    h = max(y, h)    
+    h = max(y, h)
+
+    # Put the label on the box last so it's on top
+    text += make_box_label()
+    # End of write box
+# End of Write each section
 
 # tidy up
 w += 4

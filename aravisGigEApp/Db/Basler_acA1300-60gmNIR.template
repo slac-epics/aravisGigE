@@ -22,7 +22,7 @@ record(stringin, "$(P)$(R)CamType") {
 }
 
 record(stringin, "$(P)$(R)CamTypeScreen") {
-  field(VAL,   "arvScreens/$(TYPE=aravis).edl")
+  field(VAL,   "arvScreens/$(TYPE=aravis)CamType.edl")
   field(PINI,  "YES")
 }
 

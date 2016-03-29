@@ -141,26 +141,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 40
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Info  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -1044,6 +1024,26 @@ indicatorPv "$(P)$(R)DeviceScanType_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 40
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Info  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -1059,26 +1059,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 328
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  GigE  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -1679,6 +1659,26 @@ indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 328
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  GigE  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -1694,26 +1694,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 520
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  StreamHold  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -1882,6 +1862,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 520
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  StreamHold  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -1897,26 +1897,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 592
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Timestamp  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -2259,6 +2239,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 592
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Timestamp  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -2274,26 +2274,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 4
-y 712
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Acquisition  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -2975,6 +2955,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 712
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Acquisition  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -2990,26 +2990,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 300
-y 36
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Trigger  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -3541,6 +3521,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 300
+y 36
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Trigger  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -3556,26 +3556,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 300
-y 228
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  ImageMode  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -4152,6 +4132,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 300
+y 228
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  ImageMode  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -4167,26 +4167,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 300
-y 396
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  ImageFormat  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -4931,6 +4911,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 300
+y 396
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  ImageFormat  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -4946,26 +4946,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 300
-y 612
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Controls  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -5398,6 +5378,26 @@ indicatorPv "$(P)$(R)EdgeFilter_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 300
+y 612
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Controls  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -5413,26 +5413,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 300
-y 756
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  DSPSubregion  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -5817,6 +5797,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 300
+y 756
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  DSPSubregion  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -5832,26 +5832,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 36
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Exposure  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -6092,6 +6072,26 @@ indicatorPv "$(P)$(R)ExposureAuto_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 36
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Exposure  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -6107,26 +6107,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 132
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  ExposureAutoControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -6775,6 +6755,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 132
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  ExposureAutoControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -6790,26 +6790,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 324
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  GainControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -7050,6 +7030,26 @@ indicatorPv "$(P)$(R)GainAuto_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 324
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  GainControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -7065,26 +7065,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 420
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  GainAutoControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -7661,6 +7641,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 420
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  GainAutoControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -7676,26 +7676,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 588
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  BlackLevelControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -7864,6 +7844,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 588
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  BlackLevelControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -7879,26 +7879,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 660
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Whitebalance  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -8139,6 +8119,26 @@ indicatorPv "$(P)$(R)BalanceWhiteAut0_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 660
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Whitebalance  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -8154,26 +8154,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 596
-y 756
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  BalanceWhiteAutoControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -8366,6 +8346,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 596
+y 756
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  BalanceWhiteAutoControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -8381,26 +8381,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 36
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Iris  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -8857,6 +8837,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 36
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Iris  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -8872,26 +8872,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 180
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  DefectMask  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -9036,6 +9016,26 @@ indicatorPv "$(P)$(R)DefectMaskPixelE_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 180
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  DefectMask  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -9051,26 +9051,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 252
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  SubstrateVoltage  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -9167,6 +9147,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 252
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  SubstrateVoltage  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -9182,26 +9182,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 300
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  ColorTransformationControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -9514,6 +9494,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 300
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  ColorTransformationControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -9529,26 +9529,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 420
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  LUTControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -10107,6 +10087,26 @@ offLabel "LUTSave"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 420
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  LUTControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -10122,26 +10122,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 612
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  LUTInfo  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -10526,6 +10506,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 612
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  LUTInfo  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -10541,26 +10541,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 732
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  SyncIn  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -10825,6 +10805,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 732
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  SyncIn  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -10840,26 +10840,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 892
-y 828
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  SyncOut  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -11172,6 +11152,26 @@ indicatorPv "$(P)$(R)SyncOutPolarity_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 892
+y 828
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  SyncOut  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -11187,26 +11187,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1188
-y 36
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Strobe  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -11543,6 +11523,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1188
+y 36
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Strobe  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -11558,26 +11558,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1188
-y 156
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  EventControl  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -11818,6 +11798,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1188
+y 156
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  EventControl  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -11833,26 +11833,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1188
-y 252
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  EventID  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -13293,6 +13273,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1188
+y 252
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  EventID  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -13308,26 +13308,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1188
-y 636
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  SavedUserSets  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -13622,6 +13602,26 @@ indicatorPv "$(P)$(R)UserSetDefaultSe_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1188
+y 636
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  SavedUserSets  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -13637,26 +13637,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1188
-y 756
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  LensDrive  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -14017,6 +13997,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1188
+y 756
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  LensDrive  "
+}
+autoSize
+border
+endObjectProperties
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -14032,26 +14032,6 @@ fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 1484
-y 36
-w 150
-h 14
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  PvApi  "
-}
-autoSize
-border
-endObjectProperties
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -15299,6 +15279,26 @@ font "helvetica-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 1484
+y 36
+w 150
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  PvApi  "
+}
+autoSize
+border
+endObjectProperties
 # (Exit Button)
 object activeExitButtonClass
 beginObjectProperties

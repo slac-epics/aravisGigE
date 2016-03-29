@@ -29,10 +29,10 @@ Basler-21664550
 # If arv-tool generates errors, check the line numbers in the error msgs
 # and fix any flaws in the generated xml.
 # (My first 2 Baslers both generated xml w/ 'bCustom"' instead of '"Custom"'
-% arv-tool-0.4 -n "Allied Vision Technologies-50-0503349286" genicam > Basler_acA1300-30gm.xml
+% arv-tool-0.4 -n "Allied Vision Technologies-50-0503349286" genicam > xml_files/Basler_acA1300-30gm.xml
 
 # Lastly, run the python script to create new db and edl files from the feature file
-% aravisGigEApp/src/makeDbAndEdl.py Basler_acA1300-30gm.xml Baslter_aca1300-30gm
+% aravisGigEApp/src/makeDbAndEdl.py xml_files/Basler_acA1300-30gm.xml Basler_acA1300-30gm
 
 # Note: I found that different Basler camera models had identical xml feature files,
 # but different image dimensions.
