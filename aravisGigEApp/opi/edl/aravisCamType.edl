@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1208
-y 1368
+x 1212
+y 1392
 w 634
 h 345
 font "helvetica-bold-r-12.0"
@@ -34,8 +34,8 @@ minor 0
 release 0
 x 4
 y 36
-w 380
-h 90
+w 400
+h 92
 lineColor index 14
 fill
 fillColor index 3
@@ -474,7 +474,7 @@ minor 7
 release 0
 x 88
 y 0
-w 88
+w 104
 h 24
 controlPv "$(P)$(R)CamType"
 font "helvetica-bold-r-12.0"
@@ -527,12 +527,11 @@ minor 1
 release 1
 x 20
 y 132
-w 132
+w 164
 h 20
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "StreamBytesPerSecond"
 }
@@ -544,11 +543,11 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 164
+x 192
 y 132
-w 104
+w 108
 h 20
-controlPv "$(P)$(R)StreamBytesPerSe"
+controlPv "$(P)$(R)StreamBytesPerSecond"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -569,11 +568,11 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 280
+x 304
 y 132
-w 104
+w 96
 h 20
-controlPv "$(P)$(R)StreamBytesPerSe_RBV"
+controlPv "$(P)$(R)StreamBytesPerSecond_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -622,12 +621,11 @@ minor 1
 release 1
 x 20
 y 164
-w 140
+w 164
 h 20
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "StreamFrameRateConstrain"
 }
@@ -639,17 +637,17 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 164
+x 192
 y 164
-w 104
+w 112
 h 20
 fgColor index 25
 bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)StreamFrameRateC"
-indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
+controlPv "$(P)$(R)StreamFrameRateConstrain"
+indicatorPv "$(P)$(R)StreamFrameRateConstrain_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -659,9 +657,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 140
-y 220
-w 124
+x 148
+y 216
+w 252
 h 20
 controlPv "$(P)$(R)DeviceID_RBV"
 fgColor index 15
@@ -679,13 +677,12 @@ major 4
 minor 1
 release 1
 x 4
-y 220
-w 132
+y 216
+w 124
 h 20
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "Serial #"
 }
@@ -697,11 +694,11 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 140
-y 196
-w 124
+x 148
+y 192
+w 252
 h 20
-controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
+controlPv "$(P)$(R)DeviceFirmwareVersion_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -717,13 +714,12 @@ major 4
 minor 1
 release 1
 x 4
-y 196
-w 132
+y 192
+w 124
 h 20
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 fgColor index 14
 bgColor index 3
-useDisplayBg
 value {
   "FirmwareVersion"
 }
@@ -735,9 +731,9 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 188
-y 4
-w 200
+x 200
+y 0
+w 204
 h 24
 
 beginGroup
@@ -748,9 +744,9 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 188
-y 4
-w 200
+x 200
+y 0
+w 204
 h 24
 fgColor index 14
 bgColor index 3
@@ -784,9 +780,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 212
-y 8
-w 172
+x 224
+y 4
+w 175
 h 16
 controlPv "$(P)$(R)CamModel"
 font "helvetica-medium-r-12.0"

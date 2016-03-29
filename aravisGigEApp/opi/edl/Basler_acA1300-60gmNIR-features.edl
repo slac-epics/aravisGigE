@@ -193,40 +193,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 56
-w 60
-h 20
-controlPv "$(P)$(R)FirmwareVerMajor"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 56
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)FirmwareVerMajor_RBV"
 fgColor index 15
@@ -289,40 +264,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 80
-w 60
-h 20
-controlPv "$(P)$(R)FirmwareVerMinor"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 80
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)FirmwareVerMinor_RBV"
 fgColor index 15
@@ -385,40 +335,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 104
-w 60
-h 20
-controlPv "$(P)$(R)FirmwareVerBuild"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 104
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)FirmwareVerBuild_RBV"
 fgColor index 15
@@ -481,24 +406,23 @@ value {
 }
 endObjectProperties
 
-# (Menu Button)
-object activeMenuButtonClass
+# (Text Update)
+object TextupdateClass
 beginObjectProperties
-major 4
+major 10
 minor 0
 release 0
 x 160
 y 128
 w 124
 h 20
-fgColor index 25
-bgColor index 5
-inconsistentColor index 40
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)SensorType"
-indicatorPv "$(P)$(R)SensorType_RBV"
+controlPv "$(P)$(R)SensorType_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
 font "helvetica-bold-r-12.0"
+fontAlign "center"
 endObjectProperties
 
 # (Related Display)
@@ -553,40 +477,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 152
-w 60
-h 20
-controlPv "$(P)$(R)SensorBits"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 152
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)SensorBits_RBV"
 fgColor index 15
@@ -801,7 +700,7 @@ x 160
 y 224
 w 124
 h 20
-controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
+controlPv "$(P)$(R)DeviceFirmwareVersion_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -1121,7 +1020,7 @@ x 160
 y 344
 w 60
 h 20
-controlPv "$(P)$(R)StreamBytesPerSe"
+controlPv "$(P)$(R)StreamBytesPerSecond"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -1146,7 +1045,7 @@ x 228
 y 344
 w 60
 h 20
-controlPv "$(P)$(R)StreamBytesPerSe_RBV"
+controlPv "$(P)$(R)StreamBytesPerSecond_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -1222,8 +1121,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)BandwidthControl"
-indicatorPv "$(P)$(R)BandwidthControl_RBV"
+controlPv "$(P)$(R)BandwidthControlMode"
+indicatorPv "$(P)$(R)BandwidthControlMode_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -1289,7 +1188,7 @@ x 160
 y 392
 w 60
 h 20
-controlPv "$(P)$(R)GevSCPSPacketSiz"
+controlPv "$(P)$(R)GevSCPSPacketSize"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -1314,7 +1213,7 @@ x 228
 y 392
 w 60
 h 20
-controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
+controlPv "$(P)$(R)GevSCPSPacketSize_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -1447,40 +1346,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 440
-w 60
-h 20
-controlPv "$(P)$(R)PayloadSize"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 440
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)PayloadSize_RBV"
 fgColor index 15
@@ -1543,42 +1417,17 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 464
-w 60
-h 20
-controlPv "$(P)$(R)NonImagePayloadS"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 464
-w 60
+w 124
 h 20
-controlPv "$(P)$(R)NonImagePayloadS_RBV"
+controlPv "$(P)$(R)NonImagePayloadSize_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -1654,8 +1503,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)StreamFrameRateC"
-indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
+controlPv "$(P)$(R)StreamFrameRateConstrain"
+indicatorPv "$(P)$(R)StreamFrameRateConstrain_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -1818,42 +1667,17 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 560
-w 60
-h 20
-controlPv "$(P)$(R)StreamHoldCapaci"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 560
-w 60
+w 124
 h 20
-controlPv "$(P)$(R)StreamHoldCapaci_RBV"
+controlPv "$(P)$(R)StreamHoldCapacity_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -1949,42 +1773,17 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 608
-w 60
-h 20
-controlPv "$(P)$(R)GevTimestampTick"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 608
-w 60
+w 124
 h 20
-controlPv "$(P)$(R)GevTimestampTick_RBV"
+controlPv "$(P)$(R)GevTimestampTickFrequency_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -2060,7 +1859,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)GevTimestampCont.PROC"
+controlPv "$(P)$(R)GevTimestampControlLatch.PROC"
 pressValue "1"
 onLabel "GevTimestampControlLatch"
 offLabel "GevTimestampControlLatch"
@@ -2135,7 +1934,7 @@ onColor index 3
 offColor index 3
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)GevTimestampCon0.PROC"
+controlPv "$(P)$(R)GevTimestampControlReset.PROC"
 pressValue "1"
 onLabel "GevTimestampControlReset"
 offLabel "GevTimestampControlReset"
@@ -2205,7 +2004,7 @@ x 160
 y 680
 w 60
 h 20
-controlPv "$(P)$(R)GevTimestampValu"
+controlPv "$(P)$(R)GevTimestampValue"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -2230,7 +2029,7 @@ x 228
 y 680
 w 60
 h 20
-controlPv "$(P)$(R)GevTimestampValu_RBV"
+controlPv "$(P)$(R)GevTimestampValue_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -2633,7 +2432,7 @@ x 160
 y 824
 w 60
 h 20
-controlPv "$(P)$(R)AcquisitionFrame"
+controlPv "$(P)$(R)AcquisitionFrameCount"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -2658,7 +2457,7 @@ x 228
 y 824
 w 60
 h 20
-controlPv "$(P)$(R)AcquisitionFrame_RBV"
+controlPv "$(P)$(R)AcquisitionFrameCount_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -2729,7 +2528,7 @@ x 160
 y 848
 w 60
 h 20
-controlPv "$(P)$(R)AcquisitionFram0"
+controlPv "$(P)$(R)AcquisitionFrameRateAbs"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -2754,7 +2553,7 @@ x 228
 y 848
 w 60
 h 20
-controlPv "$(P)$(R)AcquisitionFram0_RBV"
+controlPv "$(P)$(R)AcquisitionFrameRateAbs_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -2815,42 +2614,17 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 160
-y 872
-w 60
-h 20
-controlPv "$(P)$(R)AcquisitionFram1"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 228
+x 160
 y 872
-w 60
+w 124
 h 20
-controlPv "$(P)$(R)AcquisitionFram1_RBV"
+controlPv "$(P)$(R)AcquisitionFrameRateLimit_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -2921,7 +2695,7 @@ x 160
 y 896
 w 60
 h 20
-controlPv "$(P)$(R)RecorderPreEvent"
+controlPv "$(P)$(R)RecorderPreEventCount"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -2946,7 +2720,7 @@ x 228
 y 896
 w 60
 h 20
-controlPv "$(P)$(R)RecorderPreEvent_RBV"
+controlPv "$(P)$(R)RecorderPreEventCount_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -3348,8 +3122,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)TriggerActivatio"
-indicatorPv "$(P)$(R)TriggerActivatio_RBV"
+controlPv "$(P)$(R)TriggerActivation"
+indicatorPv "$(P)$(R)TriggerActivation_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -3608,40 +3382,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 456
-y 244
-w 60
-h 20
-controlPv "$(P)$(R)SensorWidth"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 524
+x 456
 y 244
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)SensorWidth_RBV"
 fgColor index 15
@@ -3704,40 +3453,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 456
-y 268
-w 60
-h 20
-controlPv "$(P)$(R)SensorHeight"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 524
+x 456
 y 268
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)SensorHeight_RBV"
 fgColor index 15
@@ -3810,7 +3534,7 @@ x 456
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)BinningHorizonta"
+controlPv "$(P)$(R)BinningHorizontal"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -3835,7 +3559,7 @@ x 524
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)BinningHorizonta_RBV"
+controlPv "$(P)$(R)BinningHorizontal_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -4002,7 +3726,7 @@ x 456
 y 340
 w 60
 h 20
-controlPv "$(P)$(R)DecimationHorizo"
+controlPv "$(P)$(R)DecimationHorizontal"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -4027,7 +3751,7 @@ x 524
 y 340
 w 60
 h 20
-controlPv "$(P)$(R)DecimationHorizo_RBV"
+controlPv "$(P)$(R)DecimationHorizontal_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -4098,7 +3822,7 @@ x 456
 y 364
 w 60
 h 20
-controlPv "$(P)$(R)DecimationVertic"
+controlPv "$(P)$(R)DecimationVertical"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -4123,7 +3847,7 @@ x 524
 y 364
 w 60
 h 20
-controlPv "$(P)$(R)DecimationVertic_RBV"
+controlPv "$(P)$(R)DecimationVertical_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -4219,40 +3943,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 456
-y 412
-w 60
-h 20
-controlPv "$(P)$(R)WidthMax"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 524
+x 456
 y 412
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)WidthMax_RBV"
 fgColor index 15
@@ -4315,40 +4014,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 456
-y 436
-w 60
-h 20
-controlPv "$(P)$(R)HeightMax"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 524
+x 456
 y 436
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)HeightMax_RBV"
 fgColor index 15
@@ -4867,40 +4541,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 456
-y 580
-w 60
-h 20
-controlPv "$(P)$(R)ImageSize"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 524
+x 456
 y 580
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)ImageSize_RBV"
 fgColor index 15
@@ -5667,7 +5316,7 @@ x 456
 y 820
 w 60
 h 20
-controlPv "$(P)$(R)DSPSubregionRigh"
+controlPv "$(P)$(R)DSPSubregionRight"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -5692,7 +5341,7 @@ x 524
 y 820
 w 60
 h 20
-controlPv "$(P)$(R)DSPSubregionRigh_RBV"
+controlPv "$(P)$(R)DSPSubregionRight_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -5763,7 +5412,7 @@ x 456
 y 844
 w 60
 h 20
-controlPv "$(P)$(R)DSPSubregionBott"
+controlPv "$(P)$(R)DSPSubregionBottom"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -5788,7 +5437,7 @@ x 524
 y 844
 w 60
 h 20
-controlPv "$(P)$(R)DSPSubregionBott_RBV"
+controlPv "$(P)$(R)DSPSubregionBottom_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -6169,7 +5818,7 @@ x 752
 y 148
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoTarg"
+controlPv "$(P)$(R)ExposureAutoTarget"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -6194,7 +5843,7 @@ x 820
 y 148
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoTarg_RBV"
+controlPv "$(P)$(R)ExposureAutoTarget_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -6625,7 +6274,7 @@ x 752
 y 268
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoOutl"
+controlPv "$(P)$(R)ExposureAutoOutliers"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -6650,7 +6299,7 @@ x 820
 y 268
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoOutl_RBV"
+controlPv "$(P)$(R)ExposureAutoOutliers_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -6721,7 +6370,7 @@ x 752
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoAdju"
+controlPv "$(P)$(R)ExposureAutoAdjustTol"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -6746,7 +6395,7 @@ x 820
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)ExposureAutoAdju_RBV"
+controlPv "$(P)$(R)ExposureAutoAdjustTol_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -7607,7 +7256,7 @@ x 752
 y 556
 w 60
 h 20
-controlPv "$(P)$(R)GainAutoAdjustTo"
+controlPv "$(P)$(R)GainAutoAdjustTol"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -7632,7 +7281,7 @@ x 820
 y 556
 w 60
 h 20
-controlPv "$(P)$(R)GainAutoAdjustTo_RBV"
+controlPv "$(P)$(R)GainAutoAdjustTol_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -7743,8 +7392,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)BlackLevelSelect"
-indicatorPv "$(P)$(R)BlackLevelSelect_RBV"
+controlPv "$(P)$(R)BlackLevelSelector"
+indicatorPv "$(P)$(R)BlackLevelSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -7946,8 +7595,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)BalanceRatioSele"
-indicatorPv "$(P)$(R)BalanceRatioSele_RBV"
+controlPv "$(P)$(R)BalanceRatioSelector"
+indicatorPv "$(P)$(R)BalanceRatioSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -8114,8 +7763,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)BalanceWhiteAut0"
-indicatorPv "$(P)$(R)BalanceWhiteAut0_RBV"
+controlPv "$(P)$(R)BalanceWhiteAuto"
+indicatorPv "$(P)$(R)BalanceWhiteAuto_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -8216,7 +7865,7 @@ x 752
 y 772
 w 60
 h 20
-controlPv "$(P)$(R)BalanceWhiteAut1"
+controlPv "$(P)$(R)BalanceWhiteAutoRate"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -8241,7 +7890,7 @@ x 820
 y 772
 w 60
 h 20
-controlPv "$(P)$(R)BalanceWhiteAut1_RBV"
+controlPv "$(P)$(R)BalanceWhiteAutoRate_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -8312,7 +7961,7 @@ x 752
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)BalanceWhiteAut2"
+controlPv "$(P)$(R)BalanceWhiteAutoAdjustTol"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -8337,7 +7986,7 @@ x 820
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)BalanceWhiteAut2_RBV"
+controlPv "$(P)$(R)BalanceWhiteAutoAdjustTol_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -8601,40 +8250,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 100
-w 60
-h 20
-controlPv "$(P)$(R)IrisVideoLevel"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 100
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)IrisVideoLevel_RBV"
 fgColor index 15
@@ -8707,7 +8331,7 @@ x 1048
 y 124
 w 60
 h 20
-controlPv "$(P)$(R)IrisVideoLevelMi"
+controlPv "$(P)$(R)IrisVideoLevelMin"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -8732,7 +8356,7 @@ x 1116
 y 124
 w 60
 h 20
-controlPv "$(P)$(R)IrisVideoLevelMi_RBV"
+controlPv "$(P)$(R)IrisVideoLevelMin_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -8803,7 +8427,7 @@ x 1048
 y 148
 w 60
 h 20
-controlPv "$(P)$(R)IrisVideoLevelMa"
+controlPv "$(P)$(R)IrisVideoLevelMax"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -8828,7 +8452,7 @@ x 1116
 y 148
 w 60
 h 20
-controlPv "$(P)$(R)IrisVideoLevelMa_RBV"
+controlPv "$(P)$(R)IrisVideoLevelMax_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -8939,8 +8563,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)DefectMaskColumn"
-indicatorPv "$(P)$(R)DefectMaskColumn_RBV"
+controlPv "$(P)$(R)DefectMaskColumnEnable"
+indicatorPv "$(P)$(R)DefectMaskColumnEnable_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -9011,8 +8635,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)DefectMaskPixelE"
-indicatorPv "$(P)$(R)DefectMaskPixelE_RBV"
+controlPv "$(P)$(R)DefectMaskPixelEnable"
+indicatorPv "$(P)$(R)DefectMaskPixelEnable_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -9249,8 +8873,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)ColorTransforma0"
-indicatorPv "$(P)$(R)ColorTransforma0_RBV"
+controlPv "$(P)$(R)ColorTransformationSelector"
+indicatorPv "$(P)$(R)ColorTransformationSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -9321,8 +8945,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)ColorTransforma1"
-indicatorPv "$(P)$(R)ColorTransforma1_RBV"
+controlPv "$(P)$(R)ColorTransformationMode"
+indicatorPv "$(P)$(R)ColorTransformationMode_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -9393,8 +9017,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)ColorTransforma2"
-indicatorPv "$(P)$(R)ColorTransforma2_RBV"
+controlPv "$(P)$(R)ColorTransformationValueSelector"
+indicatorPv "$(P)$(R)ColorTransformationValueSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -9460,7 +9084,7 @@ x 1048
 y 388
 w 60
 h 20
-controlPv "$(P)$(R)ColorTransforma4"
+controlPv "$(P)$(R)ColorTransformationValue"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -9485,7 +9109,7 @@ x 1116
 y 388
 w 60
 h 20
-controlPv "$(P)$(R)ColorTransforma4_RBV"
+controlPv "$(P)$(R)ColorTransformationValue_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -10174,40 +9798,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 628
-w 60
-h 20
-controlPv "$(P)$(R)LUTBitDepthIn"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 628
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)LUTBitDepthIn_RBV"
 fgColor index 15
@@ -10270,40 +9869,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 652
-w 60
-h 20
-controlPv "$(P)$(R)LUTBitDepthOut"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 652
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)LUTBitDepthOut_RBV"
 fgColor index 15
@@ -10366,40 +9940,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 676
-w 60
-h 20
-controlPv "$(P)$(R)LUTAddress"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 676
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)LUTAddress_RBV"
 fgColor index 15
@@ -10462,40 +10011,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 700
-w 60
-h 20
-controlPv "$(P)$(R)LUTSizeBytes"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 700
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)LUTSizeBytes_RBV"
 fgColor index 15
@@ -10593,40 +10117,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1048
-y 748
-w 60
-h 20
-controlPv "$(P)$(R)SyncInLevels"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1116
+x 1048
 y 748
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)SyncInLevels_RBV"
 fgColor index 15
@@ -10771,7 +10270,7 @@ x 1048
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)SyncInGlitchFilt"
+controlPv "$(P)$(R)SyncInGlitchFilter"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -10796,7 +10295,7 @@ x 1116
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)SyncInGlitchFilt_RBV"
+controlPv "$(P)$(R)SyncInGlitchFilter_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -11326,8 +10825,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)StrobeDurationMo"
-indicatorPv "$(P)$(R)StrobeDurationMo_RBV"
+controlPv "$(P)$(R)StrobeDurationMode"
+indicatorPv "$(P)$(R)StrobeDurationMode_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -11697,8 +11196,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)EventNotificatio"
-indicatorPv "$(P)$(R)EventNotificatio_RBV"
+controlPv "$(P)$(R)EventNotification"
+indicatorPv "$(P)$(R)EventNotification_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -11895,7 +11394,7 @@ x 1344
 y 268
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisition"
+controlPv "$(P)$(R)EventAcquisitionStart"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -11920,7 +11419,7 @@ x 1412
 y 268
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisition_RBV"
+controlPv "$(P)$(R)EventAcquisitionStart_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -11991,7 +11490,7 @@ x 1344
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisitio0"
+controlPv "$(P)$(R)EventAcquisitionEnd"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12016,7 +11515,7 @@ x 1412
 y 292
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisitio0_RBV"
+controlPv "$(P)$(R)EventAcquisitionEnd_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12087,7 +11586,7 @@ x 1344
 y 316
 w 60
 h 20
-controlPv "$(P)$(R)EventFrameTrigge"
+controlPv "$(P)$(R)EventFrameTrigger"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12112,7 +11611,7 @@ x 1412
 y 316
 w 60
 h 20
-controlPv "$(P)$(R)EventFrameTrigge_RBV"
+controlPv "$(P)$(R)EventFrameTrigger_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12279,7 +11778,7 @@ x 1344
 y 364
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisitio1"
+controlPv "$(P)$(R)EventAcquisitionRecordTrigger"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12304,7 +11803,7 @@ x 1412
 y 364
 w 60
 h 20
-controlPv "$(P)$(R)EventAcquisitio1_RBV"
+controlPv "$(P)$(R)EventAcquisitionRecordTrigger_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12375,7 +11874,7 @@ x 1344
 y 388
 w 60
 h 20
-controlPv "$(P)$(R)EventLine1Rising"
+controlPv "$(P)$(R)EventLine1RisingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12400,7 +11899,7 @@ x 1412
 y 388
 w 60
 h 20
-controlPv "$(P)$(R)EventLine1Rising_RBV"
+controlPv "$(P)$(R)EventLine1RisingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12471,7 +11970,7 @@ x 1344
 y 412
 w 60
 h 20
-controlPv "$(P)$(R)EventLine1Fallin"
+controlPv "$(P)$(R)EventLine1FallingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12496,7 +11995,7 @@ x 1412
 y 412
 w 60
 h 20
-controlPv "$(P)$(R)EventLine1Fallin_RBV"
+controlPv "$(P)$(R)EventLine1FallingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12567,7 +12066,7 @@ x 1344
 y 436
 w 60
 h 20
-controlPv "$(P)$(R)EventLine2Rising"
+controlPv "$(P)$(R)EventLine2RisingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12592,7 +12091,7 @@ x 1412
 y 436
 w 60
 h 20
-controlPv "$(P)$(R)EventLine2Rising_RBV"
+controlPv "$(P)$(R)EventLine2RisingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12663,7 +12162,7 @@ x 1344
 y 460
 w 60
 h 20
-controlPv "$(P)$(R)EventLine2Fallin"
+controlPv "$(P)$(R)EventLine2FallingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12688,7 +12187,7 @@ x 1412
 y 460
 w 60
 h 20
-controlPv "$(P)$(R)EventLine2Fallin_RBV"
+controlPv "$(P)$(R)EventLine2FallingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12759,7 +12258,7 @@ x 1344
 y 484
 w 60
 h 20
-controlPv "$(P)$(R)EventLine3Rising"
+controlPv "$(P)$(R)EventLine3RisingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12784,7 +12283,7 @@ x 1412
 y 484
 w 60
 h 20
-controlPv "$(P)$(R)EventLine3Rising_RBV"
+controlPv "$(P)$(R)EventLine3RisingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12855,7 +12354,7 @@ x 1344
 y 508
 w 60
 h 20
-controlPv "$(P)$(R)EventLine3Fallin"
+controlPv "$(P)$(R)EventLine3FallingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12880,7 +12379,7 @@ x 1412
 y 508
 w 60
 h 20
-controlPv "$(P)$(R)EventLine3Fallin_RBV"
+controlPv "$(P)$(R)EventLine3FallingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -12951,7 +12450,7 @@ x 1344
 y 532
 w 60
 h 20
-controlPv "$(P)$(R)EventLine4Rising"
+controlPv "$(P)$(R)EventLine4RisingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -12976,7 +12475,7 @@ x 1412
 y 532
 w 60
 h 20
-controlPv "$(P)$(R)EventLine4Rising_RBV"
+controlPv "$(P)$(R)EventLine4RisingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -13047,7 +12546,7 @@ x 1344
 y 556
 w 60
 h 20
-controlPv "$(P)$(R)EventLine4Fallin"
+controlPv "$(P)$(R)EventLine4FallingEdge"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -13072,7 +12571,7 @@ x 1412
 y 556
 w 60
 h 20
-controlPv "$(P)$(R)EventLine4Fallin_RBV"
+controlPv "$(P)$(R)EventLine4FallingEdge_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -13597,8 +13096,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)UserSetDefaultSe"
-indicatorPv "$(P)$(R)UserSetDefaultSe_RBV"
+controlPv "$(P)$(R)UserSetDefaultSelector"
+indicatorPv "$(P)$(R)UserSetDefaultSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -13689,40 +13188,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1344
-y 772
-w 60
-h 20
-controlPv "$(P)$(R)LensVoltage"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1412
+x 1344
 y 772
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)LensVoltage_RBV"
 fgColor index 15
@@ -13795,7 +13269,7 @@ x 1344
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)LensVoltageContr"
+controlPv "$(P)$(R)LensVoltageControl"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -13820,7 +13294,7 @@ x 1412
 y 796
 w 60
 h 20
-controlPv "$(P)$(R)LensVoltageContr_RBV"
+controlPv "$(P)$(R)LensVoltageControl_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -13963,7 +13437,7 @@ x 1344
 y 844
 w 60
 h 20
-controlPv "$(P)$(R)LensDriveDuratio"
+controlPv "$(P)$(R)LensDriveDuration"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -13988,7 +13462,7 @@ x 1412
 y 844
 w 60
 h 20
-controlPv "$(P)$(R)LensDriveDuratio_RBV"
+controlPv "$(P)$(R)LensDriveDuration_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -14099,8 +13573,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)PvDummyTriggerSe"
-indicatorPv "$(P)$(R)PvDummyTriggerSe_RBV"
+controlPv "$(P)$(R)PvDummyTriggerSelector"
+indicatorPv "$(P)$(R)PvDummyTriggerSelector_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -14171,8 +13645,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)PvDummyFrameStar"
-indicatorPv "$(P)$(R)PvDummyFrameStar_RBV"
+controlPv "$(P)$(R)PvDummyFrameStartTriggerMode"
+indicatorPv "$(P)$(R)PvDummyFrameStartTriggerMode_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -14243,8 +13717,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)PvDummyTriggerMo"
-indicatorPv "$(P)$(R)PvDummyTriggerMo_RBV"
+controlPv "$(P)$(R)PvDummyTriggerMode"
+indicatorPv "$(P)$(R)PvDummyTriggerMode_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
@@ -14310,7 +13784,7 @@ x 1640
 y 124
 w 60
 h 20
-controlPv "$(P)$(R)FrameStartTrigge"
+controlPv "$(P)$(R)FrameStartTriggerDelay"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -14335,7 +13809,7 @@ x 1708
 y 124
 w 60
 h 20
-controlPv "$(P)$(R)FrameStartTrigge_RBV"
+controlPv "$(P)$(R)FrameStartTriggerDelay_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -14492,40 +13966,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1640
-y 172
-w 60
-h 20
-controlPv "$(P)$(R)TimeStampValueLo"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1708
+x 1640
 y 172
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)TimeStampValueLo_RBV"
 fgColor index 15
@@ -14588,40 +14037,15 @@ value {
 }
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 1640
-y 196
-w 60
-h 20
-controlPv "$(P)$(R)TimeStampValueHi"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Textupdate)
+# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 1708
+x 1640
 y 196
-w 60
+w 124
 h 20
 controlPv "$(P)$(R)TimeStampValueHi_RBV"
 fgColor index 15
@@ -14790,7 +14214,7 @@ x 1640
 y 244
 w 60
 h 20
-controlPv "$(P)$(R)WhitebalValueBlu"
+controlPv "$(P)$(R)WhitebalValueBlue"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -14815,7 +14239,7 @@ x 1708
 y 244
 w 60
 h 20
-controlPv "$(P)$(R)WhitebalValueBlu_RBV"
+controlPv "$(P)$(R)WhitebalValueBlue_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
