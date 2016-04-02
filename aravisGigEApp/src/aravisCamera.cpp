@@ -216,10 +216,12 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
                 &buffer,
                 sizeof(&buffer));
         if (status) {
+            // printf as pPvt->pasynUserSelf for asynPrint is protected
             printf("Message queue full, dropped buffer\n");
             arv_stream_push_buffer (stream, buffer);
         }
     } else {
+        // printf as pPvt->pasynUserSelf for asynPrint is protected
         printf("Bad frame status: %s, recvd only %lu bytes\n", ArvBufferStatusToString(buffer_status), size);
         arv_stream_push_buffer (stream, buffer);
     }
@@ -232,13 +234,13 @@ static void controlLostCallback(ArvDevice *device, aravisCamera *pPvt) {
 
 /** Init hook that sets iocRunning flag */
 static void setIocRunningFlag(initHookState state) {
-	switch(state) {
-		case initHookAfterIocRunning:
-			iocRunning = 1;
-			break;
-		default:
-			break;
-	}
+    switch(state) {
+        case initHookAfterIocRunning:
+            iocRunning = 1;
+            break;
+        default:
+            break;
+    }
 }
 
 /** Constructor for aravisCamera; most parameters are simply passed to ADDriver::ADDriver.
@@ -260,14 +262,14 @@ aravisCamera::aravisCamera(const char *portName, const char *cameraName,
                0, 0, /* No interfaces beyond those set in ADDriver.cpp */
                0, 1, /* ASYN_CANBLOCK=0, ASYN_MULTIDEVICE=0, autoConnect=1 */
                priority, stackSize),
-	   camera(NULL),
-	   connectionValid(0),
-	   stream(NULL),
-	   device(NULL),
-	   genicam(NULL),
-	   featureKeys(NULL),
-	   payload(0),
-	   pollingLoop(*this, "aravisPoll", stackSize, epicsThreadPriorityHigh)
+       camera(NULL),
+       connectionValid(0),
+       stream(NULL),
+       device(NULL),
+       genicam(NULL),
+       featureKeys(NULL),
+       payload(0),
+       pollingLoop(*this, "aravisPoll", stackSize, epicsThreadPriorityHigh)
 {
     const char *functionName = "aravisCamera";
 
@@ -333,28 +335,35 @@ asynStatus aravisCamera::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
     // If parameter is of format ARVx_... where x is I for int, D for double, or S for string
     // then it is a camera parameter, so create it here
     if (findParam(drvInfo, &index) && strlen(drvInfo) > 5 && strncmp(drvInfo, "ARV", 3) == 0 && drvInfo[4] == '_') {
-    	/* Check we have allocated enough space */
-    	if (featureIndex > NFEATURES) {
-    		asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-    					"%s:%s: Not enough space allocated to store all camera features, increase NFEATURES\n",
-    					driverName, functionName);
-    		return asynError;
-    	}
-    	/* Make parameter of the correct type and get initial value if camera is connected */
-    	char *feature = epicsStrDup(drvInfo + 5);
-    	switch(drvInfo[3]) {
-    	case 'I':
-    		createParam(drvInfo, asynParamInt32, &(this->features[featureIndex]));
-    		if (this->connectionValid == 1)
-    			setIntegerParam(this->features[featureIndex], arv_device_get_integer_feature_value(this->device, feature));
-    		break;
-    	case 'D':
-    		createParam(drvInfo, asynParamFloat64, &(this->features[featureIndex]));
-    		if (this->connectionValid == 1)
-    			setDoubleParam(this->features[featureIndex], arv_device_get_float_feature_value(this->device, feature));
-    		break;
-    	case 'S':
-    		createParam(drvInfo, asynParamOctet, &(this->features[featureIndex]));
+        /* Check we have allocated enough space */
+        if (featureIndex > NFEATURES) {
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                        "%s:%s: Not enough space allocated to store all camera features, increase NFEATURES\n",
+                        driverName, functionName);
+            return asynError;
+        }
+        /* Check we have a feature */
+        if (!this->hasFeature(drvInfo+5)) {
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                        "%s:%s: Parameter '%s' doesn't exist on camera\n",
+                        driverName, functionName, drvInfo + 5);
+            return asynError;
+        }
+        /* Make parameter of the correct type and get initial value if camera is connected */
+        char *feature = epicsStrDup(drvInfo + 5);
+        switch(drvInfo[3]) {
+        case 'I':
+            createParam(drvInfo, asynParamInt32, &(this->features[featureIndex]));
+            if (this->connectionValid == 1)
+                setIntegerParam(this->features[featureIndex], arv_device_get_integer_feature_value(this->device, feature));
+            break;
+        case 'D':
+            createParam(drvInfo, asynParamFloat64, &(this->features[featureIndex]));
+            if (this->connectionValid == 1)
+                setDoubleParam(this->features[featureIndex], arv_device_get_float_feature_value(this->device, feature));
+            break;
+        case 'S':
+            createParam(drvInfo, asynParamOctet, &(this->features[featureIndex]));
     		if (this->connectionValid == 1) {
     			const char *stringValue;
     			stringValue = arv_device_get_string_feature_value(this->device, feature);
@@ -363,15 +372,15 @@ asynStatus aravisCamera::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
 				printf("aravisCamera: Adding feature %s with value: %s\n", feature, stringValue);
     			setStringParam(this->features[featureIndex], stringValue );
 			}
-    		break;
-    	default:
-    		asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-    					"%s:%s: Expected ARVx_... where x is one of I, D or S. Got '%c'\n",
-    					driverName, functionName, drvInfo[4]);
-    		return asynError;
-    	}
-    	g_hash_table_insert(this->featureLookup, (gpointer) &(this->features[featureIndex]), (gpointer) feature);
-    	featureIndex++;
+            break;
+        default:
+            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                        "%s:%s: Expected ARVx_... where x is one of I, D or S. Got '%c'\n",
+                        driverName, functionName, drvInfo[4]);
+            return asynError;
+        }
+        g_hash_table_insert(this->featureLookup, (gpointer) &(this->features[featureIndex]), (gpointer) feature);
+        featureIndex++;
     }
 
     // Now return baseclass result
@@ -805,12 +814,13 @@ asynStatus aravisCamera::allocBuffer() {
     this->camera exists, lock not taken */
 void aravisCamera::run() {
     epicsTimeStamp lastFeatureGet, now;
-    int getFeatures;
+    int getFeatures, numImagesCounter, imageMode, numImages;
+    const char *functionName = "run";
     ArvBuffer *buffer;
 
     /* Wait for database to be up */
     while (!iocRunning) {
-    	epicsThreadSleep(0.1);
+        epicsThreadSleep(0.1);
     }
 
     /* Loop forever */
@@ -838,10 +848,22 @@ void aravisCamera::run() {
             /* Got a buffer, so lock up and process it */
             this->lock();
             this->processBuffer(buffer);
-
             /* free memory */
             g_object_unref(buffer);
-            if (this->stream != NULL) {
+            /* See if acquisition is done */
+            getIntegerParam(ADNumImages, &numImages);
+            getIntegerParam(ADNumImagesCounter, &numImagesCounter);
+            getIntegerParam(ADImageMode, &imageMode);
+            if ((imageMode == ADImageSingle) ||
+                ((imageMode == ADImageMultiple) &&
+                 (numImagesCounter >= numImages))) {
+                this->stop();
+                // Want to make sure we're idle before we callback on ADAcquire
+                callParamCallbacks();
+                setIntegerParam(ADAcquire, 0);
+                asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
+                      "%s:%s: acquisition completed\n", driverName, functionName);
+            } else {
                 /* Allocate the new raw buffer we use to compute images. */
                 this->allocBuffer();
             }
@@ -860,21 +882,7 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     guint64 n_completed_buffers, n_failures, n_underruns;
     NDArray *pRaw;
 
-    // A small check to ensure that frame callbacks are ignored after the
-    // user has pressed STOP.
-    // For instance the Photonic Sciences SCMOS camera produce 1-2 frames
-    // after calling the arv_camera_stop_acquisition()
-    int acquiring = 0;
-    getIntegerParam(ADAcquire, &acquiring);
-    if (not acquiring) {
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
-                "%s:%s: Received frame callback after commanding camera stop. Ignoring frame.\n",
-                driverName, functionName);
-        return asynError;
-    }
-
     /* Get the current parameters */
-    getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
     getIntegerParam(NDArrayCounter, &imageCounter);
     getIntegerParam(ADNumImages, &numImages);
     getIntegerParam(ADNumImagesCounter, &numImagesCounter);
@@ -1033,18 +1041,6 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     	// TODO: Add status updates on resend using arv_gv_stream_get_statistics( ArvGvStream *, uint64 * n_resent_pkts, uint64 * n_missing_pkts )
     }
 
-    /* See if acquisition is done */
-    if ((imageMode == ADImageSingle) ||
-        ((imageMode == ADImageMultiple) &&
-         (numImagesCounter >= numImages))) {
-        this->stop();
-        // Want to make sure we're idle before we callback on ADAcquire
-        callParamCallbacks();
-        setIntegerParam(ADAcquire, 0);
-        asynPrint(this->pasynUserSelf, ASYN_TRACE_FLOW,
-              "%s:%s: acquisition completed\n", driverName, functionName);
-    }
-
     /* Call the callbacks to update any changes */
     callParamCallbacks();
     return asynSuccess;
@@ -1059,14 +1055,18 @@ asynStatus aravisCamera::stop() {
 }
 
 asynStatus aravisCamera::start() {
-    int imageMode;
+    int imageMode, numImages;
     const char *functionName = "start";
     asynStatus status = asynSuccess;
     
     // Set the image mode and counters
     getIntegerParam(ADImageMode, &imageMode);
+    getIntegerParam(ADNumImages, &numImages);
     if (imageMode == ADImageSingle) {
         arv_camera_set_acquisition_mode(this->camera, ARV_ACQUISITION_MODE_SINGLE_FRAME);
+    } else if (imageMode == ADImageMultiple && hasFeature("AcquisitionFrameCount")) {
+        arv_device_set_string_feature_value(this->device, "AcquisitionMode", "MultiFrame");
+        arv_device_set_integer_feature_value(this->device, "AcquisitionFrameCount", numImages);
     } else {
         arv_camera_set_acquisition_mode(this->camera, ARV_ACQUISITION_MODE_CONTINUOUS);
     }
@@ -1164,8 +1164,8 @@ asynStatus aravisCamera::getGeometry() {
     arv_camera_get_region(this->camera, &x, &y, &w, &h);
     setIntegerParam(ADMinX, x);
     setIntegerParam(ADMinY, y);
-    setIntegerParam(ADSizeX, w*binx);
-    setIntegerParam(ADSizeY, h*biny);
+    setIntegerParam(ADSizeX, w);
+    setIntegerParam(ADSizeY, h);
 
     /* Set sizes */
     if (colorMode == NDUInt16) bps = 2;
@@ -1223,7 +1223,7 @@ asynStatus aravisCamera::setGeometry() {
             biny = 1; setIntegerParam(ADBinY, 1);
         }
         this->setBinning(binx, biny);
-        arv_camera_set_region(this->camera, x, y, w/binx, h/biny);
+        arv_camera_set_region(this->camera, x, y, w, h);
     }
 
     /* Read back values */
@@ -1377,6 +1377,7 @@ asynStatus aravisCamera::getAllFeatures() {
 }
 
 asynStatus aravisCamera::getNextFeature() {
+    const char *functionName = "getNextFeature";
     int status = asynSuccess;
     const char *featureName;
     ArvGcNode *node;
@@ -1413,7 +1414,9 @@ asynStatus aravisCamera::getNextFeature() {
         } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(node)) == G_TYPE_STRING) {
             stringValue = arv_device_get_string_feature_value(this->device, featureName);
             if (stringValue == NULL) {
-                printf("aravisCamera: Feature %s has NULL value\n", featureName);
+                asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+                            "%s:%s: Feature %s has NULL value\n",
+                            driverName, functionName, featureName);
                 status = asynError;
             } else {
 				// printf("aravisCamera: Feature %s has value: %s\n", featureName, stringValue);
