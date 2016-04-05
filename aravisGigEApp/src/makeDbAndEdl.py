@@ -12,8 +12,8 @@ the driver supports, and the generated summary screen should be edited to make
 a more sensible summary. The Db file will be generated in:
   ../Db/<camera_name>.template
 and the edm files will be called:
-  ../opi/edl/<camera_name>.edl
-  ../opi/edl/<camera_name>-features.edl""")
+  ../op/edl/<camera_name>.edl
+  ../op/edl/<camera_name>-features.edl""")
 options, args = parser.parse_args()
 if len(args) != 2:
     parser.error("Incorrect number of arguments")
@@ -35,8 +35,8 @@ xml_root = parseString("".join(genicam_lines[start_line:]).lstrip())
 camera_name = args[1]
 prefix = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 db_filename = os.path.join(prefix, "Db", camera_name + ".template")
-edl_filename = os.path.join(prefix, "opi", "edl", camera_name + ".edl")
-edl_more_filename = os.path.join(prefix, "opi", "edl", camera_name + "-features.edl")
+edl_filename = os.path.join(prefix, "op", "edl", camera_name + ".edl")
+edl_more_filename = os.path.join(prefix, "op", "edl", camera_name + "-features.edl")
 
 # function to read element children of a node
 def elements(node):
@@ -61,8 +61,8 @@ def handle_node(node):
         name = str(node.getAttribute("Name"))
         lookup[name] = node
         recordName = name
-        if len(recordName) > 61:
-            recordName = recordName[:61]
+        if len(recordName) > 16:
+            recordName = recordName[:16]
         i = 0
         while recordName in records.values():
             recordName = recordName[:-len(str(i))] + str(i)
@@ -260,7 +260,7 @@ for node in doneNodes:
                     print >> sys.stderr, "   If needed, edit the Enumeration tag for %s to select the 16 you want." % nodeName
                     break
                 name = str(n.getAttribute("Name"))
-                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:26])
+                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:25])
                 value = [x for x in elements(n) if str(x.nodeName) == "Value"]
                 assert value, "EnumEntry %s in node %s doesn't have a value" %(name, nodeName)                
                 if i == 0:
@@ -364,7 +364,7 @@ minor 4
 release 0
 x %(nx)d
 y %(y)d
-w 12
+w 16
 h 20
 fgColor index 14
 bgColor index 3
@@ -372,7 +372,7 @@ topShadowColor index 1
 botShadowColor index 11
 font "%(defFontClass)s-bold-r-10.0"
 xPosOffset -100
-yPosOffset -88
+yPosOffset -148
 useFocus
 buttonLabel "?"
 numPvs 4
@@ -571,7 +571,7 @@ for name, nodes in structure:
                 globals()["desc%d" % i] = "''"
         nx = x + 4
         text += make_description()   
-        nx += 16
+        nx += 20
         text += make_label()
         nx += label_w + 4            
         if node.nodeName in ["StringReg"] or ro:
