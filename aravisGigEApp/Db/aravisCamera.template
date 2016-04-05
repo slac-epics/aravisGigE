@@ -146,8 +146,9 @@ record(bo, "$(P)$(R)GETFEATURES") {
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_GETFEATURES")
   field(ZNAM, "No")
   field(ONAM, "Yes")
-  field(VAL, "1")
+  field(VAL,  "0")
   field(PINI, "YES")
+  info( autosaveFields, "DESC VAL" )
 }
 
 record(longout, "$(P)$(R)CONNECTION")

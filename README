@@ -19,10 +19,18 @@ export PSPKG_RELEASE=ADCore-2.1
 source $PSPKG_ROOT/etc/set_env.sh
 
 # Then run arv-tool-0.4 to search for available genicam cameras
-# The first line is the camera name, and the 2nd the model
+# Each line gives the genicam device_name for each camera found on the current subnet
 % arv-tool-0.4
 Allied Vision Technologies-50-0503349286
 Basler-21664550
+
+# If you are not sure which camera is which you can use arv-tool to show features such as DeviceModelName
+% arv-tool-0.4 -n "Basler-21722087" control DeviceModelName
+Basler-21722087
+DeviceModelName = acA1300-60gmNIR
+
+# arv-tool can also be used to show all features on the camera
+% arv-tool-0.4 -n "Basler-21722087" features
 
 # Then run arv-tool-0.4 -n CAMERA_NAME genicam > CAMERA_NAME.xml
 # to fetch the xml feature spec

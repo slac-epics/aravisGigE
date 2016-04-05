@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1212
-y 1392
+x 802
+y 1564
 w 634
 h 345
 font "helvetica-bold-r-12.0"
@@ -196,7 +196,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 208
+x 216
 y 96
 w 84
 h 20
@@ -215,7 +215,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 292
+x 300
 y 96
 w 88
 h 20
@@ -238,7 +238,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 208
+x 216
 y 72
 w 84
 h 20
@@ -257,7 +257,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 292
+x 300
 y 72
 w 88
 h 20
@@ -279,7 +279,7 @@ minor 4
 release 0
 x 192
 y 96
-w 12
+w 16
 h 20
 fgColor index 14
 bgColor index 3
@@ -311,7 +311,7 @@ minor 4
 release 0
 x 192
 y 72
-w 12
+w 16
 h 20
 fgColor index 14
 bgColor index 3
@@ -343,7 +343,7 @@ minor 4
 release 0
 x 192
 y 48
-w 12
+w 16
 h 20
 fgColor index 14
 bgColor index 3
@@ -373,7 +373,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 208
+x 216
 y 48
 w 84
 h 20
@@ -392,7 +392,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 292
+x 300
 y 48
 w 88
 h 20
@@ -487,179 +487,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 132
-w 12
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-bold-r-10.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=StreamBytesPerSecond: Bandwidth allocation: the camera will consume up to this ,desc1=bandwidth; in bytes per second. You must set this value if multiple cameras ,desc2=share the same ethernet adapter; otherwise data will be lost. The sum of all ,desc3=StreamBytesPerSecond values of all cameras must not exceed the available ,desc4=bandwidth. ,desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 20
-y 132
-w 164
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 3
-value {
-  "StreamBytesPerSecond"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 192
-y 132
-w 108
-h 20
-controlPv "$(P)$(R)StreamBytesPerSecond"
-font "helvetica-bold-r-12.0"
-fgColor index 25
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
 # (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 304
-y 132
-w 96
-h 20
-controlPv "$(P)$(R)StreamBytesPerSecond_RBV"
-fgColor index 15
-fgAlarm
-bgColor index 12
-fill
-font "helvetica-bold-r-12.0"
-fontAlign "center"
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 164
-w 12
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-bold-r-10.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=StreamFrameRateConstrain: When enabled; the frame rate of the camera is ,desc1=constrained by available bandwidth. When disabled; the camera can image faster ,desc2=than it can send data. ,desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 20
-y 164
-w 164
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 3
-value {
-  "StreamFrameRateConstrain"
-}
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 192
-y 164
-w 112
-h 20
-fgColor index 25
-bgColor index 5
-inconsistentColor index 40
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)StreamFrameRateConstrain"
-indicatorPv "$(P)$(R)StreamFrameRateConstrain_RBV"
-font "helvetica-bold-r-12.0"
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 148
-y 216
-w 252
+x 168
+y 284
+w 236
 h 20
 controlPv "$(P)$(R)DeviceID_RBV"
 fgColor index 15
@@ -676,9 +512,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 4
-y 216
-w 124
+x 20
+y 284
+w 140
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -694,11 +530,11 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 148
-y 192
-w 252
+x 168
+y 260
+w 236
 h 20
-controlPv "$(P)$(R)DeviceFirmwareVersion_RBV"
+controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
 fgColor index 15
 fgAlarm
 bgColor index 12
@@ -713,9 +549,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 4
-y 192
-w 124
+x 20
+y 260
+w 140
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -798,5 +634,404 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 136
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCPSPacketSize: This value sets the packet size in bytes for the selected ,desc1=stream channel. Excludes data leader and data trailer. (The last packet may be ,desc2=smaller because the packet size is not necessarily a multiple of the block size ,desc3=for the stream channel.) ,desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 136
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "e-net Packet Size"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 168
+y 136
+w 104
+h 20
+controlPv "$(P)$(R)GevSCPSPacketSiz"
+font "helvetica-bold-r-12.0"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 136
+w 124
+h 20
+controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 188
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCBWA: This value indicates the base bandwidth in bytes per second that will ,desc1=be used by the camera to transmit image and chunk feature data and to handle ,desc2=resends and control data transmissions. This parameter represents a combination ,desc3=of the packet size and the inter-packet delay. ,desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 188
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "Base e-net bandwidth"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 184
+w 124
+h 20
+controlPv "$(P)$(R)GevSCBWA_RBV"
+displayMode "engineer"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 236
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCDMT: This value indicates the maximum amount of data (in bytes per second) ,desc1=that the camera could generate given its current settings and ideal conditions; ,desc2=i.e.; unlimited bandwidth and no packet resends. ,desc3='',desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 236
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "Max e-net throughput"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 236
+w 124
+h 20
+controlPv "$(P)$(R)GevSCDMT_RBV"
+displayMode "engineer"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 212
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCDCT: This value indicates the actual bandwidth (in bytes per second) that ,desc1=the camera will use to transmit image data and chunk data given the current AOI ,desc2=settings; chunk feature settings; and the pixel format setting. ,desc3='',desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 212
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "Current e-net throughput"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 212
+w 124
+h 20
+controlPv "$(P)$(R)GevSCDCT_RBV"
+displayMode "engineer"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 160
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCPD: This value sets a delay between the transmission of each packet for the ,desc1=selected stream channel. The delay is measured in ticks. ,desc2='',desc3='',desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 160
+w 140
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "GevSCPD"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 168
+y 160
+w 104
+h 20
+controlPv "$(P)$(R)GevSCPD"
+font "helvetica-bold-r-12.0"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 160
+w 124
+h 20
+controlPv "$(P)$(R)GevSCPD_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
 endObjectProperties
 
