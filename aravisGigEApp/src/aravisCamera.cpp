@@ -354,8 +354,14 @@ asynStatus aravisCamera::drvUserCreate(asynUser *pasynUser, const char *drvInfo,
         switch(drvInfo[3]) {
         case 'I':
             createParam(drvInfo, asynParamInt32, &(this->features[featureIndex]));
-            if (this->connectionValid == 1)
-                setIntegerParam(this->features[featureIndex], arv_device_get_integer_feature_value(this->device, feature));
+            if (this->connectionValid == 1) {
+    			ArvGcNode *featureNode = arv_device_get_feature(this->device, drvInfo + 5);
+				int			curValue	= 0;
+        		if ( !ARV_IS_GC_COMMAND(featureNode) ) {
+                	curValue = arv_device_get_integer_feature_value(this->device, feature);
+				}
+                setIntegerParam(this->features[featureIndex], curValue);
+			}
             break;
         case 'D':
             createParam(drvInfo, asynParamFloat64, &(this->features[featureIndex]));
@@ -574,7 +580,7 @@ asynStatus aravisCamera::connectToCamera() {
         status = asynError;
     }
 
-    printf("aravisCamera: Done.\n");
+    printf("aravisCamera: Done w/ feature list.\n");
     return (asynStatus) status;
 }
 
@@ -589,12 +595,13 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     asynStatus status = asynSuccess;
     epicsInt32 rbv;
     char *featureName;
-    ArvGcNode *feature;
+    ArvGcNode *featureNode;
 
     /* Set the parameter and readback in the parameter library.  This may be overwritten when we read back the
      * status at the end, but that's OK */
     getIntegerParam(function, &rbv);
-    status = setIntegerParam(function, value);
+	if ( rbv != value )
+    	status = setIntegerParam(function, value);
 
     /* If we have no camera, then just fail */
     if (function == AravisReset) {
@@ -633,9 +640,9 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     /* generic feature lookup */
     } else if (g_hash_table_lookup_extended(this->featureLookup, &function, NULL, NULL)) {
         featureName = (char *) g_hash_table_lookup(this->featureLookup, &function);
-        feature = arv_device_get_feature(this->device, featureName);
-        if (ARV_IS_GC_COMMAND(feature)) {
-            arv_gc_command_execute(ARV_GC_COMMAND(feature), NULL);
+        featureNode = arv_device_get_feature(this->device, featureName);
+        if (ARV_IS_GC_COMMAND(featureNode)) {
+            arv_gc_command_execute(ARV_GC_COMMAND(featureNode), NULL);
         } else {
             status = this->setIntegerValue(featureName, value, &rbv);
             if (status) setIntegerParam(function, rbv);
@@ -657,7 +664,7 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
         asynPrint(pasynUser, ASYN_TRACE_ERROR,
               "%s:writeInt32 error, status=%d function=%d, value=%d\n",
               driverName, status, function, value);
-    else
+    else if (function != AravisConnection)
         asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
               "%s:writeInt32: function=%d, value=%d\n",
               driverName, function, value);
@@ -675,7 +682,7 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     double rbv = 0;
     asynStatus status = asynSuccess;
     char *featureName;
-    ArvGcNode *feature;
+    ArvGcNode *featureNode;
 
     /* Set the parameter and readback in the parameter library.  This may be overwritten when we read back the
      * status at the end, but that's OK */
@@ -691,8 +698,8 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
         if (featureName == NULL) {
             status = asynError;
         } else {
-            feature = arv_device_get_feature(this->device, featureName);
-            if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(feature)) == G_TYPE_DOUBLE) {
+            featureNode = arv_device_get_feature(this->device, featureName);
+            if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_DOUBLE) {
                 status = this->setFloatValue(featureName, value, &rbv);
             } else {
                 epicsInt32 i_rbv, i_value = (epicsInt32) value;
@@ -708,8 +715,8 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
         if (featureName == NULL) {
             status = asynError;
         } else {
-          feature = arv_device_get_feature(this->device, featureName);
-          if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(feature)) == G_TYPE_DOUBLE) {
+          featureNode = arv_device_get_feature(this->device, featureName);
+          if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_DOUBLE) {
             status = this->setFloatValue(featureName, value * 1000000, &rbv);
           } else {
             epicsInt32 i_rbv, i_value = (epicsInt32) (value * 1000000);
@@ -722,10 +729,10 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     } else if (function == ADAcquirePeriod) {
         featureName = (char *) g_hash_table_lookup(this->featureLookup, &function);
         if (value <= 0.0) value = 0.1;
-        feature = arv_device_get_feature(this->device, featureName);
-        if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(feature)) == G_TYPE_DOUBLE) {
+        featureNode = arv_device_get_feature(this->device, featureName);
+        if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_DOUBLE) {
           status = this->setFloatValue(featureName, 1/value, &rbv);
-        } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(feature)) == G_TYPE_INT64) {
+        } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_INT64) {
           epicsInt32 i_rbv, i_value = (epicsInt32) (1/value);
           status = this->setIntegerValue(featureName, i_value, &i_rbv);
           rbv = (epicsFloat64)i_rbv;
@@ -1327,14 +1334,21 @@ asynStatus aravisCamera::setIntegerValue(const char *feature, epicsInt32 value, 
                     driverName, functionName);
         return asynError;
     }
+	asynPrint(  this->pasynUserSelf, ASYN_TRACEIO_DRIVER,
+				"%s:%s: arv_device_set_integer_feature_value %s value %d\n",
+				driverName, functionName, feature, value );
     arv_device_set_integer_feature_value (this->device, feature, value);
     if (rbv != NULL) {
-        *rbv = arv_device_get_integer_feature_value (this->device, feature);
-        if (value != *rbv) {
-            asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                        "%s:%s: value %d != rbv %d\n",
-                        driverName, functionName, value, *rbv);
-            return asynError;
+    	ArvGcNode *featureNode = arv_device_get_feature(this->device, feature);
+        *rbv = value;
+		if ( !ARV_IS_GC_COMMAND(featureNode) ) {
+        	*rbv = arv_device_get_integer_feature_value (this->device, feature);
+			if (value != *rbv) {
+				asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
+							"%s:%s: feature %s value %d != rbv %d\n",
+							driverName, functionName, feature, value, *rbv);
+				return asynError;
+			}
         }
     }
     return asynSuccess;
@@ -1369,10 +1383,11 @@ asynStatus aravisCamera::getAllFeatures() {
         g_list_free(this->featureKeys);
         this->featureKeys = NULL;
     }
-    /* Get the first features */
+    /* Get the first feature */
     status |= this->getNextFeature();
     /* Get the rest of the features */
-    while (this->featureKeys != NULL) status |= this->getNextFeature();
+    while (this->featureKeys != NULL)
+		status |= this->getNextFeature();
     return (asynStatus) status;
 }
 
@@ -1423,7 +1438,7 @@ asynStatus aravisCamera::getNextFeature() {
                 status |= setStringParam(*index, stringValue);
             }
         //} else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(node)) == G_TYPE_INT64) {
-        } else {
+        } else if ( !ARV_IS_GC_COMMAND(node)) {
             integerValue = arv_device_get_integer_feature_value (this->device, featureName);
             if (*index == ADGain) {
                 /* Gain is sometimes an integer */
@@ -1464,8 +1479,8 @@ asynStatus aravisCamera::getNextFeature() {
 
 /* Define to add feature if available */
 asynStatus aravisCamera::tryAddFeature(int *ADIdx, const char *featureString) {
-    ArvGcNode *feature = arv_device_get_feature(this->device, featureString);
-    if (feature != NULL && !ARV_IS_GC_CATEGORY(feature)) {
+    ArvGcNode *featureNode = arv_device_get_feature(this->device, featureString);
+    if (featureNode != NULL && !ARV_IS_GC_CATEGORY(featureNode)) {
         g_hash_table_insert(this->featureLookup, (gpointer)(ADIdx), (gpointer)featureString);
         return asynSuccess;
     }
