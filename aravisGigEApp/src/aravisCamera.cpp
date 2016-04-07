@@ -138,6 +138,11 @@ protected:
     #define FIRST_ARAVIS_CAMERA_PARAM AravisCompleted
     int AravisFailures;
     int AravisUnderruns;
+    int AravisFrameRetention;
+    int AravisMissingPkts;
+    int AravisPktResend;
+    int AravisPktTimeout;
+    int AravisResentPkts;
     int AravisLeftShift;
     int AravisConnection;
     int AravisGetFeatures;
@@ -208,8 +213,6 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
     buffer = arv_stream_try_pop_buffer(stream);
     if (buffer == NULL)    return;
     ArvBufferStatus buffer_status = arv_buffer_get_status(buffer);
-    size_t	size = 0;
-    arv_buffer_get_data(buffer, &size);
 	// TODO: Look into calling updateTimeStamp() here in aravis buffer callbck if possible
     if (buffer_status == ARV_BUFFER_STATUS_SUCCESS /*|| buffer->status == ARV_BUFFER_STATUS_MISSING_PACKETS*/) {
         status = epicsMessageQueueTrySend(pPvt->msgQId,
@@ -222,7 +225,8 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
         }
     } else {
         // printf as pPvt->pasynUserSelf for asynPrint is protected
-        printf("Bad frame status: %s, recvd only %lu bytes\n", ArvBufferStatusToString(buffer_status), size);
+		// Stopped fetching buffer size via arv_buffer_get_data() as it's just the preallocated size
+        printf("Bad frame status: %s\n", ArvBufferStatusToString(buffer_status) );
         arv_stream_push_buffer (stream, buffer);
     }
 }
@@ -294,6 +298,11 @@ aravisCamera::aravisCamera(const char *portName, const char *cameraName,
     createParam("ARAVIS_COMPLETED",      asynParamFloat64, &AravisCompleted);
     createParam("ARAVIS_FAILURES",       asynParamFloat64, &AravisFailures);
     createParam("ARAVIS_UNDERRUNS",      asynParamFloat64, &AravisUnderruns);
+    createParam("ARAVIS_FRAME_RETENTION",asynParamInt32,   &AravisFrameRetention);
+    createParam("ARAVIS_MISSING_PKTS",   asynParamInt32,   &AravisMissingPkts);
+    createParam("ARAVIS_RESENT_PKTS",    asynParamInt32,   &AravisResentPkts);
+    createParam("ARAVIS_PKT_RESEND",     asynParamInt32,   &AravisPktResend);
+    createParam("ARAVIS_PKT_TIMEOUT",    asynParamInt32,   &AravisPktTimeout);
     createParam("ARAVIS_LEFTSHIFT",      asynParamInt32,   &AravisLeftShift);
     createParam("ARAVIS_CONNECTION",     asynParamInt32,   &AravisConnection);
     createParam("ARAVIS_GETFEATURES",    asynParamInt32,   &AravisGetFeatures);
@@ -307,6 +316,11 @@ aravisCamera::aravisCamera(const char *portName, const char *cameraName,
     setDoubleParam(AravisCompleted, 0);
     setDoubleParam(AravisFailures, 0);
     setDoubleParam(AravisUnderruns, 0);
+    setIntegerParam(AravisFrameRetention, 100000);	// aravisGigE default 100ms
+    setIntegerParam(AravisMissingPkts, 0);
+    setIntegerParam(AravisPktResend, 1);
+    setIntegerParam(AravisPktTimeout, 20000);		// aravisGigE default 20ms
+    setIntegerParam(AravisResentPkts, 0);
     setIntegerParam(AravisLeftShift, 1);
     setIntegerParam(AravisReset, 0);
     
@@ -464,16 +478,28 @@ asynStatus aravisCamera::makeStreamObject() {
         return asynError;
     }
     /* configure the stream */
+    // Available stream options:
+	//	socket-buffer:		ARV_GV_STREAM_SOCKET_BUFFER_FIXED, ARV_GV_STREAM_SOCKET_BUFFER_AUTO, defaults to auto which follows arvgvbuffer size
+	//	socket-buffer-size: 64 bit int, Defaults to -1
+	//	packet-resend:		ARV_GV_STREAM_PACKET_RESEND_NEVER, ARV_GV_STREAM_PACKET_RESEND_ALWAYS, defaults to always
+	//	packet-timeout:		64 bit int, units us, ARV_GV_STREAM default 40000
+	//	frame-retention:	64 bit int, units us, ARV_GV_STREAM default 200000
+
+	epicsInt32		FrameRetention, PktResend, PktTimeout;
+    getIntegerParam( AravisFrameRetention,	&FrameRetention );
+    getIntegerParam( AravisPktResend, 		&PktResend );
+    getIntegerParam( AravisPktTimeout,		&PktTimeout );
     g_object_set (ARV_GV_STREAM (this->stream),
-              "packet-timeout", 20000, //20ms
-              "frame-retention", 100000, //100ms
+              "packet-resend",		(guint64) PktResend,
+              "packet-timeout",		(guint64) PktTimeout,
+              "frame-retention",	(guint64) FrameRetention,
               NULL);
-    // Uncomment this line to disable packet resend
-    g_object_set (ARV_GV_STREAM (this->stream), "packet-resend", ARV_GV_STREAM_PACKET_RESEND_NEVER, NULL);
+
+	// Enable callback on new buffers
     arv_stream_set_emit_signals (this->stream, TRUE);
     g_signal_connect (this->stream, "new-buffer", G_CALLBACK (newBufferCallback), this);
     return asynSuccess;
-}    
+}
 
 
 asynStatus aravisCamera::connectToCamera() {
@@ -637,6 +663,12 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
             setIntegerParam(ADNumExposures, 1);
             status = asynError;
         }
+    } else if (function == AravisGetFeatures || function == AravisFrameRetention
+			|| function == AravisPktResend   || function == AravisPktTimeout ) {
+    	/* just write the value for these as they get fetched via getIntegerParam when needed */
+    } else if (function < FIRST_ARAVIS_CAMERA_PARAM) {
+        /* If this parameter belongs to a base class call its method */
+        status = ADDriver::writeInt32(pasynUser, value);
     /* generic feature lookup */
     } else if (g_hash_table_lookup_extended(this->featureLookup, &function, NULL, NULL)) {
         featureName = (char *) g_hash_table_lookup(this->featureLookup, &function);
@@ -646,12 +678,7 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
         } else {
             status = this->setIntegerValue(featureName, value, &rbv);
             if (status) setIntegerParam(function, rbv);
-        }
-    /* just write the value */
-    } else if (function == AravisGetFeatures) {
-    } else if (function < FIRST_ARAVIS_CAMERA_PARAM) {
-        /* If this parameter belongs to a base class call its method */
-        status = ADDriver::writeInt32(pasynUser, value);
+		}
     } else {
            status = asynError;
     }
@@ -896,8 +923,7 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     getIntegerParam(ADImageMode, &imageMode);
     getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
     getDoubleParam(ADAcquirePeriod, &acquirePeriod);
-    getIntegerParam(AravisLeftShift, &left_shift);
-
+    getIntegerParam(AravisLeftShift, &left_shift); 
     /* The buffer structure does not contain the binning, get that from param lib,
      * but it could be wrong for this frame if recently changed */
     getIntegerParam(ADBinX, &binX);
@@ -1045,7 +1071,10 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
         setDoubleParam(AravisCompleted, (double) n_completed_buffers);
         setDoubleParam(AravisFailures, (double) n_failures);
         setDoubleParam(AravisUnderruns, (double) n_underruns);
-    	// TODO: Add status updates on resend using arv_gv_stream_get_statistics( ArvGvStream *, uint64 * n_resent_pkts, uint64 * n_missing_pkts )
+    	guint64 n_resent_pkts, n_missing_pkts;
+		arv_gv_stream_get_statistics( ARV_GV_STREAM(this->stream), &n_resent_pkts, &n_missing_pkts );
+		setIntegerParam( AravisResentPkts,	(epicsInt32) n_resent_pkts	);
+		setIntegerParam( AravisMissingPkts,	(epicsInt32) n_missing_pkts	);
     }
 
     /* Call the callbacks to update any changes */
@@ -1469,6 +1498,10 @@ asynStatus aravisCamera::getNextFeature() {
         status |= setDoubleParam(AravisCompleted, (double) n_completed_buffers);
         status |= setDoubleParam(AravisFailures, (double) n_failures);
         status |= setDoubleParam(AravisUnderruns, (double) n_underruns);
+    	guint64 n_resent_pkts, n_missing_pkts;
+		arv_gv_stream_get_statistics( ARV_GV_STREAM(this->stream), &n_resent_pkts, &n_missing_pkts );
+		setIntegerParam( AravisResentPkts,	(epicsInt32) n_resent_pkts	);
+		setIntegerParam( AravisMissingPkts,	(epicsInt32) n_missing_pkts	);
     }
 
     /* ensure we go back to the beginning */
