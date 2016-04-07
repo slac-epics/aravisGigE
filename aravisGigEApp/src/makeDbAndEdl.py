@@ -186,7 +186,7 @@ for node in doneNodes:
         print '  field(DTYP, "asynInt32")'
         print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(DISA, "0")'
-        print '  info( autosaveFields, "%s VAL" )' % long_autosaveFields
+        print '  info( autosaveFields, "%s PINI VAL" )' % long_autosaveFields
         print '}'
         print        
     elif node.nodeName in ["Boolean"]:
@@ -208,7 +208,7 @@ for node in doneNodes:
         print '  field(ZNAM, "No")'
         print '  field(ONAM, "Yes")'                                
         print '  field(DISA, "0")'
-        print '  info( autosaveFields, "%s VAL" )' % b_autosaveFields
+        print '  info( autosaveFields, "%s PINI VAL" )' % b_autosaveFields
         print '}'
         print           
     elif node.nodeName in ["Float", "Converter", "SwissKnife"]:
@@ -228,7 +228,7 @@ for node in doneNodes:
         print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_%s")' % nodeName
         print '  field(PREC, "3")'
         print '  field(DISA, "0")'
-        print '  info( autosaveFields, "%s VAL" )' % a_autosaveFields
+        print '  info( autosaveFields, "%s PINI VAL" )' % a_autosaveFields
         print '}'
         print
     elif node.nodeName in ["StringReg"]:
@@ -284,7 +284,7 @@ for node in doneNodes:
         print '  field(DOL,  "%s")' % defaultVal
         print enumerations,       
         print '  field(DISA, "0")'
-        print '  info( autosaveFields, "%s VAL" )' % mbb_autosaveFields
+        print '  info( autosaveFields, "%s PINI VAL" )' % mbb_autosaveFields
         print '}'
         print          
     else:
