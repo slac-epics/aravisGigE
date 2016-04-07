@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 830
-y 1297
+x 757
+y 1229
 w 400
 h 345
 font "helvetica-bold-r-12.0"
@@ -33,14 +33,14 @@ major 4
 minor 4
 release 0
 x 0
-y 176
-w 12
+y 200
+w 16
 h 20
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 xPosOffset -100
 yPosOffset -148
 useFocus
@@ -64,9 +64,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 16
-y 176
-w 156
+x 20
+y 200
+w 152
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -83,7 +83,7 @@ major 4
 minor 7
 release 0
 x 176
-y 176
+y 200
 w 76
 h 20
 controlPv "$(P)$(R)StreamBytesPerSecond"
@@ -108,7 +108,7 @@ major 4
 minor 7
 release 0
 x 260
-y 176
+y 200
 w 76
 h 20
 controlPv "$(P)$(R)StreamBytesPerSecond_RBV"
@@ -132,14 +132,14 @@ major 4
 minor 4
 release 0
 x 0
-y 200
-w 12
+y 224
+w 16
 h 20
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "helvetica-bold-r-10.0"
+font "helvetica-medium-r-12.0"
 xPosOffset -100
 yPosOffset -148
 useFocus
@@ -163,9 +163,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 16
-y 200
-w 156
+x 20
+y 224
+w 152
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -182,7 +182,7 @@ major 4
 minor 0
 release 0
 x 176
-y 200
+y 224
 w 80
 h 20
 fgColor index 25
@@ -202,7 +202,7 @@ major 4
 minor 7
 release 0
 x 104
-y 248
+y 272
 w 232
 h 20
 controlPv "$(P)$(R)DeviceID_RBV"
@@ -226,7 +226,7 @@ major 4
 minor 1
 release 1
 x 0
-y 248
+y 272
 w 100
 h 20
 font "helvetica-medium-r-12.0"
@@ -244,7 +244,7 @@ major 4
 minor 7
 release 0
 x 104
-y 224
+y 248
 w 232
 h 20
 controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
@@ -268,7 +268,7 @@ major 4
 minor 1
 release 1
 x 0
-y 224
+y 248
 w 100
 h 20
 font "helvetica-medium-r-12.0"
@@ -1049,7 +1049,7 @@ major 4
 minor 0
 release 0
 x 8
-y 272
+y 296
 w 204
 h 24
 
@@ -1062,7 +1062,7 @@ major 4
 minor 4
 release 0
 x 4
-y 272
+y 296
 w 204
 h 24
 fgColor index 14
@@ -1098,7 +1098,7 @@ major 4
 minor 7
 release 0
 x 28
-y 276
+y 300
 w 175
 h 16
 controlPv "$(P)$(R)CamModel"
@@ -1115,5 +1115,106 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 0
+y 176
+w 16
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+xPosOffset -100
+yPosOffset -148
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=GevSCPSPacketSize: This value sets the packet size in bytes for the selected ,desc1=stream channel. Excludes data leader and data trailer. (The last packet may be ,desc2=smaller because the packet size is not necessarily a multiple of the block size ,desc3=for the stream channel.) ,desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 176
+w 124
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "e-net Packet Size"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 176
+w 80
+h 20
+controlPv "$(P)$(R)GevSCPSPacketSiz"
+font "helvetica-medium-r-12.0"
+fgColor index 25
+fgAlarm
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 240
+y 176
+w 100
+h 20
+controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
+format "gfloat"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+useHexPrefix
+newPos
+objType "monitors"
 endObjectProperties
 
