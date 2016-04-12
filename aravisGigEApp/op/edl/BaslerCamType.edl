@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 337
-y 1300
+x 689
+y 1753
 w 400
 h 340
 font "helvetica-bold-r-12.0"
@@ -61,6 +61,7 @@ y 28
 w 72
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -103,6 +104,7 @@ y 52
 w 72
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -145,6 +147,7 @@ y 76
 w 72
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -163,6 +166,7 @@ y 28
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -204,6 +208,7 @@ y 76
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -338,6 +343,7 @@ y 52
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -564,6 +570,7 @@ y 172
 w 124
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -658,9 +665,10 @@ minor 1
 release 1
 x 20
 y 220
-w 124
+w 192
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -733,9 +741,10 @@ minor 1
 release 1
 x 20
 y 268
-w 124
+w 192
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -783,9 +792,10 @@ minor 1
 release 1
 x 20
 y 244
-w 124
+w 192
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -836,6 +846,7 @@ y 196
 w 124
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -851,7 +862,7 @@ minor 7
 release 0
 x 152
 y 196
-w 80
+w 60
 h 20
 controlPv "$(P)$(R)GevSCPD"
 font "helvetica-medium-r-12.0"
@@ -875,9 +886,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 240
+x 216
 y 196
-w 100
+w 56
 h 20
 controlPv "$(P)$(R)GevSCPD_RBV"
 font "helvetica-medium-r-12.0"
@@ -936,6 +947,7 @@ y 148
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -1004,6 +1016,7 @@ y 100
 w 72
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -1022,6 +1035,7 @@ y 100
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -1141,6 +1155,7 @@ y 124
 w 84
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -1191,6 +1206,7 @@ y 124
 w 72
 h 20
 font "helvetica-medium-r-12.0"
+fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
@@ -1223,7 +1239,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 172
+x 170
 y 148
 w 12
 h 20
@@ -1276,5 +1292,30 @@ font "helvetica-medium-r-12.0"
 fontAlign "center"
 lineWidth 1
 lineAlarm
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 276
+y 196
+w 64
+h 20
+controlPv "$(P)$(R)PktDelay"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
 endObjectProperties
 

@@ -154,7 +154,7 @@ record(mbbo, "$(P)$(R)PKT_RESEND")
    field(ONST, "Always")
    field(ONVL, "1")
    field(VAL,  "1")
-   field(PINI, "1")
+   field(PINI, "YES")
    info( autosaveFields, "DESC ONSV SRSV PINI VAL" )
 }
 
@@ -165,18 +165,18 @@ record(longout, "$(P)$(R)PKT_TIMEOUT")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_PKT_TIMEOUT")
    field(VAL,  "20000")
    field(EGU,  "us")
-   field(PINI, "1")
+   field(PINI, "YES")
    info( autosaveFields, "DESC HHSV HIHI HIGH HSV LLSV LOLO LOW LSV PINI VAL" )
 }
 
 record(longout, "$(P)$(R)FRAME_RETENTION")
 {
-   field(DESC, "Frame timeout in us after last packet rcvd" )
+   field(DESC, "Fr timeout after last pkt rcvd" )
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_FRAME_RETENTION")
    field(VAL,  "100000")
    field(EGU,  "us")
-   field(PINI, "1")
+   field(PINI, "YES")
    info( autosaveFields, "DESC HHSV HIHI HIGH HSV LLSV LOLO LOW LSV PINI VAL" )
 }
 
@@ -210,7 +210,7 @@ record(longout, "$(P)$(R)CONNECTION")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_CONNECTION")
    field(VAL, "1")
-   field(PINI, "1")
+   field(PINI, "YES")
 }
 
 record(calcout, "$(P)$(R)CHKCONN")
@@ -244,6 +244,25 @@ record(mbbo, "$(P)$(R)LEFTSHIFT") {
   field(ONVL, "1")
   field(PINI, "YES")
   info( autosaveFields, "DESC ZRSV ONSV VAL" )
+}
+
+# Initialize PINI for these records to YES
+record(longout, "$(P)$(R)GevSCPSPacketSiz")
+{
+  field(PINI, "YES")
+}
+record(longout, "$(P)$(R)GevSCPD")
+{
+  field(PINI, "YES")
+}
+
+record( calc, "$(P)$(R)PktDelay" )
+{
+    field( INPA, "$(P)$(R)GevSCPD CPP MS" )
+    field( INPB, "8.0e-3" )
+    field( CALC, "A*B" )
+    field( EGU,  "us" )
+    field( PREC, "1" ) 
 }
 
 # unsupported fields
