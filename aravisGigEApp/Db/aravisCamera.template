@@ -211,6 +211,8 @@ record(longout, "$(P)$(R)CONNECTION")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_CONNECTION")
    field(VAL, "1")
    field(PINI, "YES")
+#  Need to update GevSCPSPacketSiz after each reconnect
+   field(FLNK, "$(P)$(R)GevSCPSPacketSiz" )
 }
 
 record(calcout, "$(P)$(R)CHKCONN")
@@ -246,7 +248,21 @@ record(mbbo, "$(P)$(R)LEFTSHIFT") {
   info( autosaveFields, "DESC ZRSV ONSV VAL" )
 }
 
-# Initialize PINI for these records to YES
+# Initialize EGU for these common GEV records
+record(longin, "$(P)$(R)GevSCDCT_RBV")
+{
+	field(EGU, "Bps")
+}
+record(longin, "$(P)$(R)GevSCDMT_RBV")
+{
+	field(EGU, "Bps")
+}
+record(longin, "$(P)$(R)GevSCBWA_RBV")
+{
+	field(EGU, "Bps")
+}
+
+# Initialize PINI for these common GEV records to YES
 record(longout, "$(P)$(R)GevSCPSPacketSiz")
 {
   field(PINI, "YES")
@@ -256,7 +272,8 @@ record(longout, "$(P)$(R)GevSCPD")
   field(PINI, "YES")
 }
 
-record( calc, "$(P)$(R)PktDelay" )
+# Calculate delay per packet for cameras which support GevSCPD
+record( calc, "$(P)$(R)GevPktDelay" )
 {
     field( INPA, "$(P)$(R)GevSCPD CPP MS" )
     field( INPB, "8.0e-3" )

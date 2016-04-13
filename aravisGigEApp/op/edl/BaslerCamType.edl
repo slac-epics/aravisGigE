@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 689
-y 1753
+x 697
+y 1801
 w 400
 h 340
 font "helvetica-bold-r-12.0"
@@ -32,9 +32,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 264
+x 268
 y 28
-w 76
+w 72
 h 20
 controlPv "$(P)$(R)COMPLETED_RBV"
 font "helvetica-medium-r-12.0"
@@ -56,7 +56,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
+x 192
 y 28
 w 72
 h 20
@@ -75,9 +75,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 264
+x 268
 y 52
-w 76
+w 72
 h 20
 controlPv "$(P)$(R)FAILURES_RBV"
 font "helvetica-medium-r-12.0"
@@ -99,7 +99,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
+x 192
 y 52
 w 72
 h 20
@@ -118,9 +118,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 264
+x 268
 y 76
-w 76
+w 72
 h 20
 controlPv "$(P)$(R)UNDERRUNS_RBV"
 font "helvetica-medium-r-12.0"
@@ -142,7 +142,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
+x 192
 y 76
 w 72
 h 20
@@ -161,7 +161,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 28
 w 84
 h 20
@@ -180,7 +180,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 108
+x 112
 y 28
 w 72
 h 20
@@ -203,7 +203,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 76
 w 84
 h 20
@@ -222,7 +222,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 108
+x 112
 y 76
 w 72
 h 20
@@ -242,7 +242,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 28
 w 16
 h 20
@@ -274,7 +274,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 76
 w 16
 h 20
@@ -306,7 +306,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 52
 w 16
 h 20
@@ -338,7 +338,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 52
 w 84
 h 20
@@ -357,7 +357,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 108
+x 112
 y 52
 w 72
 h 20
@@ -460,7 +460,7 @@ minor 0
 release 0
 x 4
 y 292
-w 204
+w 192
 h 24
 
 beginGroup
@@ -473,7 +473,7 @@ minor 4
 release 0
 x 4
 y 292
-w 204
+w 192
 h 24
 fgColor index 14
 bgColor index 3
@@ -507,9 +507,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 28
+x 27
 y 296
-w 175
+w 165
 h 16
 controlPv "$(P)$(R)CamModel"
 font "helvetica-medium-r-12.0"
@@ -533,7 +533,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 172
 w 16
 h 20
@@ -567,7 +567,7 @@ minor 1
 release 1
 x 20
 y 172
-w 124
+w 116
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -584,9 +584,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 152
+x 140
 y 172
-w 80
+w 60
 h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz"
 font "helvetica-medium-r-12.0"
@@ -610,9 +610,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 240
+x 204
 y 220
-w 100
+w 68
 h 20
 controlPv "$(P)$(R)GevSCBWA_RBV"
 displayMode "engineer"
@@ -631,7 +631,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 220
 w 16
 h 20
@@ -665,7 +665,7 @@ minor 1
 release 1
 x 20
 y 220
-w 192
+w 180
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -682,9 +682,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 240
+x 204
 y 172
-w 100
+w 68
 h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
 format "gfloat"
@@ -707,7 +707,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 268
 w 16
 h 20
@@ -741,7 +741,7 @@ minor 1
 release 1
 x 20
 y 268
-w 192
+w 180
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -758,7 +758,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 244
 w 16
 h 20
@@ -792,7 +792,7 @@ minor 1
 release 1
 x 20
 y 244
-w 192
+w 180
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -809,7 +809,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 196
 w 16
 h 20
@@ -843,7 +843,7 @@ minor 1
 release 1
 x 20
 y 196
-w 124
+w 116
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
@@ -860,7 +860,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 152
+x 140
 y 196
 w 60
 h 20
@@ -886,9 +886,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 216
+x 204
 y 196
-w 56
+w 68
 h 20
 controlPv "$(P)$(R)GevSCPD_RBV"
 font "helvetica-medium-r-12.0"
@@ -910,7 +910,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 148
 w 16
 h 20
@@ -942,7 +942,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 148
 w 84
 h 20
@@ -961,7 +961,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 108
+x 112
 y 148
 w 60
 h 20
@@ -987,9 +987,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 264
+x 268
 y 100
-w 76
+w 72
 h 20
 controlPv "$(P)$(R)RESENT_PKTS_RBV"
 font "helvetica-medium-r-12.0"
@@ -1011,7 +1011,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
+x 192
 y 100
 w 72
 h 20
@@ -1030,7 +1030,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 100
 w 84
 h 20
@@ -1049,7 +1049,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 108
+x 112
 y 100
 w 72
 h 20
@@ -1068,7 +1068,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 100
 w 16
 h 20
@@ -1100,9 +1100,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 264
+x 268
 y 124
-w 76
+w 72
 h 20
 controlPv "$(P)$(R)MISSING_PKTS_RBV"
 font "helvetica-medium-r-12.0"
@@ -1124,7 +1124,7 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 108
+x 112
 y 124
 w 60
 h 20
@@ -1150,7 +1150,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
+x 24
 y 124
 w 84
 h 20
@@ -1169,7 +1169,7 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 0
+x 4
 y 124
 w 16
 h 20
@@ -1201,7 +1201,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
+x 192
 y 124
 w 72
 h 20
@@ -1220,7 +1220,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 170
+x 176
 y 124
 w 12
 h 20
@@ -1239,7 +1239,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 170
+x 176
 y 148
 w 12
 h 20
@@ -1258,9 +1258,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 240
+x 204
 y 244
-w 100
+w 68
 h 20
 controlPv "$(P)$(R)GevSCDCT_RBV"
 displayMode "engineer"
@@ -1279,9 +1279,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 240
+x 204
 y 268
-w 100
+w 68
 h 20
 controlPv "$(P)$(R)GevSCDMT_RBV"
 displayMode "engineer"
@@ -1304,7 +1304,7 @@ x 276
 y 196
 w 64
 h 20
-controlPv "$(P)$(R)PktDelay"
+controlPv "$(P)$(R)GevPktDelay"
 font "helvetica-medium-r-12.0"
 fontAlign "center"
 fgColor index 16
@@ -1317,5 +1317,92 @@ useHexPrefix
 showUnits
 newPos
 objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 276
+y 220
+w 36
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Bps"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 276
+y 244
+w 36
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Bps"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 276
+y 268
+w 36
+h 20
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 5
+useDisplayBg
+value {
+  "Bps"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 200
+y 292
+w 144
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-12.0"
+buttonLabel "eNet Bandwidth Help"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/bandwidthHelp.edl"
+}
+menuLabel {
+  0 "eNet Bandwidth Help"
+}
+symbols {
+  0 "P=$(P),R=$(R)"
+}
+icon
 endObjectProperties
 
