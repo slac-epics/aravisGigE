@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 697
-y 1801
+x 372
+y 1564
 w 400
 h 340
 font "helvetica-bold-r-12.0"
@@ -610,7 +610,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 204
+x 128
 y 220
 w 68
 h 20
@@ -665,14 +665,14 @@ minor 1
 release 1
 x 20
 y 220
-w 180
+w 104
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
-  "Base e-net bandwidth"
+  "Base eNet B/W"
 }
 endObjectProperties
 
@@ -741,14 +741,14 @@ minor 1
 release 1
 x 20
 y 268
-w 180
+w 104
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
-  "Max e-net throughput"
+  "Max eNet ThruPut"
 }
 endObjectProperties
 
@@ -792,14 +792,14 @@ minor 1
 release 1
 x 20
 y 244
-w 180
+w 104
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
-  "Cur e-net throughput"
+  "Cur eNet ThruPut"
 }
 endObjectProperties
 
@@ -1258,7 +1258,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 204
+x 128
 y 244
 w 68
 h 20
@@ -1279,7 +1279,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 204
+x 128
 y 268
 w 68
 h 20
@@ -1325,9 +1325,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 276
+x 200
 y 220
-w 36
+w 24
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -1344,9 +1344,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 276
+x 200
 y 244
-w 36
+w 24
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -1363,9 +1363,9 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 276
+x 200
 y 268
-w 36
+w 24
 h 20
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -1404,5 +1404,99 @@ symbols {
   0 "P=$(P),R=$(R)"
 }
 icon
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 224
+y 220
+w 52
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "$(IF) RX"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 276
+y 220
+w 64
+h 20
+controlPv "$(IOC):$(IF):RX"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+precision 1
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 276
+y 244
+w 64
+h 20
+controlPv "$(IOC):$(IF):TX"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+precision 1
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 224
+y 244
+w 52
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "$(IF) TX"
+}
 endObjectProperties
 
