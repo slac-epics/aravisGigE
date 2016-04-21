@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 139
-y 1686
+x 4
+y 1727
 w 400
 h 345
 font "helvetica-bold-r-12.0"
@@ -796,7 +796,7 @@ major 4
 minor 7
 release 0
 x 104
-y 196
+y 220
 w 232
 h 20
 controlPv "$(P)$(R)DeviceID_RBV"
@@ -820,7 +820,7 @@ major 4
 minor 1
 release 1
 x 0
-y 196
+y 220
 w 100
 h 20
 font "helvetica-medium-r-12.0"
@@ -838,7 +838,7 @@ major 4
 minor 7
 release 0
 x 104
-y 172
+y 196
 w 232
 h 20
 controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
@@ -862,7 +862,7 @@ major 4
 minor 1
 release 1
 x 0
-y 172
+y 196
 w 100
 h 20
 font "helvetica-medium-r-12.0"
@@ -880,7 +880,7 @@ major 4
 minor 0
 release 0
 x 8
-y 220
+y 244
 w 204
 h 24
 
@@ -893,7 +893,7 @@ major 4
 minor 4
 release 0
 x 4
-y 220
+y 244
 w 204
 h 24
 fgColor index 14
@@ -929,7 +929,7 @@ major 4
 minor 7
 release 0
 x 28
-y 224
+y 248
 w 175
 h 16
 controlPv "$(P)$(R)CamModel"
@@ -946,5 +946,80 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 172
+w 156
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "$(IF) eNet Traffix Rx/Tx"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 152
+y 172
+w 88
+h 20
+controlPv "$(IOC):$(IF):RX"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 244
+y 172
+w 92
+h 20
+controlPv "$(IOC):$(IF):TX"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
 endObjectProperties
 
