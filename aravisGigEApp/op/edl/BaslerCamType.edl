@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 372
-y 1564
+x 1043
+y 1613
 w 400
 h 340
 font "helvetica-bold-r-12.0"
@@ -612,7 +612,7 @@ minor 0
 release 0
 x 128
 y 220
-w 68
+w 60
 h 20
 controlPv "$(P)$(R)GevSCBWA_RBV"
 displayMode "engineer"
@@ -1260,7 +1260,7 @@ minor 0
 release 0
 x 128
 y 244
-w 68
+w 60
 h 20
 controlPv "$(P)$(R)GevSCDCT_RBV"
 displayMode "engineer"
@@ -1281,7 +1281,7 @@ minor 0
 release 0
 x 128
 y 268
-w 68
+w 60
 h 20
 controlPv "$(P)$(R)GevSCDMT_RBV"
 displayMode "engineer"
@@ -1302,7 +1302,7 @@ minor 7
 release 0
 x 276
 y 196
-w 64
+w 68
 h 20
 controlPv "$(P)$(R)GevPktDelay"
 font "helvetica-medium-r-12.0"
@@ -1325,7 +1325,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 200
+x 188
 y 220
 w 24
 h 20
@@ -1344,7 +1344,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 200
+x 188
 y 244
 w 24
 h 20
@@ -1363,7 +1363,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 200
+x 188
 y 268
 w 24
 h 20
@@ -1412,7 +1412,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 224
+x 216
 y 220
 w 52
 h 20
@@ -1431,9 +1431,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
+x 268
 y 220
-w 64
+w 76
 h 20
 controlPv "$(IOC):$(IF):RX"
 format "float"
@@ -1459,9 +1459,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
+x 268
 y 244
-w 64
+w 76
 h 20
 controlPv "$(IOC):$(IF):TX"
 format "float"
@@ -1487,7 +1487,7 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 224
+x 216
 y 244
 w 52
 h 20
