@@ -947,11 +947,12 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     }
 //            printf("callb buffer: %p, pRaw[%d]: %p, pData %p\n", buffer, i, pRaw, pRaw->pData);
     /* Put the frame number and time stamp into the buffer */
-    pRaw->uniqueId = imageCounter;
+    // pRaw->uniqueId = imageCounter;
     pRaw->timeStamp = arv_buffer_get_timestamp(buffer) / 1.e9;
 
 	/* Update the areaDetector timeStamp */
 	updateTimeStamp( &pRaw->epicsTS );
+    pRaw->uniqueId = pRaw->epicsTS.nsec & 0x1FFFF;
 
     /* Get any attributes that have been defined for this driver */
     this->getAttributes(pRaw->pAttributeList);
