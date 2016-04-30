@@ -622,6 +622,8 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     epicsInt32 rbv;
     char *featureName;
     ArvGcNode *featureNode;
+	const char	*	reasonName = "unknownReason";
+	getParamName( 0, function, &reasonName );
 
     /* Set the parameter and readback in the parameter library.  This may be overwritten when we read back the
      * status at the end, but that's OK */
@@ -686,15 +688,18 @@ asynStatus aravisCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     /* Do callbacks so higher layers see any changes */
     callParamCallbacks();
 
-    /* Report any errors */
-    if (status)
-        asynPrint(pasynUser, ASYN_TRACE_ERROR,
-              "%s:writeInt32 error, status=%d function=%d, value=%d\n",
-              driverName, status, function, value);
-    else if (function != AravisConnection)
-        asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-              "%s:writeInt32: function=%d, value=%d\n",
-              driverName, function, value);
+    if (function != AravisConnection)
+	{
+		/* Report any errors */
+		if (status)
+			asynPrint(pasynUser, ASYN_TRACE_ERROR,
+				  "%s:writeInt32 error, status=%d function=%d %s, value=%d\n",
+				  driverName, status, function, reasonName, value);
+		else
+			asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+				  "%s:writeInt32: function=%d %s, value=%d\n",
+				  driverName, function, reasonName, value);
+	}
     return status;
 }
 
@@ -710,6 +715,8 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     asynStatus status = asynSuccess;
     char *featureName;
     ArvGcNode *featureNode;
+	const char	*	reasonName = "unknownReason";
+	getParamName( 0, function, &reasonName );
 
     /* Set the parameter and readback in the parameter library.  This may be overwritten when we read back the
      * status at the end, but that's OK */
@@ -783,12 +790,12 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     callParamCallbacks();
     if (status)
         asynPrint(pasynUser, ASYN_TRACE_ERROR,
-              "%s:writeFloat64 error, status=%d function=%d, value=%f, rbv=%f\n",
-              driverName, status, function, value, rbv);
+              "%s:writeFloat64 error, status=%d function=%d %s, value=%f, rbv=%f\n",
+              driverName, status, function, value, reasonName, rbv);
     else
         asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-              "%s:writeFloat64: function=%d, value=%f\n",
-              driverName, function, value);
+              "%s:writeFloat64: function=%d %s, value=%f\n",
+              driverName, function, reasonName, value);
     return status;
 }
 
