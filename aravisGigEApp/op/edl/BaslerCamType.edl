@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1043
-y 1613
+x 17
+y 44
 w 400
 h 340
 font "helvetica-bold-r-12.0"
@@ -21,7 +21,6 @@ topShadowColor index 1
 botShadowColor index 13
 title "CamType Basler"
 showGrid
-snapToGrid
 gridSize 4
 disableScroll
 endScreenProperties
@@ -32,9 +31,9 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 28
-w 72
+x 204
+y 131
+w 63
 h 20
 controlPv "$(P)$(R)COMPLETED_RBV"
 font "helvetica-medium-r-12.0"
@@ -50,34 +49,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 192
-y 28
-w 72
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Completed"
-}
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 52
-w 72
+x 204
+y 156
+w 65
 h 20
 controlPv "$(P)$(R)FAILURES_RBV"
 font "helvetica-medium-r-12.0"
@@ -93,34 +73,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 192
-y 52
-w 72
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Failures"
-}
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 76
-w 72
+x 203
+y 226
+w 68
 h 20
 controlPv "$(P)$(R)UNDERRUNS_RBV"
 font "helvetica-medium-r-12.0"
@@ -142,8 +103,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 192
-y 76
+x 127
+y 228
 w 72
 h 20
 font "helvetica-medium-r-12.0"
@@ -162,7 +123,7 @@ major 4
 minor 1
 release 1
 x 24
-y 28
+y 253
 w 84
 h 20
 font "helvetica-medium-r-12.0"
@@ -181,7 +142,7 @@ major 4
 minor 1
 release 0
 x 112
-y 28
+y 253
 w 72
 h 20
 fgColor index 25
@@ -197,45 +158,6 @@ offLabel "Reconnect"
 font "helvetica-medium-r-12.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 76
-w 84
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Left shift data"
-}
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 112
-y 76
-w 72
-h 20
-fgColor index 25
-bgColor index 5
-inconsistentColor index 40
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)LEFTSHIFT"
-indicatorPv "$(P)$(R)LEFTSHIFT_RBV"
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
 # (Related Display)
 object relatedDisplayClass
 beginObjectProperties
@@ -243,7 +165,7 @@ major 4
 minor 4
 release 0
 x 4
-y 28
+y 253
 w 16
 h 20
 fgColor index 14
@@ -266,109 +188,6 @@ setPosition {
 symbols {
   0 "desc0=Click this button if your camera stops communicating or acquiring.,desc1=It will do a reconnect,desc2='',desc3='',desc4='',desc5=''"
 }
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 76
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=If set to Yes: 10 12 and 14 bit frames will be left shifted so they occupy the most,desc1=significant bits of the 16 bit frame,desc2='',desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 52
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=Set to Yes to get feature value updates periodically ,desc1=(never more than one feature every 5ms),desc2=Set to No if you are getting performance issues,desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 52
-w 84
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Get features"
-}
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 112
-y 52
-w 72
-h 20
-fgColor index 25
-bgColor index 5
-inconsistentColor index 40
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)GETFEATURES"
-indicatorPv "$(P)$(R)GETFEATURES_RBV"
-font "helvetica-medium-r-12.0"
 endObjectProperties
 
 # (Group)
@@ -458,8 +277,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 4
-y 292
+x 2
+y 278
 w 192
 h 24
 
@@ -471,8 +290,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 4
-y 292
+x 2
+y 278
 w 192
 h 24
 fgColor index 14
@@ -507,8 +326,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 27
-y 296
+x 25
+y 282
 w 165
 h 16
 controlPv "$(P)$(R)CamModel"
@@ -533,8 +352,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 4
-y 172
+x 2
+y 55
 w 16
 h 20
 fgColor index 14
@@ -565,8 +384,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 172
+x 18
+y 55
 w 116
 h 20
 font "helvetica-medium-r-12.0"
@@ -584,8 +403,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 140
-y 172
+x 138
+y 55
 w 60
 h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz"
@@ -604,86 +423,14 @@ newPos
 objType "controls"
 endObjectProperties
 
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 128
-y 220
-w 60
-h 20
-controlPv "$(P)$(R)GevSCBWA_RBV"
-displayMode "engineer"
-fgColor index 16
-bgColor index 12
-fill
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-lineWidth 1
-lineAlarm
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 220
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=GevSCBWA: This value indicates the base bandwidth in bytes per second that will ,desc1=be used by the camera to transmit image and chunk feature data and to handle ,desc2=resends and control data transmissions. This parameter represents a combination ,desc3=of the packet size and the inter-packet delay. ,desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 20
-y 220
-w 104
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Base eNet B/W"
-}
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 204
-y 172
+x 202
+y 55
 w 68
 h 20
 controlPv "$(P)$(R)GevSCPSPacketSiz_RBV"
@@ -707,59 +454,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 4
-y 268
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=GevSCDMT: This value indicates the maximum amount of data (in bytes per second) ,desc1=that the camera could generate given its current settings and ideal conditions; ,desc2=i.e.; unlimited bandwidth and no packet resends. ,desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 20
-y 268
-w 104
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Max eNet ThruPut"
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 244
+x 2
+y 105
 w 16
 h 20
 fgColor index 14
@@ -790,16 +486,16 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 244
-w 104
+x 18
+y 105
+w 181
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
-  "Cur eNet ThruPut"
+  "Current eNet Bandwidth"
 }
 endObjectProperties
 
@@ -809,8 +505,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 4
-y 196
+x 2
+y 79
 w 16
 h 20
 fgColor index 14
@@ -841,8 +537,8 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 20
-y 196
+x 18
+y 79
 w 116
 h 20
 font "helvetica-medium-r-12.0"
@@ -860,8 +556,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 140
-y 196
+x 138
+y 79
 w 60
 h 20
 controlPv "$(P)$(R)GevSCPD"
@@ -886,8 +582,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 204
-y 196
+x 202
+y 79
 w 68
 h 20
 controlPv "$(P)$(R)GevSCPD_RBV"
@@ -904,92 +600,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 148
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=Frame timeout in us before giving up on image frame.,desc1='',desc2='',desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 148
-w 84
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Frame Timeout"
-}
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 112
-y 148
-w 60
-h 20
-controlPv "$(P)$(R)FRAME_RETENTION"
-font "helvetica-medium-r-12.0"
-fgColor index 25
-fgAlarm
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 100
-w 72
+x 202
+y 203
+w 68
 h 20
 controlPv "$(P)$(R)RESENT_PKTS_RBV"
 font "helvetica-medium-r-12.0"
@@ -1005,104 +624,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 192
-y 100
-w 72
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Resent Pkts"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 100
-w 84
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Packet Resend"
-}
-endObjectProperties
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 112
-y 100
-w 72
-h 20
-fgColor index 25
-bgColor index 5
-inconsistentColor index 40
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)PKT_RESEND"
-font "helvetica-medium-r-12.0"
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 100
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=Enables code that requests resend of missing packets.,desc1='',desc2='',desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 124
-w 72
+x 203
+y 180
+w 67
 h 20
 controlPv "$(P)$(R)MISSING_PKTS_RBV"
 font "helvetica-medium-r-12.0"
@@ -1118,172 +648,17 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 112
-y 124
-w 60
-h 20
-controlPv "$(P)$(R)PKT_TIMEOUT"
-font "helvetica-medium-r-12.0"
-fgColor index 25
-fgAlarm
-bgColor index 5
-editable
-motifWidget
-limitsFromDb
-nullColor index 40
-smartRefresh
-changeValOnLoseFocus
-autoSelect
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 24
-y 124
-w 84
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Packet Timeout"
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 4
-y 124
-w 16
-h 20
-fgColor index 14
-bgColor index 3
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-xPosOffset -100
-yPosOffset -148
-useFocus
-buttonLabel "?"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "arvScreens/aravisHelp.edl"
-}
-setPosition {
-  0 "button"
-}
-symbols {
-  0 "desc0=Packet timeout in us before requesting packet resend.,desc1='Must be greater than the inter-packet delay.',desc2='',desc3='',desc4='',desc5=''"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 192
-y 124
-w 72
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "Missing Pkts"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 176
-y 124
-w 12
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-useDisplayBg
-value {
-  "us"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 176
-y 148
-w 12
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-useDisplayBg
-value {
-  "us"
-}
-endObjectProperties
-
 # (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 128
-y 244
-w 60
+x 204
+y 105
+w 110
 h 20
 controlPv "$(P)$(R)GevSCDCT_RBV"
-displayMode "engineer"
-fgColor index 16
-bgColor index 12
-fill
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-lineWidth 1
-lineAlarm
-endObjectProperties
-
-# (Text Update)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 128
-y 268
-w 60
-h 20
-controlPv "$(P)$(R)GevSCDMT_RBV"
 displayMode "engineer"
 fgColor index 16
 bgColor index 12
@@ -1300,8 +675,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 276
-y 196
+x 274
+y 79
 w 68
 h 20
 controlPv "$(P)$(R)GevPktDelay"
@@ -1325,52 +700,13 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 188
-y 220
-w 24
+x 315
+y 105
+w 26
 h 20
 font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-useDisplayBg
-value {
-  "Bps"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 188
-y 244
-w 24
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-useDisplayBg
-value {
-  "Bps"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 188
-y 268
-w 24
-h 20
-font "helvetica-medium-r-12.0"
-fgColor index 14
-bgColor index 5
-useDisplayBg
+fgColor index 15
+bgColor index 12
 value {
   "Bps"
 }
@@ -1382,8 +718,8 @@ beginObjectProperties
 major 4
 minor 4
 release 0
-x 200
-y 292
+x 198
+y 278
 w 144
 h 24
 fgColor index 14
@@ -1406,61 +742,14 @@ symbols {
 icon
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 216
-y 220
-w 52
-h 20
-font "helvetica-medium-r-12.0"
-fontAlign "right"
-fgColor index 14
-bgColor index 3
-value {
-  "$(IF) RX"
-}
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 7
 release 0
-x 268
-y 220
-w 76
-h 20
-controlPv "$(IOC):$(IF):RX"
-format "float"
-font "helvetica-medium-r-12.0"
-fontAlign "center"
-fgColor index 15
-fgAlarm
-bgColor index 12
-precision 1
-nullColor index 40
-smartRefresh
-fastUpdate
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-noExecuteClipMask
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 268
-y 244
+x 273
+y 29
 w 76
 h 20
 controlPv "$(IOC):$(IF):TX"
@@ -1481,22 +770,126 @@ objType "monitors"
 noExecuteClipMask
 endObjectProperties
 
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 193
+y 29
+w 76
+h 20
+controlPv "$(IOC):$(IF):RX"
+format "float"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+precision 1
+nullColor index 40
+smartRefresh
+fastUpdate
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 1
-x 216
-y 244
-w 52
+x 21
+y 29
+w 164
 h 20
 font "helvetica-medium-r-12.0"
 fontAlign "right"
 fgColor index 14
 bgColor index 3
 value {
-  "$(IF) TX"
+  "$(IF) eNet Traffic Rx/Tx"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 156
+w 179
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Frames dropped"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 132
+w 178
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Frames completed"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 19
+y 180
+w 180
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Packets missed"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 18
+y 204
+w 181
+h 20
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 3
+value {
+  "Packets resent"
 }
 endObjectProperties
 
