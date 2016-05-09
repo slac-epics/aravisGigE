@@ -210,11 +210,13 @@ static void destroyBuffer(gpointer data){
 static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
     ArvBuffer *buffer;
     int status;
+	static int	nConsecutiveBadFrames	= 0;
     buffer = arv_stream_try_pop_buffer(stream);
     if (buffer == NULL)    return;
     ArvBufferStatus buffer_status = arv_buffer_get_status(buffer);
-	// TODO: Look into calling updateTimeStamp() here in aravis buffer callbck if possible
+	// TODO: Look into calling updateTimeStamp() here in aravis buffer callback if possible
     if (buffer_status == ARV_BUFFER_STATUS_SUCCESS /*|| buffer->status == ARV_BUFFER_STATUS_MISSING_PACKETS*/) {
+		nConsecutiveBadFrames = 0;
         status = epicsMessageQueueTrySend(pPvt->msgQId,
                 &buffer,
                 sizeof(&buffer));
@@ -226,8 +228,20 @@ static void newBufferCallback (ArvStream *stream, aravisCamera *pPvt) {
     } else {
         // printf as pPvt->pasynUserSelf for asynPrint is protected
 		// Stopped fetching buffer size via arv_buffer_get_data() as it's just the preallocated size
-        printf("Bad frame status: %s\n", ArvBufferStatusToString(buffer_status) );
         arv_stream_push_buffer (stream, buffer);
+
+		nConsecutiveBadFrames++;
+		if ( nConsecutiveBadFrames < 10 )
+        	printf("Bad frame status: %s\n", ArvBufferStatusToString(buffer_status) );
+		else if ( ((nConsecutiveBadFrames-10) % 1000) == 0 ) {
+			static int	nBadFramesPrior	= 0;
+        	printf("Bad frame status: %s, %d msgs suppressed.\n", ArvBufferStatusToString(buffer_status),
+					nConsecutiveBadFrames - nBadFramesPrior );
+			nBadFramesPrior	= nConsecutiveBadFrames;
+			// arv_camera_stop_acquisition(pPvt->camera);
+			// epicsThreadSleep( 1 );
+			// arv_camera_start_acquisition (pPvt->camera);
+		}
     }
 }
 
@@ -791,7 +805,7 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     if (status)
         asynPrint(pasynUser, ASYN_TRACE_ERROR,
               "%s:writeFloat64 error, status=%d function=%d %s, value=%f, rbv=%f\n",
-              driverName, status, function, value, reasonName, rbv);
+              driverName, status, function, reasonName, value, rbv);
     else
         asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
               "%s:writeFloat64: function=%d %s, value=%f\n",
