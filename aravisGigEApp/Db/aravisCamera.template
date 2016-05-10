@@ -314,7 +314,7 @@ record( ao, "$(P)$(R)XmitRate" )
 
 record( ao, "$(P)$(R)CamProcDelay" )
 {
-    field( DOL,  "1.0e-6" )
+    field( DOL,  "10e-3" )
     field( EGU,  "Sec" )
     field( PREC, "3" ) 
     field( PINI, "YES" )
@@ -329,7 +329,8 @@ record( calc, "$(P)$(R)XmitDelay" )
     field( INPC, "$(P)$(R)CamProcDelay CPP MS" )
     field( INPD, "$(P)$(R)DataType_RBV CPP MS" )
     field( CALC, "D?(2*A/B+C):(A/B+C)" )
-    field( EGU,  "Bytes/Sec" )
+    field( EGU,  "Sec" )
+    field( PREC, "4" )
 }   
 
 record( ao, "$(P)$(R)DriverProcDelay" )
