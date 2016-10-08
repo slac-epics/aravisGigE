@@ -1,0 +1,19 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#==============================================================
+
+R2.1-1.0.0:	8-Oct-2016, B. Hill  (bhill)
+	Updated to build w/ git work-flow
+    Merged in updates from pcds-trunk, include new camera models for Basler and Manta.
+    Numerous feature branches are included here, most of which have been accepted upstream
+    but not tagged w/ an upstream release yet.
+		addr-timeout-defaults adds defaults for ADDR and TIMEOUT macros
+		autosaveFields adds info(autosave) directives
+		pkt-stats adds new network traffic packet statistics
+		mbbo-default, local-build-compat, site-font-color, and write-only
+			are related to translating the xml to db and edl files and build issues.
+		updateTimeStamp adds calls to the ADCore timeStampSource for timestamping images
+		status-n-diags includes numerous updates to status and diagnostic messages
+
