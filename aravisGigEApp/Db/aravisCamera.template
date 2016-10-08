@@ -171,7 +171,7 @@ record(longout, "$(P)$(R)PKT_TIMEOUT")
 
 record(longout, "$(P)$(R)FRAME_RETENTION")
 {
-   field(DESC, "Frame timeout in us after last packet")
+   field(DESC, "Fr timeout us after last pkt rcvd")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_FRAME_RETENTION")
    field(VAL,  "100000")
@@ -210,14 +210,16 @@ record(longout, "$(P)$(R)CONNECTION")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_CONNECTION")
    field(VAL, "1")
-   field(PINI, "1")
+   field(PINI, "YES")
+#  Need to update GevSCPSPacketSiz after each reconnect
+   field(FLNK, "$(P)$(R)GevSCPSPacketSiz" )
 }
 
 record(calcout, "$(P)$(R)CHKCONN")
 {
    field(SCAN, "1 second")
    field(INPA, "$(P)$(R)CONNECTION.SEVR CP")
-   field(CALC, "A==0")
+   field(CALC, "A!=0")
    field(OOPT, "When Non-zero")
    field(OUT,  "$(P)$(R)CONNECTION.PROC PP")
 }
@@ -242,6 +244,7 @@ record(mbbo, "$(P)$(R)LEFTSHIFT") {
   field(ZRVL, "0")
   field(ONST, "Yes")
   field(ONVL, "1")
+  field(PINI, "YES")
   info(autosaveFields, "DESC ZRSV ONSV VAL")
 }
 
@@ -263,7 +266,42 @@ record(bo, "$(P)$(R)HWIMAGEMODE") {
   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARAVIS_HWIMAGEMODE")
   field(ZNAM, "No")
   field(ONAM, "Yes")
+  field(PINI, "YES")
   info(autosaveFields, "DESC ZRSV ONSV VAL")
+}
+
+# Initialize EGU for these common GEV records
+record(longin, "$(P)$(R)GevSCDCT_RBV")
+{
+	field(EGU, "Bps")
+}
+record(longin, "$(P)$(R)GevSCDMT_RBV")
+{
+	field(EGU, "Bps")
+}
+record(longin, "$(P)$(R)GevSCBWA_RBV")
+{
+	field(EGU, "Bps")
+}
+
+# Initialize PINI for these common GEV records to YES
+record(longout, "$(P)$(R)GevSCPSPacketSiz")
+{
+  field(PINI, "YES")
+}
+record(longout, "$(P)$(R)GevSCPD")
+{
+  field(PINI, "YES")
+}
+
+# Calculate delay per packet for cameras which support GevSCPD
+record( calc, "$(P)$(R)GevPktDelay" )
+{
+    field( INPA, "$(P)$(R)GevSCPD CPP MS" )
+    field( INPB, "8.0e-3" )
+    field( CALC, "A*B" )
+    field( EGU,  "us" )
+    field( PREC, "1" ) 
 }
 
 # unsupported fields
@@ -285,3 +323,60 @@ record(longin, "$(P)$(R)NumExposuresCounter_RBV") {
 record(mbbo, "$(P)$(R)TriggerMode") {
   field(DISA, "1")
 }
+
+
+record( ao, "$(P)$(R)XmitRate" )
+{
+    field( DOL,  "125e6" )
+    field( EGU,  "Bytes/Sec" )
+    field( PREC, "3" )
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+
+record( ao, "$(P)$(R)CamProcDelay" )
+{
+    field( DOL,  "10e-3" )
+    field( EGU,  "Sec" )
+    field( PREC, "3" ) 
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+# aravisGigE DataType Enumerations
+# UInt8=0, UInt16=1
+record( calc, "$(P)$(R)XmitDelay" )
+{
+    field( INPA, "$(P)$(R)ArraySize_RBV CP MS" )
+    field( INPB, "$(P)$(R)XmitRate CPP MS" )
+    field( INPC, "$(P)$(R)CamProcDelay CPP MS" )
+    field( INPD, "$(P)$(R)DataType_RBV CPP MS" )
+    field( CALC, "D?(2*A/B+C):(A/B+C)" )
+    field( EGU,  "Sec" )
+    field( PREC, "4" )
+}   
+
+record( ao, "$(P)$(R)DriverProcDelay" )
+{
+    field( DOL,  "1.0e-6" )
+    field( EGU,  "Sec" )
+    field( PREC, "3" ) 
+    field( PINI, "YES" )
+    info( autosaveFields, "VAL" )
+}   
+
+#
+# TrigToTS_Calc: Calculates expected delay from trigger to timeStamp update 
+# Inputs: All units in seconds
+#   A   - Camera acquire time (exposure length)
+#   B   - Camera image transmission time
+#   C   - Estimated driver processing delay before requesting timestamp
+record( calc, "$(P)$(R)TrigToTS_Calc" )
+{
+    field( INPA, "$(P)$(R)AcquireTime_RBV CP MS" )
+    field( INPB, "$(P)$(R)XmitDelay CP MS" )
+    field( INPC, "$(P)$(R)DriverProcDelay CP MS" )
+    field( CALC, "A+B+C" )
+    field( EGU,  "sec" )
+    field( PREC, "5" ) 
+}
+
