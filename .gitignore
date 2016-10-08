@@ -15,5 +15,6 @@ cdCommands
 dllPath.bat
 auto_settings*
 *~
+*.log
 *.swp
 

@@ -1,5 +1,4 @@
-#export ARV_DEBUG=stream-thread
-#genicam
+# Examples of possible ARV_DEBUG settings
 #export ARV_DEBUG=stream-thread:2,packet:3,gvcp:2
 #export ARV_DEBUG=${ARV_DEBUG}:packet
 #export ARV_DEBUG=${ARV_DEBUG}:evaluator

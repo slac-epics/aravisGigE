@@ -12,13 +12,16 @@ the driver supports, and the generated summary screen should be edited to make
 a more sensible summary. The Db file will be generated in:
   ../Db/<camera_name>.template
 and the edm files will be called:
-  ../opi/edl/<camera_name>.edl
-  ../opi/edl/<camera_name>-features.edl""")
+  ../op/edl/<camera_name>.edl
+  ../op/edl/<camera_name>-features.edl""")
 options, args = parser.parse_args()
 if len(args) != 2:
     parser.error("Incorrect number of arguments")
 
-# parse xml file to dom object
+# Check the first two lines of the feature xml file to see if arv-tool left
+# the camera id there, thus creating an unparsable file
+# Throw it away if it doesn't look like valid xml
+# A valid first line of an xml file will be optional whitespace followed by '<'
 genicam_lines = open(args[0]).readlines()
 try:
     start_line = min(i for i in range(2) if genicam_lines[i].lstrip().startswith("<"))
@@ -28,11 +31,12 @@ except:
     sys.exit(1)
 
 xml_root = parseString("".join(genicam_lines[start_line:]).lstrip())
+
 camera_name = args[1]
 prefix = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 db_filename = os.path.join(prefix, "Db", camera_name + ".template")
-edl_filename = os.path.join(prefix, "opi", "edl", camera_name + ".edl")
-edl_more_filename = os.path.join(prefix, "opi", "edl", camera_name + "-features.edl")
+edl_filename = os.path.join(prefix, "op", "edl", camera_name + ".edl")
+edl_more_filename = os.path.join(prefix, "op", "edl", camera_name + "-features.edl")
 
 # function to read element children of a node
 def elements(node):
@@ -119,118 +123,168 @@ print '# Macros:'
 print '#% macro, P, Device Prefix'
 print '#% macro, R, Device Suffix'
 print '#% macro, PORT, Asyn Port name'
-print '#% macro, TIMEOUT, Timeout'
-print '#% macro, ADDR, Asyn Port address'
+print '#% macro, TIMEOUT, Timeout, default=1'
+print '#% macro, ADDR, Asyn Port address, default=0'
 print '#%% gui, $(PORT), edmtab, %s.edl, P=$(P),R=$(R)' % camera_name
 print 
 
+a_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PREC'
+b_autosaveFields		= 'DESC ZSV OSV TSE'
+long_autosaveFields		= 'DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE'
+mbb_autosaveFields		= 'DESC ZRSV ONSV TWSV THSV FRSV FVSV SXSV SVSV EISV NISV TESV ELSV TVSV TTSV FTSV FFSV TSE'
+string_autosaveFields	= 'DESC TSE'
+
+# Create CamModel and CamType related PV's for navigation and labeling
+print 'record(stringin, "$(P)$(R)CamModel") {'
+print '  field(VAL,   "%s")' % camera_name
+print '  field(PINI,  "YES")'
+print '}'
+print
+print 'record(stringin, "$(P)$(R)CamModelScreen") {'
+print '  field(VAL,   "arvScreens/%s")' % camera_name
+print '  field(PINI,  "YES")'
+print '}'
+print
+print 'record(stringin, "$(P)$(R)CamType") {'
+print '  field(VAL,   "$(TYPE=aravis)")'
+print '  field(PINI,  "YES")'
+print '}'
+print
+print 'record(stringin, "$(P)$(R)CamTypeScreen") {'
+print '  field(VAL,   "arvScreens/$(TYPE=aravis)CamType.edl")'
+print '  field(PINI,  "YES")'
+print '}'
+print
+
+def	isNodeReadOnly( node ):
+    for n in elements(node):
+        if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
+            return True
+        elif str(n.nodeName) == "pValue":
+            regNode = lookup[getText(n)]
+            if not regNode:
+                return True
+            return isNodeReadOnly( regNode )
+    return False
 
 # for each node
 for node in doneNodes:
     nodeName = str(node.getAttribute("Name"))
-    ro = False
-    for n in elements(node):
-        if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
-            ro = True
+    ro = isNodeReadOnly( node )
     if node.nodeName in ["Integer", "IntConverter", "IntSwissKnife"]:
         print 'record(longin, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'        
+        print '  info( autosaveFields, "%s" )' % long_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(longout, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s PINI VAL" )' % long_autosaveFields
         print '}'
         print        
     elif node.nodeName in ["Boolean"]:
         print 'record(bi, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(ZNAM, "No")'
         print '  field(ONAM, "Yes")'                        
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % b_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(bo, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(ZNAM, "No")'
         print '  field(ONAM, "Yes")'                                
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s PINI VAL" )' % b_autosaveFields
         print '}'
         print           
     elif node.nodeName in ["Float", "Converter", "SwissKnife"]:
         print 'record(ai, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynFloat64")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVD_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_%s")' % nodeName
         print '  field(PREC, "3")'        
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % a_autosaveFields
         print '}'
         print    
         if ro:
             continue    
         print 'record(ao, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynFloat64")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVD_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVD_%s")' % nodeName
         print '  field(PREC, "3")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s PINI VAL" )' % a_autosaveFields
         print '}'
         print
     elif node.nodeName in ["StringReg"]:
         print 'record(stringin, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynOctetRead")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVS_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVS_%s")' % nodeName
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % string_autosaveFields
         print '}'
         print
     elif node.nodeName in ["Command"]:
         print 'record(longout, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % long_autosaveFields
         print '}'
         print         
     elif node.nodeName in ["Enumeration"]:
         enumerations = ""
         i = 0
+        defaultVal = "0"
         epicsId = ["ZR", "ON", "TW", "TH", "FR", "FV", "SX", "SV", "EI", "NI", "TE", "EL", "TV", "TT", "FT", "FF"]
         for n in elements(node):
             if str(n.nodeName) == "EnumEntry":
                 if i >= len(epicsId):
-                    print >> sys.stderr, "Too many enum entries in %s, truncating" % nodeName
+                    print >> sys.stderr, "More than 16 enum entries for %s mbbi record, discarding additional options." % nodeName
+                    print >> sys.stderr, "   If needed, edit the Enumeration tag for %s to select the 16 you want." % nodeName
                     break
                 name = str(n.getAttribute("Name"))
-                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:16])
+                enumerations += '  field(%sST, "%s")\n' %(epicsId[i], name[:25])
                 value = [x for x in elements(n) if str(x.nodeName) == "Value"]
                 assert value, "EnumEntry %s in node %s doesn't have a value" %(name, nodeName)                
-                enumerations += '  field(%sVL, "%s")\n' %(epicsId[i], getText(value[0]))                
+                if i == 0:
+                    defaultVal = getText(value[0])
+                enumerations += '  field(%sVL, "%s")\n' %(epicsId[i], getText(value[0]))
                 i += 1                
         print 'record(mbbi, "$(P)$(R)%s_RBV") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
         print enumerations,
         print '  field(SCAN, "I/O Intr")'
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s" )' % mbb_autosaveFields
         print '}'
         print
         if ro:
             continue        
         print 'record(mbbo, "$(P)$(R)%s") {' % records[nodeName]
         print '  field(DTYP, "asynInt32")'
-        print '  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))ARVI_%s")' % nodeName
+        print '  field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_%s")' % nodeName
+        print '  field(DOL,  "%s")' % defaultVal
         print enumerations,       
         print '  field(DISA, "0")'
+        print '  info( autosaveFields, "%s PINI VAL" )' % mbb_autosaveFields
         print '}'
         print          
     else:
@@ -242,11 +296,16 @@ sys.stdout = stdout
 
 # Spit out a feature screen
 edl_file = open(edl_more_filename, "w")
-w = 260
+w = 300
 h = 40
-x = 5
-y = 50
+x = 4
+y = 48
 text = ""
+defFontClass	= "helvetica"
+defFgColorCtrl	= 25
+defBgColorCtrl	= 5
+defFgColorMon	= 15
+defBgColorMon	= 12
 
 def quoteString(string):
     escape_list = ["\\","{","}",'"']
@@ -264,24 +323,27 @@ minor 0
 release 0
 x %(x)d
 y %(y)d
-w 255
+w %(boxw)d
 h %(boxh)d
 lineColor index 14
 fill
 fillColor index 5
 endObjectProperties
 
-# (Static Text)
+""" % globals()
+
+def make_box_label():
+    return """# (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x %(x)d
 y %(laby)d
 w 150
 h 14
-font "arial-medium-r-12.0"
+font "%(defFontClass)s-medium-r-12.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 8
@@ -291,7 +353,6 @@ value {
 autoSize
 border
 endObjectProperties
-
 """ % globals()
 
 def make_description():
@@ -299,25 +360,25 @@ def make_description():
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
 x %(nx)d
 y %(y)d
-w 10
+w 16
 h 20
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-10.0"
+font "%(defFontClass)s-bold-r-10.0"
 xPosOffset -100
-yPosOffset -85
+yPosOffset -148
 useFocus
 buttonLabel "?"
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "aravisHelp"
+  0 "arvScreens/aravisHelp.edl"
 }
 setPosition {
   0 "button"
@@ -325,7 +386,7 @@ setPosition {
 symbols {
   0 "desc0=%(desc0)s,desc1=%(desc1)s,desc2=%(desc2)s,desc3=%(desc3)s,desc4=%(desc4)s,desc5=%(desc5)s"
 }
-endObjectProperties                
+endObjectProperties
 
 """ % globals()
 
@@ -336,24 +397,24 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x %(nx)d
 y %(y)d
-w 110
+w %(label_w)d
 h 20
-font "arial-bold-r-10.0"
+font "%(defFontClass)s-bold-r-10.0"
 fgColor index 14
 bgColor index 3
 useDisplayBg
 value {
   "%(nodeName)s"
 }
-endObjectProperties   
+endObjectProperties
 
 """ % globals()             
 
 def make_ro():
-    return """# (Textupdate)
+    return """# (Text Update)
 object TextupdateClass
 beginObjectProperties
 major 10
@@ -361,36 +422,43 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
 controlPv "$(P)$(R)%(recordName)s_RBV"
-fgColor index 16
+fgColor index %(defFgColorMon)d
 fgAlarm
-bgColor index 10
+bgColor index %(defBgColorMon)d
 fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 fontAlign "center"
-endObjectProperties        
+endObjectProperties
 
 """ % globals()         
 
 def make_demand():
-    return """# (Textentry)
-object TextentryClass
+    return """# (Text Control)
+object activeXTextDspClass
 beginObjectProperties
-major 10
-minor 0
+major 4
+minor 7
 release 0
 x %(nx)d
 y %(y)d
 w 60
 h 20
 controlPv "$(P)$(R)%(recordName)s"
-fgColor index 25
-fgAlarm
-bgColor index 3
-fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
+fgColor index %(defFgColorCtrl)d
+bgColor index %(defBgColorCtrl)d
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
 endObjectProperties
 
 """ % globals()
@@ -407,11 +475,11 @@ y %(y)d
 w 60
 h 20
 controlPv "$(P)$(R)%(recordName)s_RBV"
-fgColor index 16
+fgColor index %(defFgColorMon)d
 fgAlarm
-bgColor index 10
+bgColor index %(defBgColorMon)d
 fill
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 fontAlign "center"
 endObjectProperties
 
@@ -426,17 +494,17 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
-fgColor index 25
-bgColor index 3
-inconsistentColor index 0
+fgColor index %(defFgColorCtrl)d
+bgColor index %(defBgColorCtrl)d
+inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)%(recordName)s"
 indicatorPv "$(P)$(R)%(recordName)s_RBV"
-font "arial-bold-r-12.0"
-endObjectProperties        
+font "%(defFontClass)s-bold-r-12.0"
+endObjectProperties
 
 """ % globals()
 
@@ -449,9 +517,9 @@ minor 0
 release 0
 x %(nx)d
 y %(y)d
-w 125
+w 124
 h 20
-fgColor index 25
+fgColor index %(defFgColorCtrl)d
 onColor index 3
 offColor index 3
 topShadowColor index 1
@@ -461,31 +529,31 @@ pressValue "1"
 onLabel "%(nodeName)s"
 offLabel "%(nodeName)s"
 3d
-font "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
 endObjectProperties
 
 """ % globals()
 
+label_w = 132
 # Write each section
 for name, nodes in structure:
     # write box
-    boxh = len(nodes) * 25 + 5
-    if (boxh + y > 850):
-        y = 50
-        w += 260
-        x += 260  
-    laby = y - 10      
+    boxh = len(nodes) * 24 + 8
+    boxw = label_w + 156
+    if (boxh + y > 940):
+        y = 44
+        w += boxw + 8
+        x += boxw + 8
+    laby = y - 8      
     text += make_box()
-    y += 5
+    y += 8
     h = max(y, h)    
     for node in nodes:
         nodeName = str(node.getAttribute("Name"))
         recordName = records[nodeName]
-        ro = False
+        ro = isNodeReadOnly( node )
         desc = ""
         for n in elements(node):
-            if str(n.nodeName) == "AccessMode" and getText(n) == "RO":
-                ro = True
             if str(n.nodeName) in ["ToolTip", "Description"]:
                 desc = getText(n)
         descs = ["%s: "% nodeName, "", "", "", "", ""]
@@ -501,16 +569,16 @@ for name, nodes in structure:
                 globals()["desc%d" % i] = quoteString(descs[i])
             else:
                 globals()["desc%d" % i] = "''"
-        nx = x + 5
+        nx = x + 4
         text += make_description()   
-        nx += 10
+        nx += 20
         text += make_label()
-        nx += 110            
+        nx += label_w + 4            
         if node.nodeName in ["StringReg"] or ro:
             text += make_ro()
         elif node.nodeName in ["Integer", "Float", "Converter", "IntConverter", "IntSwissKnife", "SwissKnife"]:  
             text += make_demand()
-            nx += 65 
+            nx += 68 
             text += make_rbv() 
         elif node.nodeName in ["Enumeration", "Boolean"]:
             text += make_menu()
@@ -518,15 +586,22 @@ for name, nodes in structure:
             text += make_cmd()
         else:
             print "Don't know what to do with", node.nodeName
-        y += 25
-    y += 15
-    h = max(y, h)    
+        y += 24
+    y += 16
+    h = max(y, h)
+
+    # Put the label on the box last so it's on top
+    text += make_box_label()
+    # End of write box
+# End of Write each section
 
 # tidy up
-w += 5
+w += 4
 exitX = w - 100
-exitY = h - min(30, h - y)
-h = exitY + 30
+exitY = h - min(28, h - y)
+h = exitY + 28
+
+# Write edl file header
 edl_file.write("""4 0 1
 beginScreenProperties
 major 4
@@ -536,22 +611,22 @@ x 50
 y 50
 w %(w)d
 h %(h)d
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
+ctlFont "%(defFontClass)s-bold-r-12.0"
+btnFont "%(defFontClass)s-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
-ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlFgColor1 index %(defFgColorMon)d
+ctlFgColor2 index %(defFgColorCtrl)d
+ctlBgColor1 index %(defBgColorMon)d
+ctlBgColor2 index %(defBgColorCtrl)d
 topShadowColor index 1
 botShadowColor index 11
 title "%(camera_name)s features - $(P)$(R)"
 showGrid
 snapToGrid
-gridSize 5
+gridSize 4
 endScreenProperties
 
 # (Group)
@@ -612,12 +687,12 @@ object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
-release 0
+release 1
 x 0
 y 2
 w %(w)d
 h 24
-font "arial-bold-r-16.0"
+font "%(defFontClass)s-bold-r-18.0"
 fontAlign "center"
 fgColor index 14
 bgColor index 48
@@ -656,7 +731,11 @@ endGroup
 endObjectProperties
 
 """ %globals())
+
+# Write edl file widgets
 edl_file.write(text.encode('ascii', 'replace'))
+
+# Write edl file exit button
 edl_file.write("""# (Exit Button)
 object activeExitButtonClass
 beginObjectProperties
@@ -672,7 +751,7 @@ bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 label "EXIT"
-font "arial-bold-r-14.0"
+font "%(defFontClass)s-bold-r-14.0"
 3d
 endObjectProperties
 """ % globals())
@@ -687,39 +766,24 @@ minor 0
 release 1
 x 713
 y 157
-w 390
+w 420
 h 820
-font "arial-bold-r-12.0"
-ctlFont "arial-bold-r-12.0"
-btnFont "arial-bold-r-12.0"
+font "%(defFontClass)s-bold-r-12.0"
+ctlFont "%(defFontClass)s-bold-r-12.0"
+btnFont "%(defFontClass)s-bold-r-12.0"
 fgColor index 14
 bgColor index 3
 textColor index 14
-ctlFgColor1 index 25
-ctlFgColor2 index 25
-ctlBgColor1 index 3
-ctlBgColor2 index 3
+ctlFgColor1 index %(defFgColorMon)d
+ctlFgColor2 index %(defFgColorCtrl)d
+ctlBgColor1 index %(defBgColorMon)d
+ctlBgColor2 index %(defBgColorCtrl)d
 topShadowColor index 1
 botShadowColor index 11
 showGrid
 snapToGrid
-gridSize 5
+gridSize 4
 endScreenProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 0
-y 470
-w 390
-h 350
-lineColor index 5
-fill
-fillColor index 5
-endObjectProperties
 
 # (Embedded Window)
 object activePipClass
@@ -727,17 +791,17 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 0
-y 0
-w 390
-h 470
+x 4
+y 4
+w 408
+h 476
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "ADBase"
-sizeOfs 5
+file "areaDetectorScreens/ADBase.edl"
+sizeOfs 0
 numDsps 0
 noScroll
 endObjectProperties
@@ -748,17 +812,17 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 0
-y 470
-w 390
-h 110
+x 4
+y 480
+w 408
+h 112
 fgColor index 14
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
 displaySource "file"
-file "aravisCamera"
-sizeOfs 5
+file "arvScreens/aravisCamera.edl"
+sizeOfs 0
 numDsps 0
 noScroll
 endObjectProperties
@@ -767,25 +831,26 @@ endObjectProperties
 object relatedDisplayClass
 beginObjectProperties
 major 4
-minor 2
+minor 4
 release 0
-x 5
-y 790
-w 380
-h 25
+x 4
+y 792
+w 408
+h 24
 fgColor index 43
 bgColor index 3
 topShadowColor index 1
 botShadowColor index 11
-font "arial-bold-r-14.0"
+font "%(defFontClass)s-bold-r-14.0"
 buttonLabel "more features..."
 numPvs 4
 numDsps 1
 displayFileName {
-  0 "%s-features"
+  0 "arvScreens/%(camera_name)s-features.edl"
 }
 setPosition {
   0 "parentWindow"
 }
-endObjectProperties""" % camera_name)
+endObjectProperties
+""" % globals() )
 

@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 188
-y 1984
-w 390
-h 110
+x 1208
+y 1368
+w 634
+h 345
 font "helvetica-bold-r-12.0"
 ctlFont "helvetica-bold-r-12.0"
 btnFont "helvetica-bold-r-12.0"
@@ -19,6 +19,7 @@ ctlBgColor1 index 3
 ctlBgColor2 index 3
 topShadowColor index 1
 botShadowColor index 11
+title "CamType Aravis"
 showGrid
 snapToGrid
 gridSize 4
@@ -32,7 +33,7 @@ major 4
 minor 0
 release 0
 x 4
-y 12
+y 36
 w 380
 h 90
 lineColor index 14
@@ -47,7 +48,7 @@ major 4
 minor 1
 release 1
 x 4
-y 4
+y 28
 w 60
 h 14
 font "helvetica-medium-r-12.0"
@@ -66,8 +67,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 90
-y 24
+x 92
+y 48
 w 92
 h 20
 controlPv "$(P)$(R)COMPLETED_RBV"
@@ -91,7 +92,7 @@ major 4
 minor 1
 release 1
 x 8
-y 24
+y 48
 w 76
 h 20
 font "helvetica-medium-r-12.0"
@@ -109,8 +110,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 90
-y 48
+x 92
+y 72
 w 92
 h 20
 controlPv "$(P)$(R)FAILURES_RBV"
@@ -134,7 +135,7 @@ major 4
 minor 1
 release 1
 x 8
-y 48
+y 72
 w 76
 h 20
 font "helvetica-medium-r-12.0"
@@ -152,8 +153,8 @@ beginObjectProperties
 major 4
 minor 7
 release 0
-x 90
-y 72
+x 92
+y 96
 w 92
 h 20
 controlPv "$(P)$(R)UNDERRUNS_RBV"
@@ -177,7 +178,7 @@ major 4
 minor 1
 release 1
 x 8
-y 72
+y 96
 w 76
 h 20
 font "helvetica-medium-r-12.0"
@@ -196,7 +197,7 @@ major 4
 minor 1
 release 1
 x 208
-y 72
+y 96
 w 84
 h 20
 font "helvetica-medium-r-12.0"
@@ -214,8 +215,8 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 290
-y 72
+x 292
+y 96
 w 88
 h 20
 fgColor index 25
@@ -238,7 +239,7 @@ major 4
 minor 1
 release 1
 x 208
-y 48
+y 72
 w 84
 h 20
 font "helvetica-medium-r-12.0"
@@ -256,8 +257,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 290
-y 48
+x 292
+y 72
 w 88
 h 20
 fgColor index 25
@@ -277,7 +278,7 @@ major 4
 minor 4
 release 0
 x 192
-y 72
+y 96
 w 12
 h 20
 fgColor index 14
@@ -309,7 +310,7 @@ major 4
 minor 4
 release 0
 x 192
-y 48
+y 72
 w 12
 h 20
 fgColor index 14
@@ -341,7 +342,7 @@ major 4
 minor 4
 release 0
 x 192
-y 24
+y 48
 w 12
 h 20
 fgColor index 14
@@ -373,7 +374,7 @@ major 4
 minor 1
 release 1
 x 208
-y 24
+y 48
 w 84
 h 20
 font "helvetica-medium-r-12.0"
@@ -391,8 +392,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 290
-y 24
+x 292
+y 48
 w 88
 h 20
 fgColor index 25
@@ -412,7 +413,7 @@ major 4
 minor 0
 release 0
 x 12
-y 24
+y 48
 w 175
 h 70
 
@@ -425,7 +426,7 @@ major 4
 minor 1
 release 1
 x 8
-y 24
+y 48
 w 176
 h 72
 font "helvetica-medium-r-12.0"
@@ -445,5 +446,361 @@ endGroup
 visPv "$(P)$(R)CONNECTION.SEVR"
 visMin "3"
 visMax "4"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 0
+w 84
+h 24
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+value {
+  "Camera Type"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 88
+y 0
+w 88
+h 24
+controlPv "$(P)$(R)CamType"
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+limitsFromDb
+nullColor index 25
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 4
+y 132
+w 12
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+xPosOffset -100
+yPosOffset -88
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=StreamBytesPerSecond: Bandwidth allocation: the camera will consume up to this ,desc1=bandwidth; in bytes per second. You must set this value if multiple cameras ,desc2=share the same ethernet adapter; otherwise data will be lost. The sum of all ,desc3=StreamBytesPerSecond values of all cameras must not exceed the available ,desc4=bandwidth. ,desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 132
+w 132
+h 20
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "StreamBytesPerSecond"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 164
+y 132
+w 104
+h 20
+controlPv "$(P)$(R)StreamBytesPerSe"
+font "helvetica-bold-r-12.0"
+fgColor index 25
+bgColor index 5
+editable
+motifWidget
+limitsFromDb
+nullColor index 40
+smartRefresh
+changeValOnLoseFocus
+autoSelect
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 280
+y 132
+w 104
+h 20
+controlPv "$(P)$(R)StreamBytesPerSe_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 4
+y 164
+w 12
+h 20
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-10.0"
+xPosOffset -100
+yPosOffset -88
+useFocus
+buttonLabel "?"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "arvScreens/aravisHelp.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "desc0=StreamFrameRateConstrain: When enabled; the frame rate of the camera is ,desc1=constrained by available bandwidth. When disabled; the camera can image faster ,desc2=than it can send data. ,desc3='',desc4='',desc5=''"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 164
+w 140
+h 20
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "StreamFrameRateConstrain"
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 164
+w 104
+h 20
+fgColor index 25
+bgColor index 5
+inconsistentColor index 40
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)StreamFrameRateC"
+indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
+font "helvetica-bold-r-12.0"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 220
+w 124
+h 20
+controlPv "$(P)$(R)DeviceID_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 220
+w 132
+h 20
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Serial #"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 140
+y 196
+w 124
+h 20
+controlPv "$(P)$(R)DeviceFirmwareVe_RBV"
+fgColor index 15
+fgAlarm
+bgColor index 12
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 4
+y 196
+w 132
+h 20
+font "helvetica-bold-r-10.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "FirmwareVersion"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 188
+y 4
+w 200
+h 24
+
+beginGroup
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 188
+y 4
+w 200
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 14
+font "helvetica-medium-r-12.0"
+buttonLabel "             Model Specific        "
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "gigeScreens/camModel.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "P=$(P),R=$(R),IOC=$(IOC),EVR=$(EVR),CAM=$(CAM)"
+}
+replaceSymbols {
+  0 1
+}
+propagateMacros {
+  0 0
+}
+icon
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 212
+y 8
+w 172
+h 16
+controlPv "$(P)$(R)CamModel"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
 endObjectProperties
 
