@@ -1523,11 +1523,20 @@ static void configAravisCameraCallFunc(const iocshArgBuf *args)
                       args[2].ival, args[3].ival, args[4].ival, args[5].ival);
 }
 
+// iocsh function definition for arv_debug_enable()
+static const iocshArg arv_debug_enableArg0 = {"New Debug Settings: Ex. gvcp:3,genicam:2", iocshArgString};
+static const iocshArg * const arv_debug_enableArgs[] =  { &arv_debug_enableArg0 };
+static const iocshFuncDef arv_debug_enableFuncDef = {"arv_debug_enable", 6, arv_debug_enableArgs};
+static void arv_debug_enableCallFunc(const iocshArgBuf *args)
+{
+    arv_debug_enable( args[0].sval ); 
+}
 
 static void aravisCameraRegister(void)
 {
 
     iocshRegister(&configAravisCamera, configAravisCameraCallFunc);
+    iocshRegister(&arv_debug_enableFuncDef, arv_debug_enableCallFunc);
 }
 
 extern "C" {
