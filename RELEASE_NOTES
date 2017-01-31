@@ -4,6 +4,13 @@
 #
 #==============================================================
 
+R2.1-1.1.1:	2017-01-31 Bruce Hill
+	Updated to ADCore/R2.2-1.1.1 and asyn/R4.30-1.1.1 and fixed some cross compile settings
+	Simplified configure/RELEASE* files following latest git workflow pattern
+
+R2.1-1.1.0: 2016-10-10 Bruce Hill
+	Added support for JAI AM-201GE 1600x1200 12bit 40fps gigE camera
+
 R2.1-1.0.0:	8-Oct-2016, B. Hill  (bhill)
 	Updated to build w/ git work-flow
     Merged in updates from pcds-trunk, include new camera models for Basler and Manta.
