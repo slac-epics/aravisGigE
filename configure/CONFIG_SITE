@@ -19,10 +19,14 @@ CHECK_RELEASE = YES
 # Set this when you only want to compile this application
 #   for a subset of the cross-compiled target architectures
 #   that Base is built for.
-CROSS_COMPILER_TARGET_ARCHS =
-ifeq '$(EPICS_HOST_ARCH)' 'rhel6-x86_64'
-CROSS_COMPILER_TARGET_ARCHS += linuxRT_glibc-x86_64
-endif
+#ifeq '$(EPICS_HOST_ARCH)' 'rhel6-x86_64'
+#CROSS_COMPILER_TARGET_ARCHS     +=  linuxRT_glibc-x86_64
+#endif
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out linuxRT-i686,       $(CROSS_COMPILER_TARGET_ARCHS))
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out linuxRT_glibc-i686, $(CROSS_COMPILER_TARGET_ARCHS))
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out linuxRT-arm_zynq,   $(CROSS_COMPILER_TARGET_ARCHS))
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out vxWorks%,           $(CROSS_COMPILER_TARGET_ARCHS))
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out RTEMS%,             $(CROSS_COMPILER_TARGET_ARCHS))
 
 # To install files into a location other than $(TOP) define
 #   INSTALL_LOCATION here.
@@ -35,15 +39,6 @@ endif
 #   take effect.
 #IOCS_APPL_TOP = </IOC/path/to/application/top>
 
-# Set the paths for glib and aravis packages
-ifeq '$(EPICS_HOST_ARCH)' 'rhel6-x86_64'
-PKG_ARCH=x86_64-rhel6-gcc44-opt
-else
-PKG_ARCH=x86_64-rhel5-gcc41-opt
-endif
-ARAVISPREFIX=$(PSPKG_ROOT)/release/aravis/0.3.7gige/$(PKG_ARCH)
-GLIBPREFIX=$(PSPKG_ROOT)/release/glib/2.28.8/$(PKG_ARCH)
-
 # Get settings from AREA_DETECTOR, so we only have to configure once for all detectors if we want to
 -include $(AREA_DETECTOR)/configure/CONFIG_SITE
 -include $(AREA_DETECTOR)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH)
@@ -52,3 +47,31 @@ ifdef T_A
   -include $(AREA_DETECTOR)/configure/CONFIG_SITE.Common.$(T_A)
   -include $(AREA_DETECTOR)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
 endif
+
+# Build shared and static libs
+ifeq (Linux, $(OS_CLASS))
+	SHARED_LIBRARIES=YES
+	STATIC_BUILD=YES
+endif
+
+ifndef PSPKG_ROOT
+ifneq ($(wildcard /reg/g/pcds/pkg_mgr),)
+PSPKG_ROOT=/reg/g/pcds/pkg_mgr
+endif
+ifneq ($(wildcard /afs/slac/g/pcds/pkg_mgr),)
+PSPKG_ROOT=/afs/slac/g/pcds/pkg_mgr
+endif
+endif
+
+# Set the paths for glib and aravis packages
+PKG_ARCH	= $(T_A)
+ifeq '$(PKG_ARCH)' 'linuxRT_glibc-x86_64'
+PKG_ARCH	= rhel6-x86_64
+endif
+ifeq '$(PKG_ARCH)' 'linuxRT-x86_64'
+PKG_ARCH	= rhel6-x86_64
+endif
+
+ARAVISPREFIX	= $(PSPKG_ROOT)/release/aravis/0.3.7gige/$(PKG_ARCH)
+GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.28.8/$(PKG_ARCH)
+
