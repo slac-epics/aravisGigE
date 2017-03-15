@@ -103,6 +103,12 @@ Build Instructions for example
 * Add the LIBS dependencies to src/Makefile 
 <pre>
     example_LIBS += aravisCamera
+    example_LIBS += aravis-0.4
+    example_LIBS += gio-2.0
+    example_LIBS += gobject-2.0
+    example_LIBS += gthread-2.0
+    example_LIBS += gmodules-2.0
+    example_LIBS += glib-2.0
     example_LIBS += NDPlugin
     example_LIBS += ADBase
     example_LIBS += netCDF
