@@ -107,7 +107,7 @@ Build Instructions for example
     example_LIBS += gio-2.0
     example_LIBS += gobject-2.0
     example_LIBS += gthread-2.0
-    example_LIBS += gmodules-2.0
+    example_LIBS += gmodule-2.0
     example_LIBS += glib-2.0
     example_LIBS += NDPlugin
     example_LIBS += ADBase
