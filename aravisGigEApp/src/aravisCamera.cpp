@@ -606,7 +606,8 @@ asynStatus aravisCamera::connectToCamera() {
 
     /* Add exposure lookup */
     if (tryAddFeature(&ADAcquireTime, "ExposureTime"))
-        tryAddFeature(&ADAcquireTime, "ExposureTimeAbs");
+        if (tryAddFeature(&ADAcquireTime, "ExposureTimeAbs"))
+        	tryAddFeature(&ADAcquireTime, "ExposureTimeRaw");
 
     /* Add framerate lookup */
     if (tryAddFeature(&ADAcquirePeriod, "AcquisitionFrameRate"))
@@ -776,20 +777,24 @@ asynStatus aravisCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     /* Acquire period / framerate */
     } else if (function == ADAcquirePeriod) {
         featureName = (char *) g_hash_table_lookup(this->featureLookup, &function);
-        if (value <= 0.0) value = 0.1;
-        featureNode = arv_device_get_feature(this->device, featureName);
-        if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_DOUBLE) {
-          status = this->setFloatValue(featureName, 1/value, &rbv);
-        } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_INT64) {
-          epicsInt32 i_rbv, i_value = (epicsInt32) (1/value);
-          status = this->setIntegerValue(featureName, i_value, &i_rbv);
-          rbv = (epicsFloat64)i_rbv;
-          if (rbv <= 0.0)
-            rbv = 0.1;
+        if (featureName == NULL) {
+            status = asynError;
         } else {
-          status = asynError;
-        }
-        if (status) setDoubleParam(function, 1/rbv);
+		  if (value <= 0.0) value = 0.1;
+		  featureNode = arv_device_get_feature(this->device, featureName);
+		  if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_DOUBLE) {
+			status = this->setFloatValue(featureName, 1/value, &rbv);
+		  } else if (arv_gc_feature_node_get_value_type(ARV_GC_FEATURE_NODE(featureNode)) == G_TYPE_INT64) {
+			epicsInt32 i_rbv, i_value = (epicsInt32) (1/value);
+			status = this->setIntegerValue(featureName, i_value, &i_rbv);
+			rbv = (epicsFloat64)i_rbv;
+			if (rbv <= 0.0)
+			  rbv = 0.1;
+		  } else {
+			status = asynError;
+		  }
+		  if (status) setDoubleParam(function, 1/rbv);
+		}
     /* generic feature lookup */
     } else if (g_hash_table_lookup_extended(this->featureLookup, &function, NULL, NULL)) {
         featureName = (char *) g_hash_table_lookup(this->featureLookup, &function);
