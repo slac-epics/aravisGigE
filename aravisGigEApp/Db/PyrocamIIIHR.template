@@ -15090,3 +15090,13 @@ record(longout, "$(P)$(R)TLParamsLocked") {
   info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE PINI VAL" )
 }
 
+####### Records overwritten from ADBase.template ##############################
+record(ao, "$(P)$(R)AcquirePeriod")
+{
+   field(DISA, "1")
+}
+
+record(ai, "$(P)$(R)AcquirePeriod_RBV")
+{
+   field(DISA, "1")
+}
