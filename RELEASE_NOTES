@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-1.1.5:	2017-04-19 Bruce Hill
+	Update to asyn/R4.31-0.1.0 and ADCore/R2.6-0.3.0
+
 R2.1-1.1.4:	2017-03-15 Bruce Hill
 	Added test for no AqcuirePeriod feature to avoid some ugly and non-helpful arv_gc error msgs.
 	Update to ADCore/R2.2-1.1.4
