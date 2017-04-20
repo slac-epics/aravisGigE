@@ -2,7 +2,7 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-ADCORE_MODULE_VERSION     =   R2.6-0.3.0
+ADCORE_MODULE_VERSION     =   R2.6-2.0.0
 BUSY_MODULE_VERSION       =   R1.6.1-0.2.4
 ASYN_MODULE_VERSION       =   R4.31-0.1.0
 CALC_MODULE_VERSION       =   R3.6.1-0.1.0
