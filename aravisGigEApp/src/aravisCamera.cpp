@@ -296,7 +296,17 @@ aravisCamera::aravisCamera(const char *portName, const char *cameraName,
     const char *functionName = "aravisCamera";
 
     /* glib initialisation */
-    //g_type_init ();
+    //g_thread_init is deprecated since glib 2.32 
+    // See: https://developer.gnome.org/glib/stable/glib-Deprecated-Thread-APIs.html#g-thread-init
+    #if !GLIB_CHECK_VERSION(2,32,0)
+    g_thread_init (NULL);
+    #endif
+
+    //g_type_init is deprecated since glib 2.36
+    // See: https://developer.gnome.org/gobject/stable/gobject-Type-Information.html#g-type-init
+    #if !GLIB_CHECK_VERSION(2,36,0)
+    g_type_init ();
+    #endif
 
     /* Duplicate camera name so we can use it if we reconnect */
     this->cameraName = epicsStrDup(cameraName);
