@@ -28,6 +28,7 @@ ifneq ($(ARAVISPREFIX),)
         # Assume it is in the lib directory
 		aravis-0.4_DIR = $(ARAVISPREFIX)/lib
 	endif
+	LIB_INSTALLS += $(wildcard $(aravis-0.4_DIR)/lib*)
 endif
 
 # If glib is not in a standard place, tell the build system where to look
@@ -40,8 +41,17 @@ ifneq ($(GLIBPREFIX),)
     else
         # Assume it is in the lib directory
 		USR_INCLUDES += -I$(GLIBPREFIX)/lib/glib-2.0/include		
+		USR_INCLUDES += -I$(GLIBPREFIX)/include
 		glib-2.0_DIR = $(GLIBPREFIX)/lib
 	endif
+	LIB_INSTALLS += $(wildcard $(glib-2.0_DIR)/lib*)
+endif
+
+ifneq ($(FFIPREFIX),)
+	USR_INCLUDES += -I$(FFIPREFIX)/lib/libffi-3.2.1/include
+	ffi_DIR = $(FFIPREFIX)/lib64
+	USR_LIBS += ffi
+	LIB_INSTALLS += $(wildcard $(ffi_DIR)/lib*)
 endif
 
 USR_LIBS += glib-2.0
@@ -49,7 +59,5 @@ USR_LIBS += glib-2.0
 # TODO: should pick this up from the vendor directory
 USR_LIBS += aravis-0.4
 
-LIB_INSTALLS += $(wildcard $(ARAVISPREFIX)/lib/lib*)
-LIB_INSTALLS += $(wildcard $(GLIBPREFIX)/lib/lib*)
 
 include $(TOP)/configure/RULES
