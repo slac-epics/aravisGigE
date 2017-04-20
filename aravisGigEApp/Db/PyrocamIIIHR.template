@@ -14900,14 +14900,6 @@ record(bo, "$(P)$(R)GEVPlayer") {
   info( autosaveFields, "DESC ZSV OSV TSE PINI VAL" )
 }
 
-record(longin, "$(P)$(R)FirmwareVersion_RBV") {
-  field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FirmwareVersion")
-  field(SCAN, "I/O Intr")
-  field(DISA, "0")
-  info( autosaveFields, "DESC LOLO LOW HIGH HIHI LLSV LSV HSV HHSV EGU TSE" )
-}
-
 record(longin, "$(P)$(R)FPGAChecksum_RBV") {
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))ARVI_FPGAChecksum")
