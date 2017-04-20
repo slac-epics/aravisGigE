@@ -17,7 +17,30 @@ PROD_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp $(PROD_NAME)Main.cpp
 # Add locally compiled object code
 PROD_LIBS += aravisCamera
 PROD_LIBS += aravis-0.4
-PROD_SYS_LIBS += giomm-2.4
+
+lzma_DIR = $(XZ_LIB)
+z_DIR = $(ZLIB_LIB)
+xml2_DIR = $(LIBXML2_LIB)
+ffi_DIR = $(FFI_LIB)
+
+# AreaDetector
+USR_LIBS += xml2
+USR_LIBS += z
+USR_LIBS += lzma
+
+# Aravis
+USR_LIBS += gio-2.0
+USR_LIBS += gobject-2.0 #2
+USR_LIBS += gthread-2.0 #3
+USR_LIBS += gmodule-2.0 #4
+USR_LIBS += glib-2.0    #5
+USR_LIBS += ffi
+USR_SYS_LIBS += resolv
+
+USR_INCLUDES += $(ZLIB_INCLUDE)
+USR_INCLUDES += $(XZ_INCLUDE)
+USR_INCLUDES += $(LIBXML2_INCLUDE)
+USR_INCLUDES += $(FFI_INCLUDE)
 
 include $(ADCORE)/ADApp/commonDriverMakefile
 

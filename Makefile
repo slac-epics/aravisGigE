@@ -9,7 +9,7 @@ DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 
 ifeq ($(BUILD_IOCS), YES)
-#DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
+DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
 iocs_DEPEND_DIRS += aravisGigEApp
 endif
 

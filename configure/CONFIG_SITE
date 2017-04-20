@@ -54,3 +54,4 @@ ifeq (Linux, $(OS_CLASS))
 	STATIC_BUILD=YES
 endif
 
+BUILD_IOCS=YES
