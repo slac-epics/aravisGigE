@@ -6,7 +6,7 @@
 R2.1-2.0.0: 2017-04-20 Hugo Slepicka
         Removing deprecated APIs from old glib version.
         Adjusting aravisGigEApp/src/Makefile to work with static build.
-        Bumping version of Asyn to R4.31-0.1.0 and ADCore to R2.6-0.3.0
+        Bumping version of Asyn to R4.31-0.1.0 and ADCore to R2.6-1.0.0
         Moving the definition of additional packages to T_A specific CONFIG_SITE.Common.
         Keeping linuxRT_glibc and linux-x86_64 files as we want and need to build this release for both Epics Base R3.15.5-1.0 and R3-14-12-4-1_1.
         Building the example ioc for aravisGigE.
