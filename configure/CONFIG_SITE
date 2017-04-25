@@ -71,9 +71,6 @@ endif
 ifeq '$(PKG_ARCH)' 'linuxRT-x86_64'
 PKG_ARCH	= rhel6-x86_64
 endif
-ifeq '$(PKG_ARCH)' 'linux-x86_64'
-PKG_ARCH	= rhel6-x86_64
-endif
 
 ARAVISPREFIX	= $(PSPKG_ROOT)/release/aravis/0.3.7gige/$(PKG_ARCH)
 GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.28.8/$(PKG_ARCH)
