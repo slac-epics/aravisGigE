@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-1.1.7:	2017-05-26 Bruce Hill
+	Update to asyn/R4.31-1.0.0 and ADCore/R2.6-2.2.0
+
 R2.1-1.1.6:	2017-04-24 Bruce Hill
 	Fixed incorrect rhel6 PKG_ARCH for rhel5 linux-x86_64 target arch
 
