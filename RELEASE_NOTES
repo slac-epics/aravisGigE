@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-1.1.8:	2017-05-26 Bruce Hill
+	Update to ADCore/R2.6-2.3.0
+
 R2.1-1.1.7:	2017-05-26 Bruce Hill
 	Update to asyn/R4.31-1.0.0 and ADCore/R2.6-2.2.0
 
