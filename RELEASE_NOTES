@@ -3,7 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
-R2.1-1.1.8:	2017-05-26 Bruce Hill
+R2.1-1.1.9:	2017-11-13 Bruce Hill
+	Update to ADCore/R2.6-2.4.0
+
+R2.1-1.1.8:	2017-10-25 Bruce Hill
 	Update to ADCore/R2.6-2.3.0
 
 R2.1-1.1.7:	2017-05-26 Bruce Hill
