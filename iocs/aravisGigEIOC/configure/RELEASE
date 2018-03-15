@@ -16,6 +16,9 @@ CALC          = $(EPICS_MODULES)/calc/$(CALC_MODULE_VERSION)
 SSCAN         = $(EPICS_MODULES)/sscan/$(SSCAN_MODULE_VERSION)
 
 
+-include $(TOP)/../../RELEASE_SITE
+-include $(TOP)/../../configure/RELEASE
+-include $(TOP)/../../configure/RELEASE.local
 -include $(TOP)/../../../configure/RELEASE_PATHS.local
 -include $(TOP)/../../../configure/RELEASE_PATHS.local.$(EPICS_HOST_ARCH)
 -include $(TOP)/../../../configure/RELEASE_PRODS.local

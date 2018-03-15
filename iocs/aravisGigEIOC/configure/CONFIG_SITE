@@ -44,3 +44,20 @@ ifdef T_A
   -include $(AREA_DETECTOR)/configure/CONFIG_SITE.Common.$(T_A)
   -include $(AREA_DETECTOR)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
 endif
+
+XZ_TOP=$(PACKAGE_SITE_TOP)/xz/5.2.2/$(PKG_ARCH)
+XZ_LIB=$(XZ_TOP)/lib
+XZ_INCLUDE=-I$(XZ_TOP)/include
+
+LIBXML2_TOP=$(PACKAGE_SITE_TOP)/libxml2/2.9.3/$(PKG_ARCH)
+LIBXML2_LIB=$(LIBXML2_TOP)/lib
+LIBXML2_INCLUDE=-I$(LIBXML2_TOP)/include
+
+ZLIB_TOP=$(PACKAGE_SITE_TOP)/zlib/1.2.8/$(PKG_ARCH)
+ZLIB_LIB=$(ZLIB_TOP)/lib
+ZLIB_INCLUDE=-I$(ZLIB_TOP)/include
+
+FFI_TOP=$(PACKAGE_SITE_TOP)/libffi/3.2.1/$(PKG_ARCH)
+FFI_LIB=$(FFI_TOP)/lib64
+FFI_INCLUDE=-I$(FFI_TOP)/lib/libffi-3.2.1/include
+
