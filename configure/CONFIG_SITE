@@ -68,11 +68,19 @@ endif
 endif
 
 ifeq (,$(findstring pcds,$(EPICS_BASE)))
-	# PCDS_BUILD=NO
+	# LCLS/LCLS2 build
+	ifeq '$(PKG_ARCH)' 'linuxRT_glibc-x86_64'
+		BR_VERSION	= buildroot-2015.02-x86_64
+		PKG_ARCH	= $(BR_VERSION)
+	endif
+	ifeq '$(PKG_ARCH)' 'linuxRT-x86_64'
+		BR_VERSION	= buildroot-2016.11.1-x86_64
+		PKG_ARCH	= $(BR_VERSION)
+	endif
 	ARAVISPREFIX	= $(PACKAGE_SITE_TOP)/aravis/0.4.1_1/$(PKG_ARCH)
 	GLIBPREFIX		= $(PACKAGE_SITE_TOP)/glib/2.52.0/$(PKG_ARCH)
 else
-	# PCDS_BUILD=YES
+	# PCDS build
 	ifeq '$(PKG_ARCH)' 'linuxRT_glibc-x86_64'
 		PKG_ARCH	= rhel6-x86_64
 	endif
