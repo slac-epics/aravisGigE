@@ -54,6 +54,12 @@ ifneq ($(FFIPREFIX),)
 	LIB_INSTALLS += $(wildcard $(ffi_DIR)/lib*)
 endif
 
+ifneq ($(PCRE_LIB),)
+	pcre_DIR = $(PCRE_LIB)
+	USR_LIBS += pcre
+	LIB_INSTALLS += $(wildcard $(PCRE_LIB)/lib*)
+endif
+
 USR_LIBS += glib-2.0
 
 # TODO: should pick this up from the vendor directory
