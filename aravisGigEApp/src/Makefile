@@ -47,11 +47,17 @@ ifneq ($(GLIBPREFIX),)
 	LIB_INSTALLS += $(wildcard $(glib-2.0_DIR)/lib*)
 endif
 
-ifneq ($(FFIPREFIX),)
-	USR_INCLUDES += -I$(FFIPREFIX)/lib/libffi-3.2.1/include
-	ffi_DIR = $(FFIPREFIX)/lib64
+ifneq ($(FFI_LIB),)
+#	USR_INCLUDES += -I$(FFI_TOP)/lib/libffi-3.2.1/include
+	ffi_DIR = $(FFI_LIB)
 	USR_LIBS += ffi
-	LIB_INSTALLS += $(wildcard $(ffi_DIR)/lib*)
+	LIB_INSTALLS += $(wildcard $(FFI_LIB)/lib*)
+endif
+
+ifneq ($(PCRE_LIB),)
+	pcre_DIR = $(PCRE_LIB)
+	USR_LIBS += pcre
+	LIB_INSTALLS += $(wildcard $(PCRE_LIB)/lib*)
 endif
 
 USR_LIBS += glib-2.0
