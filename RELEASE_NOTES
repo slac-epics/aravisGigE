@@ -3,6 +3,11 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-1.1.12: 2018-03-28 Bruce Hill
+	Update to pcre/8.39 for UTF support needed for aravis/0.4.1.1
+		Prior version worked for prosilica cameras but not
+		for basler or other aravisGigE cameras.
+
 R2.1-1.1.11: 2018-03-23 Bruce Hill
 	Build support for LCLS and PCDS from same branch
 
