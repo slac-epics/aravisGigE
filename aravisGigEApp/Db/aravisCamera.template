@@ -155,7 +155,7 @@ record(mbbo, "$(P)$(R)PKT_RESEND")
    field(ONVL, "1")
    field(VAL,  "1")
    field(PINI, "YES")
-   info( autosaveFields, "DESC ONSV SRSV PINI VAL" )
+   info( autosaveFields, "DESC ONSV ZRSV PINI VAL" )
 }
 
 record(longout, "$(P)$(R)PKT_TIMEOUT")
