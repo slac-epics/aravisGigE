@@ -571,8 +571,12 @@ asynStatus aravisCamera::connectToCamera() {
     if (model) status |= setStringParam (ADModel, model);
     deviceID = arv_camera_get_device_id(this->camera);
     if (deviceID) status |= setStringParam (ADSerialNumber, deviceID);
-    firmwareVersion = arv_device_get_string_feature_value(this->device, "DeviceFirmwareVersion");
-    if (firmwareVersion) status |= setStringParam (ADFirmwareVersion, firmwareVersion);
+
+    if (this->hasFeature("DeviceFirmwareVersion"))
+    {
+        firmwareVersion = arv_device_get_string_feature_value(this->device, "DeviceFirmwareVersion");
+        if (firmwareVersion) status |= setStringParam (ADFirmwareVersion, firmwareVersion);
+    }
 
     /* Get sensor size */
     arv_camera_get_sensor_size(this->camera, &w, &h);
