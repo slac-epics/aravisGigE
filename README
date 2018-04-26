@@ -43,7 +43,7 @@ DeviceModelName = acA1300-60gmNIR
 % arv-tool-0.4 -n "Allied Vision Technologies-50-0503349286" genicam > xml_files/Basler_acA1300-30gm.xml
 
 # Lastly, run the python script to create new db and edl files from the feature file
-% aravisGigEApp/src/makeDbAndEdl.py xml_files/Basler_acA1300-30gm.xml Basler_acA1300-30gm
+% aravisGigEApp/src/makeDbAndEdl.py etc/genicam/Basler_acA1300-30gm.xml Basler_acA1300-30gm
 
 # Note: I found that different Basler camera models had identical xml feature files,
 # but different image dimensions.
