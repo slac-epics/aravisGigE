@@ -2,19 +2,7 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
-ADCORE_MODULE_VERSION     =   R2.6-2.0.0
-BUSY_MODULE_VERSION       =   R1.6.1-0.2.4
-ASYN_MODULE_VERSION       =   R4.31-0.1.0
-CALC_MODULE_VERSION       =   R3.6.1-0.1.0
-SSCAN_MODULE_VERSION      =   R2.10.2-0.1.0
-
 ARAVISGIGE=$(TOP)/../..
-ADCORE        = $(EPICS_MODULES)/ADCore/$(ADCORE_MODULE_VERSION)
-BUSY          = $(EPICS_MODULES)/busy/$(BUSY_MODULE_VERSION)
-ASYN          = $(EPICS_MODULES)/asyn/$(ASYN_MODULE_VERSION)
-CALC          = $(EPICS_MODULES)/calc/$(CALC_MODULE_VERSION)
-SSCAN         = $(EPICS_MODULES)/sscan/$(SSCAN_MODULE_VERSION)
-
 
 -include $(TOP)/../../RELEASE_SITE
 -include $(TOP)/../../configure/RELEASE
@@ -24,4 +12,3 @@ SSCAN         = $(EPICS_MODULES)/sscan/$(SSCAN_MODULE_VERSION)
 -include $(TOP)/../../../configure/RELEASE_PRODS.local
 -include $(TOP)/RELEASE.local
 -include $(TOP)/configure/RELEASE.local
--include $(TOP)/../../configure/RELEASE.local
