@@ -41,9 +41,9 @@ ifneq ($(GLIBPREFIX),)
     else
         # Assume it is in the lib directory
 		USR_INCLUDES += -I$(GLIBPREFIX)/lib/glib-2.0/include		
-		USR_INCLUDES += -I$(GLIBPREFIX)/include
 		glib-2.0_DIR = $(GLIBPREFIX)/lib
 	endif
+	USR_INCLUDES += -I$(GLIBPREFIX)/include
 	LIB_INSTALLS += $(wildcard $(glib-2.0_DIR)/lib*)
 endif
 
@@ -52,12 +52,6 @@ ifneq ($(FFI_LIB),)
 	ffi_DIR = $(FFI_LIB)
 	USR_LIBS += ffi
 	LIB_INSTALLS += $(wildcard $(FFI_LIB)/lib*)
-endif
-
-ifneq ($(PCRE_LIB),)
-	pcre_DIR = $(PCRE_LIB)
-	USR_LIBS += pcre
-	LIB_INSTALLS += $(wildcard $(PCRE_LIB)/lib*)
 endif
 
 ifneq ($(PCRE_LIB),)
