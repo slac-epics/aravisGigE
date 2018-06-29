@@ -6,6 +6,7 @@
 #   EPICS_MODULES 
 # from one of the following options
 -include $(TOP)/../../RELEASE_SITE
+-include $(TOP)/../../../../RELEASE_SITE
 -include $(TOP)/RELEASE_SITE
 
 # Check that EPICS_MODULES was defined in a RELEASE_SITE file
