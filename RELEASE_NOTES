@@ -3,6 +3,14 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-1.1.15: 2018-06-29 Bruce Hill
+	Builds sample ioc w/o repeating ADCore and asyn versions in ioc configure files.
+	Adds genicam xml, templates and env for the Basler_acA1300-22gm.
+
+R2.1-1.1.14: 2018-03-30 Hugo Slepicka
+	Adding support for FLIR AX5 series IR cam.
+	Avoid checking the 'DeviceFirmwareVersion' for cameras that don't have it (FLIR A35).
+
 R2.1-1.1.13: 2018-03-14 Bruce Hill
 	Updated to ADCore/R3.1-2.1.1
 
