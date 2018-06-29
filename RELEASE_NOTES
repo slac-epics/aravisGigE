@@ -3,6 +3,12 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-2.0.1:	2018-06-28 Bruce Hill
+	Update to asyn/R4.31-0.1.0 and ADCore/R2.6-0.3.0
+	Merged in some missing updates from R2.1-1.branch.
+	With a bit more work we should be able to consolidate
+	the 2.branch into the 1.branch.
+
 R2.1-2.0.0: 2017-04-20 Hugo Slepicka
         Removing deprecated APIs from old glib version.
         Adjusting aravisGigEApp/src/Makefile to work with static build.
