@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-2.0.2:	2019-01-31 Bruce Hill
+	epics-update -p ADCore/R3.1-2.3.0
+
 R2.1-2.0.1:	2018-06-28 Bruce Hill
 	Update to asyn/R4.31-0.1.0 and ADCore/R2.6-0.3.0
 	Merged in some missing updates from R2.1-1.branch.
