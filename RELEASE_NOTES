@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-2.0.3:	2019-02-07 Bruce Hill
+	Bump up pcre to 8.39 and disable linux-arm CROSS_COMPILER_TARGET_ARCHS
+
 R2.1-2.0.2:	2019-01-31 Bruce Hill
 	epics-update -p ADCore/R3.1-2.3.0
 
