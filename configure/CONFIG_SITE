@@ -22,6 +22,7 @@ CHECK_RELEASE = YES
 #ifeq '$(EPICS_HOST_ARCH)' 'rhel6-x86_64'
 #CROSS_COMPILER_TARGET_ARCHS     +=  linuxRT_glibc-x86_64
 #endif
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out linux-arm%,       	$(CROSS_COMPILER_TARGET_ARCHS))
 CROSS_COMPILER_TARGET_ARCHS := $(filter-out linux-x86,       	$(CROSS_COMPILER_TARGET_ARCHS))
 CROSS_COMPILER_TARGET_ARCHS := $(filter-out linuxRT-i686,       $(CROSS_COMPILER_TARGET_ARCHS))
 CROSS_COMPILER_TARGET_ARCHS := $(filter-out linuxRT_glibc-i686, $(CROSS_COMPILER_TARGET_ARCHS))
@@ -82,7 +83,7 @@ ifeq (,$(findstring pcds,$(EPICS_BASE)))
 	ARAVISPREFIX	= $(PACKAGE_SITE_TOP)/aravis/0.4.1_1/$(PKG_ARCH)
 	GLIBPREFIX		= $(PACKAGE_SITE_TOP)/glib/2.52.0/$(PKG_ARCH)
 	FFI_TOP			= $(PACKAGE_SITE_TOP)/libffi/3.2.1/$(PKG_ARCH)
-	PCRE_TOP		= $(PACKAGE_SITE_TOP)/pcre/8.37/$(PKG_ARCH)
+	PCRE_TOP		= $(PACKAGE_SITE_TOP)/pcre/8.39/$(PKG_ARCH)
 else
 	# PCDS build
 	ifeq '$(PKG_ARCH)' 'linuxRT_glibc-x86_64'
@@ -95,7 +96,7 @@ else
 	ARAVISPREFIX	= $(PSPKG_ROOT)/release/aravis/0.4.1.1gige/$(PKG_ARCH)
 	GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.48.2/$(PKG_ARCH)
 	FFI_TOP			= $(PSPKG_ROOT)/release/libffi/3.2.1/$(PKG_ARCH)
-	PCRE_TOP		= $(PSPKG_ROOT)/release/pcre/8.37/$(PKG_ARCH)
+	PCRE_TOP		= $(PSPKG_ROOT)/release/pcre/8.39/$(PKG_ARCH)
 endif
 FFI_LIB		= $(FFI_TOP)/lib64
 PCRE_LIB	= $(PCRE_TOP)/lib
