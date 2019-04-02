@@ -86,7 +86,7 @@ x 176
 y 200
 w 76
 h 20
-controlPv "$(P)$(R)StreamBytesPerSecond"
+controlPv "$(P)$(R)StreamBytesPerSe"
 font "helvetica-bold-r-12.0"
 fgColor index 25
 bgColor index 5
@@ -111,7 +111,7 @@ x 260
 y 200
 w 76
 h 20
-controlPv "$(P)$(R)StreamBytesPerSecond_RBV"
+controlPv "$(P)$(R)StreamBytesPerSe_RBV"
 font "helvetica-bold-r-12.0"
 fontAlign "center"
 fgColor index 16
@@ -190,8 +190,8 @@ bgColor index 5
 inconsistentColor index 40
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(P)$(R)StreamFrameRateConstrain"
-indicatorPv "$(P)$(R)StreamFrameRateConstrain_RBV"
+controlPv "$(P)$(R)StreamFrameRateC"
+indicatorPv "$(P)$(R)StreamFrameRateC_RBV"
 font "helvetica-bold-r-12.0"
 endObjectProperties
 
