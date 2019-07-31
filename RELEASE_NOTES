@@ -3,6 +3,13 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-2.0.5:	2019-07-30 Bruce Hill
+	Update to ADCore/R3.1-2.3.3
+	Fix pv names in AVT_MantaCamType.edl
+
+R2.1-2.0.4:	2019-05-06 T. Johnson
+	Adding support for Basler acA1440-73gm and acA2500-20gm
+
 R2.1-2.0.3:	2019-02-07 Bruce Hill
 	Bump up pcre to 8.39 and disable linux-arm CROSS_COMPILER_TARGET_ARCHS
 
