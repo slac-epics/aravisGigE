@@ -20,15 +20,15 @@ DBD += aravisCameraSupport.dbd
 
 # Set aravis include and lib paths
 ifneq ($(ARAVISPREFIX),)
-	USR_INCLUDES += -I$(ARAVISPREFIX)/include/aravis-0.4
-    ifneq (,$(wildcard $(ARAVISPREFIX)/lib64/libaravis-0.4*))
-	    # If these is a glibprefix/lib64/aravis-0.4 dir then use this	    
-    	aravis-0.4_DIR = $(ARAVISPREFIX)/lib64
+	USR_INCLUDES += -I$(ARAVISPREFIX)/include/aravis-0.6
+    ifneq (,$(wildcard $(ARAVISPREFIX)/lib64/libaravis-0.6*))
+	    # If these is a glibprefix/lib64/aravis-0.6 dir then use this	    
+    	aravis-0.6_DIR = $(ARAVISPREFIX)/lib64
     else
         # Assume it is in the lib directory
-		aravis-0.4_DIR = $(ARAVISPREFIX)/lib
+		aravis-0.6_DIR = $(ARAVISPREFIX)/lib
 	endif
-	LIB_INSTALLS += $(wildcard $(aravis-0.4_DIR)/lib*)
+	LIB_INSTALLS += $(wildcard $(aravis-0.6_DIR)/lib*)
 endif
 
 # If glib is not in a standard place, tell the build system where to look
@@ -60,9 +60,13 @@ ifneq ($(PCRE_LIB),)
 	LIB_INSTALLS += $(wildcard $(PCRE_LIB)/lib*)
 endif
 
+ifneq ($(LIBUSB_TOP),)
+	LIB_INSTALLS += $(wildcard $(LIBUSB_TOP)/lib/lib*)
+endif
+
 USR_LIBS += glib-2.0
 
-USR_LIBS += aravis-0.4
+USR_LIBS += aravis-0.6
 
 
 include $(TOP)/configure/RULES

@@ -458,8 +458,10 @@ asynStatus aravisCamera::makeCameraObject() {
                     driverName, functionName);
         return asynError;
     }
+#if !ARAVIS_CHECK_VERSION(0,5,4)
     // Make standard size packets
     arv_gv_device_set_packet_size(ARV_GV_DEVICE(this->device), ARV_GV_DEVICE_GVSP_PACKET_SIZE_DEFAULT);
+#endif
     // Uncomment this line to set jumbo packets
 //    arv_gv_device_set_packet_size(ARV_GV_DEVICE(this->device), 9000);
     /* Store genicam */

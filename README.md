@@ -50,15 +50,15 @@ You are now ready to build the module.
     * If you have glib >= 2.26 then comment out GLIBPREFIX, otherwise download and install glib and set the GLIBPREFIX macro to the install prefix you used. If you are installing 64-bit then please make sure you configure and install glib with the option --libdir=$GLIBPREFIX/lib64
     * Set AREADETECTOR to the path of an areaDetector release 1-6 or newer.
   * Type make
-  * Run bin/linux-x86_64/arv-tool-0.4 to see GigE visible devices
+  * Run bin/linux-x86_64/arv-tool-0.6 to see GigE visible devices
   * If your camera is not visible, check that it has an IP address on the same subnet
   * If your camera is of a supported type, modify the example to use the correct database and screen, otherwise read the next section
 
 Adding a new camera
 -------------------
 
-  * Run `bin/linux-x86/arv-tool-0.4 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
-    * E.g. `bin/linux-x86/arv-tool-0.4 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
+  * Run `bin/linux-x86/arv-tool-0.6 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
+    * E.g. `bin/linux-x86/arv-tool-0.6 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
   * Make sure the generated file doesn't have a space at the start of it
   * Run `aravisGigEApp/src/makeDbAndEdl.py <genicam_xml> <camera_name>`
     * E.g. `aravisGigEApp/src/makeDbAndEdl.py AVT_Manta_G125B.xml AVT_Manta`
@@ -103,12 +103,13 @@ Build Instructions for example
 * Add the LIBS dependencies to src/Makefile 
 <pre>
     example_LIBS += aravisCamera
-    example_LIBS += aravis-0.4
+    example_LIBS += aravis-0.6
     example_LIBS += gio-2.0
     example_LIBS += gobject-2.0
     example_LIBS += gthread-2.0
     example_LIBS += gmodule-2.0
     example_LIBS += glib-2.0
+    example_LIBS += usb-1.0
     example_LIBS += NDPlugin
     example_LIBS += ADBase
     example_LIBS += netCDF
