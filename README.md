@@ -42,23 +42,23 @@ Installation
 As this module is just a wrapper to aravis, it is not distributed with aravis, so you need to download and compile aravis in order to use the module. After downloading and untarring aravisGigE, either:
 
   * Run the bash script `install.sh` in the root of the module, or
-  * Download and unzip the [aravis source](http://ftp.gnome.org/pub/GNOME/sources/aravis/0.1/aravis-0.1.15.tar.xz) in the vendor directory of the module, renaming it to aravis
+  * Download and unzip the [aravis source]( https://github.com/AravisProject/aravis/archive/ARAVIS_0_7_3.tar.gz ) in the vendor directory of the module, renaming it to aravis
 
 You are now ready to build the module.
 
   * Modify configure/RELEASE.local
     * If you have glib >= 2.26 then comment out GLIBPREFIX, otherwise download and install glib and set the GLIBPREFIX macro to the install prefix you used. If you are installing 64-bit then please make sure you configure and install glib with the option --libdir=$GLIBPREFIX/lib64
-    * Set AREADETECTOR to the path of areaDetector 1-6 or 1-7beta
+    * Set AREADETECTOR to the path of an areaDetector release 1-6 or newer.
   * Type make
-  * Run bin/linux-x86/arv-tool-0.2 to see GigE visible devices
+  * Run bin/linux-x86_64/arv-tool-0.4 to see GigE visible devices
   * If your camera is not visible, check that it has an IP address on the same subnet
   * If your camera is of a supported type, modify the example to use the correct database and screen, otherwise read the next section
 
 Adding a new camera
 -------------------
 
-  * Run `bin/linux-x86/arv-tool-0.2 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
-    * E.g. `bin/linux-x86/arv-tool-0.2 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
+  * Run `bin/linux-x86/arv-tool-0.4 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
+    * E.g. `bin/linux-x86/arv-tool-0.4 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
   * Make sure the generated file doesn't have a space at the start of it
   * Run `aravisGigEApp/src/makeDbAndEdl.py <genicam_xml> <camera_name>`
     * E.g. `aravisGigEApp/src/makeDbAndEdl.py AVT_Manta_G125B.xml AVT_Manta`
