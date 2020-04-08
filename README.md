@@ -71,6 +71,7 @@ You are now ready to build the module.
   * If you are using the standard areadDetector layout, with aravisGigE in a subdirectory of areaDetector, then edit the top-level areaDetector/configure files
   as described in [INSTALL_GUIDE.md](https://github.com/areaDetector/areaDetector/blob/master/INSTALL_GUIDE.md).
   * If you are not using this layout then you will need to edit aravisGigE/configure/RELEASE.local and aravisGigRE/configure/CONFIG_SITE to define things.
+  * If you have glib >= 2.26 then comment out GLIBPREFIX, otherwise download and install glib and set the GLIBPREFIX macro to the install prefix you used. If you are installing 64-bit then please make sure you configure and install glib with the option --libdir=$GLIBPREFIX/lib64
   * Type make
   * The first time make is run in the top-level aravisGigE directory it will build the aravis library and tools.  
     It will install aravisGigE/bin/linux-x86_64/arv-tool-VERSION , where VERSION is for example 0.6.
@@ -156,8 +157,8 @@ the selected users or groups.  Here is one way to do this:
 
 Adding a new camera
 -------------------
-  * Run `bin/linux-x86/arv-tool-0.2 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
-    * E.g. `bin/linux-x86/arv-tool-0.2 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
+  * Run `bin/linux-x86/arv-tool-0.6 -n "<device_name>" genicam > "<camera_model>.xml"` to download the genicam xml data from the selected device cameras
+    * E.g. `bin/linux-x86/arv-tool-0.6 -n "Allied Vision Technologies-50-0503318719" genicam > AVT_Manta_G125B.xml`
   * Make sure the generated file doesn't have a space at the start of it
   * Run `aravisGigEApp/src/makeDbAndEdl.py <genicam_xml> <camera_name>`
     * E.g. `aravisGigEApp/src/makeDbAndEdl.py AVT_Manta_G125B.xml AVT_Manta`
