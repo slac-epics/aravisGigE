@@ -3,6 +3,12 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R2.1-2.1.0: 2020-04-09 Bruce Hill
+	Update to aravis/0.5.13
+	New cameras:
+		Basler_acA1440-73gm
+		Basler_acA2500-20gm
+
 R2.1-2.0.5:	2019-07-30 Bruce Hill
 	Update to ADCore/R3.1-2.3.3
 	Fix pv names in AVT_MantaCamType.edl
