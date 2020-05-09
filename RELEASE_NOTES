@@ -3,6 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.1.0: 2020-05-08 Bruce Hill
+	Fix install of camera MODEL.env files
+	Add missing Basler_acA2500-20gm and Basler_acA1440-73gm files.
+
 R3.0-1.0.0: 2020-04-21 Bruce Hill
 	Created fresh branch off collaboration R3-0
 	SLAC changes from branch slac-changes-vs-R3.0-ref
