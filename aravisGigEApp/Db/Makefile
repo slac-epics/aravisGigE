@@ -14,7 +14,7 @@ include $(TOP)/configure/CONFIG
 DB += $(patsubst ../%, %, $(wildcard ../*.template))
 
 # Also install env files 
-DB_INSTALLS += $(wildcard *.env)
+DB += $(patsubst ../%, %, $(wildcard ../*.env))
 
 include $(TOP)/configure/RULES
 #----------------------------------------
