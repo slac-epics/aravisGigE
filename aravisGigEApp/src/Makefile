@@ -29,6 +29,7 @@ ifneq ($(ARAVISPREFIX),)
 		aravis-0.6_DIR = $(ARAVISPREFIX)/lib
 	endif
 	LIB_INSTALLS += $(wildcard $(aravis-0.6_DIR)/lib*)
+	BIN_INSTALLS += $(wildcard $(ARAVISPREFIX)/bin/*)
 endif
 
 # If glib is not in a standard place, tell the build system where to look
