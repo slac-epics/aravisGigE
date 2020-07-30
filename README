@@ -35,12 +35,12 @@ DeviceModelName = acA1300-60gmNIR
 # arv-tool can also be used to show all features on the camera
 % arv-tool-0.6 -n "Basler-21722087" features
 
-# Then run arv-tool-0.6 -n CAMERA_NAME genicam > CAMERA_NAME.xml
-# to fetch the xml feature spec
+# Then run arv-tool-0.6 -n CAMERA_NAME genicam > etc/genicam/Basler_acA1300-30gm.xml
+# to fetch the xml feature spec.  (Substitute your camera model #)
 # If arv-tool generates errors, check the line numbers in the error msgs
 # and fix any flaws in the generated xml.
 # (My first 2 Baslers both generated xml w/ 'bCustom"' instead of '"Custom"')
-% arv-tool-0.6 -n "Allied Vision Technologies-50-0503349286" genicam > xml_files/Basler_acA1300-30gm.xml
+% arv-tool-0.6 -n "Allied Vision Technologies-50-0503349286" genicam > etc/genicam/Basler_acA1300-30gm.xml
 
 # Lastly, run the python script to create new db and edl files from the feature file
 % aravisGigEApp/src/makeDbAndEdl.py etc/genicam/Basler_acA1300-30gm.xml Basler_acA1300-30gm
