@@ -3,6 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.2.0: 2020-07-29 Bruce Hill
+	Redownload xml and reran makeDbAndEdl.py for:
+		Basler_acA2500-20gm and Basler_acA1440-73gm
+
 R3.0-1.1.0: 2020-05-08 Bruce Hill
 	Fix install of camera MODEL.env files
 	Add missing Basler_acA2500-20gm and Basler_acA1440-73gm files.
