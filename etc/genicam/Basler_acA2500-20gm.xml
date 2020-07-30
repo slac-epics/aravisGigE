@@ -1,4 +1,3 @@
-Basler-40021268
 <RegisterDescription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.genicam.org/GenApi/Version_1_0" MajorVersion="3" MinorVersion="8" ModelName="GigECamera" ProductGuid="1F3C6A72-7842-4edd-9130-E2E90A2058BA" SchemaMajorVersion="1" SchemaMinorVersion="0" SchemaSubMinorVersion="1" StandardNameSpace="GEV" SubMinorVersion="0" ToolTip="Basler generic GigEVision camera interface" VendorName="Basler" VersionGuid="87F31A73-557C-48BE-AE18-E63F77209C88" xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0 http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd">
   <Category Name="Root" NameSpace="Standard">
     <pFeature>AnalogControls</pFeature>

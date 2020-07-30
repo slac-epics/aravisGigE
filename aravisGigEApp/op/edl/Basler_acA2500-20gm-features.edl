@@ -905,6 +905,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -1584,6 +1585,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -3347,6 +3349,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -5836,6 +5839,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -6399,6 +6403,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -6825,6 +6830,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -9485,6 +9491,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -9595,6 +9602,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -11141,6 +11149,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -11702,6 +11711,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -12540,6 +12550,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -12935,6 +12946,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -14053,6 +14065,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -14476,6 +14489,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -14679,6 +14693,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -16169,6 +16184,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -16420,6 +16436,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -16605,6 +16622,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -18632,6 +18650,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -18811,6 +18830,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19059,6 +19079,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19236,6 +19257,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19413,6 +19435,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19590,6 +19613,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19767,6 +19791,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -19944,6 +19969,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -20121,6 +20147,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -20369,6 +20396,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -20546,6 +20574,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -20723,6 +20752,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -20900,6 +20930,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21077,6 +21108,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21254,6 +21286,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21431,6 +21464,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21608,6 +21642,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21785,6 +21820,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -21962,6 +21998,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -22139,6 +22176,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -22316,6 +22354,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -22493,6 +22532,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -22670,6 +22710,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -22847,6 +22888,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -23248,6 +23290,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -25807,6 +25850,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -28314,6 +28358,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -28754,6 +28799,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -29537,6 +29583,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -30508,6 +30555,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -31143,6 +31191,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -31322,6 +31371,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Rectangle)
 object activeRectangleClass
 beginObjectProperties
@@ -31597,6 +31647,7 @@ value {
 autoSize
 border
 endObjectProperties
+
 # (Exit Button)
 object activeExitButtonClass
 beginObjectProperties
