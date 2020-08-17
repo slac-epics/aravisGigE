@@ -77,7 +77,7 @@ ifeq (lcls,$(findstring lcls,$(EPICS_BASE)))
 		PKG_ARCH	= $(BR_VERSION)
 	endif
 	ifeq '$(PKG_ARCH)' 'linuxRT-x86_64'
-		BR_VERSION	= buildroot-2016.11.1-x86_64
+		BR_VERSION	= buildroot-2019.08-x86_64
 		PKG_ARCH	= $(BR_VERSION)
 	endif
 	ARAVISPREFIX	= $(PACKAGE_SITE_TOP)/aravis/0.4.1_1/$(PKG_ARCH)
