@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.3.4: 2022-02-09 Bruce Hill
+	Update to ADCore/R3.9-1.1.0
+
 R3.0-1.3.3: 2022-01-20 Bruce Hill
 	Update to ADCore/R3.9-1.0.3 and asyn/R4.39-1.0.1
 	For lcls use Buildroot 2019.08 and pcre/8.37
