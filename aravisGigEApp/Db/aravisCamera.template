@@ -350,7 +350,7 @@ record( calc, "$(P)$(R)XmitDelay" )
     field( INPB, "$(P)$(R)XmitRate CPP MS" )
     field( INPC, "$(P)$(R)CamProcDelay CPP MS" )
     field( INPD, "$(P)$(R)DataType_RBV CPP MS" )
-    field( CALC, "D?(2*A/B+C):(A/B+C)" )
+    field( CALC, "A/B+C" )
     field( EGU,  "Sec" )
     field( PREC, "4" )
 }   
