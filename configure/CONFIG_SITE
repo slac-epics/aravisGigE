@@ -84,6 +84,9 @@ ifeq (lcls,$(findstring lcls,$(EPICS_BASE)))
 	GLIBPREFIX		= $(PACKAGE_SITE_TOP)/glib/2.52.0/$(PKG_ARCH)
 	FFI_TOP			= $(PACKAGE_SITE_TOP)/libffi/3.2.1/$(PKG_ARCH)
 	PCRE_TOP		= $(PACKAGE_SITE_TOP)/pcre/8.37/$(PKG_ARCH)
+	LIBUSB_TOP		= $(PSPKG_ROOT)/release/libusb/1.0.23/$(PKG_ARCH)
+	GLIBMM_TOP		= $(PSPKG_ROOT)/release/glibmm/2.40.0/$(PKG_ARCH)
+	UTIL_LINUX_TOP	= $(PSPKG_ROOT)/release/util-linux/2.37.3/$(PKG_ARCH)
 else
 	# PCDS build
 	ifeq '$(PKG_ARCH)' 'linuxRT_glibc-x86_64'
@@ -97,7 +100,9 @@ else
 	GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.56.1/$(PKG_ARCH)
 	FFI_TOP			= $(PSPKG_ROOT)/release/libffi/3.2.1/$(PKG_ARCH)
 	PCRE_TOP		= $(PSPKG_ROOT)/release/pcre/8.42/$(PKG_ARCH)
-	LIBUSB_TOP		= $(PSPKG_ROOT)/release/libusb/1.0.21/$(PKG_ARCH)
+	LIBUSB_TOP		= $(PSPKG_ROOT)/release/libusb/1.0.23/$(PKG_ARCH)
+	GLIBMM_TOP		= $(PSPKG_ROOT)/release/glibmm/2.40.0/$(PKG_ARCH)
+	UTIL_LINUX_TOP	= $(PSPKG_ROOT)/release/util-linux/2.37.3/$(PKG_ARCH)
 endif
 FFI_LIB		= $(FFI_TOP)/lib64
 PCRE_LIB	= $(PCRE_TOP)/lib

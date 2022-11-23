@@ -64,6 +64,12 @@ endif
 ifneq ($(LIBUSB_TOP),)
 	LIB_INSTALLS += $(wildcard $(LIBUSB_TOP)/lib/lib*)
 endif
+ifneq ($(GLIBMM_TOP),)
+	LIB_INSTALLS += $(wildcard $(GLIBMM_TOP)/lib/lib*)
+endif
+ifneq ($(UTIL_LINUX_TOP),)
+	LIB_INSTALLS += $(wildcard $(UTIL_LINUX_TOP)/lib/lib*)
+endif
 
 USR_LIBS += glib-2.0
 
