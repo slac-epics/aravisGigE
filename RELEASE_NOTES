@@ -3,6 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.4.1: 2023-02-22 Bruce Hill
+	Update to ADCore/R3.10-1.1.0
+	Added cfg/CONFIG_ARAVIS which defines ARAVIS_LIBS
+
 R3.0-1.4.0: 2022-11-22 Bruce Hill
 	Fix timestamping by fixing XmitDelay CALC for ArraySize_RBV in bytes.
 	Add support for AVT_Manta_G146C
