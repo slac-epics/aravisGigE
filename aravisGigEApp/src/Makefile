@@ -23,11 +23,11 @@ ifneq ($(ARAVISPREFIX),)
 	USR_INCLUDES += -I$(ARAVISPREFIX)/include/aravis-0.6
     ifneq (,$(wildcard $(ARAVISPREFIX)/lib64/libaravis-0.6*))
 	    # If these is a glibprefix/lib64/aravis-0.6 dir then use this	    
-    	aravis-0.6_DIR = $(ARAVISPREFIX)/lib64
+	aravis-0.6_DIR = $(ARAVISPREFIX)/lib64
     else
         # Assume it is in the lib directory
 		aravis-0.6_DIR = $(ARAVISPREFIX)/lib
-	endif
+    endif
 	LIB_INSTALLS += $(wildcard $(aravis-0.6_DIR)/lib*)
 	BIN_INSTALLS += $(wildcard $(ARAVISPREFIX)/bin/*)
 endif
@@ -38,7 +38,7 @@ ifneq ($(GLIBPREFIX),)
     ifneq (,$(wildcard $(GLIBPREFIX)/lib64/glib-2.0))
 	    # If these is a glibprefix/lib64/glib-2.0 dir then use this	    
 		USR_INCLUDES += -I$(GLIBPREFIX)/lib64/glib-2.0/include
-    	glib-2.0_DIR = $(GLIBPREFIX)/lib64
+	glib-2.0_DIR = $(GLIBPREFIX)/lib64
     else
         # Assume it is in the lib directory
 		USR_INCLUDES += -I$(GLIBPREFIX)/lib/glib-2.0/include		
