@@ -178,6 +178,7 @@ private:
     asynStatus getNextFeature();
     int hasEnumString(const char* feature, const char *value);
     gboolean hasFeature(const char *feature);
+    gboolean isAvailable(const char *feature);
     asynStatus tryAddFeature(int *ADIdx, const char *featureString);
 
     ArvStream *stream;
@@ -1475,12 +1476,23 @@ gboolean aravisCamera::hasFeature(const char *feature) {
     return arv_gc_get_node(this->genicam, feature) != NULL;
 }
 
+gboolean aravisCamera::isAvailable(const char *feature) {
+    ArvGcNode *node = arv_device_get_feature(device, feature);
+    if (ARV_IS_GC_FEATURE_NODE(node)) {
+	ArvGcFeatureNode *n = (ArvGcFeatureNode *)node;
+	GError *error = NULL;
+	return arv_gc_feature_node_is_available(n, &error);
+    } else
+	return false;
+}
+
 asynStatus aravisCamera::setIntegerValue(const char *feature, epicsInt32 value, epicsInt32 *rbv) {
     const char *functionName = "setIntegerValue";
-    if (feature == NULL) {
+    if (feature == NULL || !isAvailable(feature)) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-                    "%s:%s: Cannot set integer value of a NULL feature\n",
-                    driverName, functionName);
+		  "%s:%s: Cannot set integer value of %s feature\n",
+		  driverName, functionName,
+		  feature == NULL ? "a NULL" : "an unavailable");
         return asynError;
     }
     asynPrint(  this->pasynUserSelf, ASYN_TRACEIO_DRIVER,
@@ -1505,10 +1517,11 @@ asynStatus aravisCamera::setIntegerValue(const char *feature, epicsInt32 value, 
 
 asynStatus aravisCamera::setFloatValue(const char *feature, epicsFloat64 value, epicsFloat64 *rbv) {
     const char *functionName = "setFloatValue";
-    if (feature == NULL) {
+    if (feature == NULL || !isAvailable(feature)) {
         asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
-            "%s:%s: Cannot set float value of a NULL feature\n",
-            driverName, functionName);
+		  "%s:%s: Cannot set float value of %s feature\n",
+		  driverName, functionName,
+		  feature == NULL ? "a NULL" : "an unavailable");
         return asynError;
     }
 
@@ -1570,7 +1583,7 @@ asynStatus aravisCamera::getNextFeature() {
         featureName = (const char *) g_hash_table_lookup(this->featureLookup, index);
         node = arv_device_get_feature(this->device, featureName);
         //printf("Get %p %s %d\n", node, featureName, *index);
-        if (node == NULL) {
+        if (node == NULL || !isAvailable(featureName)) {
             status = asynError;
         } else if (ARV_IS_GC_ENUMERATION(node)) {
             integerValue = arv_device_get_integer_feature_value (this->device, featureName);

@@ -1,0 +1,54 @@
+# List of problematic values.
+# These give read_memory: Timeout.
+ExposureEndEventFrameID
+EventOverrunEventFrameID
+# These give read_register: Timeout.
+ColorTransformationValue
+# These give buffer not found.
+ChunkLineTriggerCounter
+ChunkGainAll
+ChunkPayloadCRC16
+ChunkShaftEncoderCounter
+ChunkInputStatusAtLineTriggerValue
+ChunkInputStatusAtLineTriggerBitsPerLine
+ChunkLineTriggerEndToEndCounter
+ChunkFramesPerTriggerCounter
+ChunkFrameTriggerCounter
+ChunkFrameTriggerIgnoredCounter
+ChunkLineTriggerIgnoredCounter
+ChunkTriggerinputcounter
+ChunkVirtLineStatusAll
+ChunkLineStatusAll
+ChunkFramecounter
+ChunkTimestamp
+ChunkDynamicRangeMax
+ChunkDynamicRangeMin
+ChunkHeight
+ChunkWidth
+ChunkOffsetY
+ChunkOffsetX
+ChunkSequenceSetIndex
+ChunkStride
+ChunkExposureTime
+ChunkModeActive
+ChunkSelector
+ChunkEnable
+ChunkPixelFormat
+ChunkInputStatusAtLineTriggerIndex
+# These give no available entry found in enumeration.
+SequenceAddressBitSource
+SequenceAddressBitSelector
+SequenceControlSelector
+LineSource
+ExposureTimeMode
+DemosaicingMode
+ColorAdjustmentSelector
+ColorTransformationSelector
+BalanceRatioSelector
+BalanceWhiteAuto
+LightSourceSelector
+# These just might not exist on camera.
+VignettingCorrectionIndex
+VignettingCorrectionValue
+VignettingCorrectionEnable
+VignettingCorrectionStore

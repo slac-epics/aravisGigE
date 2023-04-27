@@ -38,6 +38,11 @@ db_filename = os.path.join(prefix, "Db", camera_name + ".template")
 edl_filename = os.path.join(prefix, "op", "edl", camera_name + ".edl")
 edl_more_filename = os.path.join(prefix, "op", "edl", camera_name + "-features.edl")
 
+try:
+    ignore_lines = [l.strip() for l in open(args[0]+".ignore").readlines()]
+except:
+    ignore_lines = []
+
 # function to read element children of a node
 def elements(node):
     return [n for n in node.childNodes if n.nodeType == n.ELEMENT_NODE]  
@@ -170,6 +175,8 @@ def	isNodeReadOnly( node ):
 # for each node
 for node in doneNodes:
     nodeName = str(node.getAttribute("Name"))
+    if nodeName in ignore_lines:
+        continue
     ro = isNodeReadOnly( node )
     if node.nodeName in ["Integer", "IntConverter", "IntSwissKnife"]:
         print 'record(longin, "$(P)$(R)%s_RBV") {' % records[nodeName]
@@ -551,6 +558,8 @@ for name, nodes in structure:
     h = max(y, h)    
     for node in nodes:
         nodeName = str(node.getAttribute("Name"))
+        if nodeName in ignore_lines:
+            continue
         recordName = records[nodeName]
         ro = isNodeReadOnly( node )
         desc = ""
