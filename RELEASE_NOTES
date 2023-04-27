@@ -3,6 +3,11 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.4.2: 2023-04-27 Michael Browne
+        Don't try to read unavailable features.
+	Add "ignore" files to just omit problematic features from the IOC.
+	Use patched version of aravis library with boolean fix for property nodes.
+
 R3.0-1.4.1: 2023-02-22 Bruce Hill
 	Update to ADCore/R3.10-1.1.0
 	Added cfg/CONFIG_ARAVIS which defines ARAVIS_LIBS
