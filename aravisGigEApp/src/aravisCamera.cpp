@@ -1071,6 +1071,9 @@ asynStatus aravisCamera::processBuffer(ArvBuffer *buffer) {
     // pRaw->uniqueId = imageCounter;
     pRaw->timeStamp = arv_buffer_get_timestamp(buffer) / 1.e9;
 
+    extern double camera_ts;
+    camera_ts = pRaw->timeStamp;
+
     /* Update the areaDetector timeStamp */
     updateTimeStamp(&pRaw->epicsTS);
     pRaw->uniqueId = pRaw->epicsTS.nsec & 0x1FFFF;

@@ -14,7 +14,7 @@ include $(TOP)/configure/CONFIG
 LIBRARY_IOC += aravisCamera
 
 # The following are compiled and added to the support library
-aravisCamera_SRCS += aravisCamera.cpp
+aravisCamera_SRCS += aravisCamera.cpp camera_ts.cpp
 
 DBD += aravisCameraSupport.dbd
 
