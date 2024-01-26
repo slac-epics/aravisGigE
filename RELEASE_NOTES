@@ -3,6 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.4.4: 2024-01-26 Basil Aljamal
+    Add AVT Manta G2460B camera
+    add include_libs.sh script that adds libs to LD_LIBRARY_PATH that needed for arv-tool
+
 R2.1-1.1.15: 2018-06-29 Bruce Hill
 	Builds sample ioc w/o repeating ADCore and asyn versions in ioc configure files.
 	Adds genicam xml, templates and env for the Basler_acA1300-22gm.
