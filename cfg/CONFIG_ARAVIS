@@ -1,0 +1,20 @@
+# CONFIG_ARAVIS
+# Configure macros for building and linking to aravisGigE module 
+
+# Display how this makefile was called
+#$(info CONFIG_ARAVIS: '$(MAKECMDGOALS)')
+
+ARAVIS_LIBS += aravisCamera
+ARAVIS_LIBS += aravis-0.6
+ARAVIS_LIBS += gio-2.0
+ARAVIS_LIBS += gobject-2.0
+ARAVIS_LIBS += gthread-2.0
+ARAVIS_LIBS += gmodule-2.0
+ARAVIS_LIBS += glib-2.0
+
+ARAVIS_SYS_LIBS += resolv
+ARAVIS_SYS_LIBS += usb-1.0
+ARAVIS_SYS_LIBS += mount
+
+ARAVIS_PROD_LIBS += pcre
+ARAVIS_PROD_LIBS += ffi
