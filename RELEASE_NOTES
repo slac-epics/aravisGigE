@@ -3,6 +3,10 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.5.0: 2025-01-31 Jeremy Lorelli
+    Upgrade to R4.39-1.0.2, ADCore/R3.10-1.1.1
+    Upgrade to aravis/0.6.4-1, glib/2.70.0
+
 R3.0-1.4.2: 2023-04-27 Michael Browne
         Don't try to read unavailable features.
 	Add "ignore" files to just omit problematic features from the IOC.
