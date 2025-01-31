@@ -96,8 +96,8 @@ else
 		PKG_ARCH	= rhel6-x86_64
 	endif
 
-	ARAVISPREFIX	= $(PSPKG_ROOT)/release/aravis/0.6.4/$(PKG_ARCH)
-	GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.56.1/$(PKG_ARCH)
+	ARAVISPREFIX	= $(PSPKG_ROOT)/release/aravis/0.6.4-1/$(PKG_ARCH)
+	GLIBPREFIX		= $(PSPKG_ROOT)/release/glib/2.70.0/$(PKG_ARCH)
 	FFI_TOP			= $(PSPKG_ROOT)/release/libffi/3.2.1/$(PKG_ARCH)
 	PCRE_TOP		= $(PSPKG_ROOT)/release/pcre/8.42/$(PKG_ARCH)
 	LIBUSB_TOP		= $(PSPKG_ROOT)/release/libusb/1.0.23/$(PKG_ARCH)
