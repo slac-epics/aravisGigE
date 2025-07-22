@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R3.0-1.5.1: 2025-07-22 Jane Liu
+    Update to asyn/R4.42-1.0.0, ADCore/R3.10-1.2.0
+
 R3.0-1.5.0: 2025-01-31 Jeremy Lorelli
     Upgrade to R4.39-1.0.2, ADCore/R3.10-1.1.1
     Upgrade to aravis/0.6.4-1, glib/2.70.0
